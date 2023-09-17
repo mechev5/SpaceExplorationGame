@@ -1,0 +1,54 @@
+Here's where I'm going to keep the notes on things that need to be done, could be done, values associated with the ships, the players, maybe even the galaxies that these players inhabit. There also seems to be the player's base, which I still don't know a lot of information about but for now, let's just get some ideas out on what things to be stored inside these classes.
+
+Note: The ones that have an asterisk (*) are an idea for now.
+
+Planet System Level:
+	- Name of Planet System
+	- Number of Players *
+	- List of Player positions *
+	- Number of Planets 
+	- List of Planet positions
+	
+Planet Level:
+	- Name of Planet
+	- Type of Planet
+	- Position of Planet
+	- List of Planet Details, such as: *
+		- Mass
+		- Rotation Speed
+		- Angle
+		- Velocity
+		- Possible Moons
+		- Possible Samples / Observations / Rewards upon visiting
+			- Cooldown on this?
+
+Player Level:
+	- Name of Player
+	- Player Position
+	- Last visited planet
+	- O2 capacity
+		- Current amount of O2
+	- Max health
+		- Current amount of health
+	- Max hunger
+		- Current amount of hunger
+	- Max thirst
+		- Current amount of thirst
+	- Max inventory space
+		- List of items in player's inventory
+	- List of Player perks *
+
+Spaceship Level:
+	- Name of Spaceship (if given)
+	- Type of Spaceship
+	- O2 capacity
+		- Current amount of O2
+	- Max health
+		- Current amount of health
+	- Max fuel
+		- Current amount of fuel
+	- Max inventory space
+		- List of items in spaceship's inventory
+
+Base Level: 
+	- List of items in the player's base
