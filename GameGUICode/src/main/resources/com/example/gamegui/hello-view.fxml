@@ -6,7 +6,7 @@
 
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.image.ImageView?>
-<BorderPane fx:id="root" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gamegui.HelloController" style="-fx-background-color: black;">
+<BorderPane fx:id="root" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gamegui.HelloController">
     <top>
         <HBox alignment="BASELINE_CENTER" spacing="940">
             <VBox translateY="10">

@@ -9,7 +9,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
-import javafx.scene.text.Text;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundImage;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -96,5 +97,18 @@ public class HelloController implements Initializable {
         menuIV.setFitWidth(imageW / 8);
         menuIV.setFitHeight(imageH / 8);
         menuButton.setGraphic(menuIV);
+
+// First, load the Andromeda image
+        Image andromeda = new Image("Andromeda galaxy.jpg");
+        BackgroundImage andBg = new BackgroundImage(
+                andromeda,
+                null,
+                null,
+                null,
+                null
+        );
+        Background andromedaBackground = new Background(andBg);
+        root.setBackground(andromedaBackground);
+
     }
 }
