@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.image.ImageView?>
+<BorderPane fx:id="root" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gamegui.homeController">
+    <center>
+        <HBox alignment="BASELINE_CENTER">
+            <Button fx:id = "milkyWay_POI" ></Button>
+        </HBox>
+    </center>
+
+    <center>
+        <HBox alignment="BASELINE_CENTER">
+            <Button fx:id = "menuButton" ></Button>
+        </HBox>
+    </center>
+
+    <bottom>
+        <FlowPane fx:id="fpInv" vgap="4" hgap="4" alignment="BASELINE_CENTER">
+            <ImageView fx:id="inv1"> </ImageView>
+            <ImageView fx:id="inv2"> </ImageView>
+            <ImageView fx:id="inv3"> </ImageView>
+        </FlowPane>
+    </bottom>
+</BorderPane>

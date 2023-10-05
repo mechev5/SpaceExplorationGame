@@ -1,3 +1,4 @@
+//Use Hello Controller -displays 2 planets to pick from and return button
 package com.example.gamegui;
 
 import javafx.application.Application;
@@ -6,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.Border;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
