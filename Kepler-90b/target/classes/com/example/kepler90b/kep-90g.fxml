@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.image.ImageView?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.kepler90b.Kep90g"
+            fx:id="root">
+    <VBox spacing = "200">
+        <HBox spacing = "500">
+            <ImageView fx:id="kepX"/>
+            <TextArea fx:id="planetText"/>
+        </HBox>
+        <HBox spacing = "500">
+            <Button fx:id = "toPlanet"/>
+            <Button fx:id = "backButton"/>
+        </HBox>
+    </VBox>
+
+</BorderPane>
