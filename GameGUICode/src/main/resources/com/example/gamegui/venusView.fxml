@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Text?>
+<GridPane xmlns="http://javafx.com/javafx" prefHeight="600.0" prefWidth="600.0">
+    <VBox>
+        <Text>Venus</Text>
+        <HBox>
+        <Text text="Venus is the second planet from the Sun. It is a rocky planet with the densest atmosphere of all the&#xD;rocky bodies in the Solar System, and the only one with a mass and size that is close to that of&#xD;its orbital neighbour Earth. Orbiting inferiorly (inside of Earth's orbit), it appears in Earth's&#xD;sky always close to the Sun, as either a 'morning star' or an 'evening star'. While this is also true&#xD;for Mercury, Venus appears much more prominently, since it is the third brightest object in Earth's&#xD;sky after the Moon and the Sun,appearing brighter than any other star-like classical planet or&#xD;any fixed star. With such prominence in Earth's sky, Venus has historically been a common and important&#xD;object for humans, in both their cultures and astronomy."></Text>
+        </HBox>
+    </VBox>
+</GridPane>

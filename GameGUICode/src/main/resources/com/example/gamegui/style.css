@@ -10,5 +10,34 @@
     -fx-background-color: transparent;
 }
 
+/* Planets */
+#earth_button {
+    -fx-background-color: transparent;
+}
+#jupiter_button {
+    -fx-background-color: transparent;
+}
+#mars_button {
+    -fx-background-color: transparent;
+}
+#mercury_button {
+    -fx-background-color: transparent;
+}
+#neptune_button {
+    -fx-background-color: transparent;
+}
+#saturn_button {
+    -fx-background-color: transparent;
+}
+#sun_button {
+    -fx-background-color: transparent;
+}
+#uranus_button {
+    -fx-background-color: transparent;
+}
+#venus_button {
+    -fx-background-color: transparent;
+}
+
 .imageview {
 }

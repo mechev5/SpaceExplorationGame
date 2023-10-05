@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Text?>
+<GridPane xmlns="http://javafx.com/javafx" prefHeight="600.0" prefWidth="600.0">
+    <VBox>
+        <Text>Neptune</Text>
+        <HBox>
+            <Text text="Neptune is the eighth planet from the Sun and the farthest IAU-recognized planet in the Solar System.&#xD;It is the fourth-largest planet in the Solar System by diameter, the third-most-massive planet, and&#xD;the densest giant planet. It is 17 times the mass of Earth, and slightly more massive than its&#xD;near-twin Uranus. Neptune is denser and physically smaller than Uranus because its greater mass&#xD;causes more gravitational compression of its atmosphere. Being composed primarily of gases and liquids,&#xD;it has no well-defined solid surface. The planet orbits the Sun once every 164.8 years at an&#xD;average distance of 30.1 astronomical units (4.5 billion kilometres; 2.8 billion miles).&#xD;It is named after the Roman god of the sea and has the astronomical symbol ♆,&#xD;representing Neptune's trident.">
+            </Text>
+        </HBox>
+    </VBox>
+</GridPane>

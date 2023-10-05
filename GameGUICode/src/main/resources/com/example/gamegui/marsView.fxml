@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Text?>
+<GridPane xmlns="http://javafx.com/javafx" prefHeight="600.0" prefWidth="600.0">
+    <VBox>
+        <Text>Mars</Text>
+        <HBox>
+            <Text text="Mars is the fourth planet and the furthest terrestrial planet from the Sun. The reddish color of its surface is due&#xD;to finely grained iron(III) oxide dust in the soil, giving it the nickname 'the Red Planet'. Mars's radius&#xD;is second smallest among the planets in the Solar System at 3,389.5 km (2,106 mi). The Martian dichotomy&#xD;is visible on the surface: on average, the terrain on Mars's northern hemisphere is flatter and lower than&#xD;its southern hemisphere. Mars has a thin atmosphere made primarily of carbon dioxide and two irregularly&#xD;shaped natural satellites: Phobos and Deimos.">
+            </Text>
+        </HBox>
+    </VBox>
+</GridPane>

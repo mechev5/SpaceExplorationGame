@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Text?>
+<GridPane xmlns="http://javafx.com/javafx" prefHeight="600.0" prefWidth="600.0">
+    <VBox>
+        <Text>Uranus</Text>
+        <HBox>
+            <Text text="Uranus is the seventh planet from the Sun and is a gaseous cyan ice giant. Most of the planet&#xD;is made of water, ammonia, and methane in a supercritical phase of matter, which in astronomy is called&#xD;'ice' or volatiles. The planet's atmosphere has a complex layered cloud structure and has&#xD;the lowest minimum temperature of 49 K (−224 °C; −371 °F) out of all Solar System's planets. It has&#xD;a marked axial tilt of 97.8° with a retrograde rotation rate of 17 hours. This means that in an&#xD;84 Earth years orbital period around the Sun, its poles get around 42 years of continuous sunlight,&#xD;followed by 42 years of continuous darkness">
+            </Text>
+        </HBox>
+    </VBox>
+</GridPane>
