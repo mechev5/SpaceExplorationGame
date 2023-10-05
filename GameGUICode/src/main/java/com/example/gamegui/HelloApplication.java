@@ -15,6 +15,7 @@ import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.BackgroundImage;
@@ -51,11 +52,18 @@ public class HelloApplication extends Application {
         BackgroundImage backgroundStartUp = new BackgroundImage(backgroundPic, null, null, null, new BackgroundSize(1300, 1260,false,false,false,false));
         Background startBackground = new Background(backgroundStartUp);
 
-        TextField gameTitle = new TextField("Space Exploration Game");
-        gameTitle.setEditable(false);
-        gameTitle.setMaxWidth(310);
-        gameTitle.setStyle("-fx-background-color: white;" + "-fx-border-color: black;" + "-fx-text-color: white");
-        gameTitle.setFont(Font.font("Copperplate", FontWeight.BOLD, 24));
+        //TextField gameTitle = new TextField("Space Exploration Game");
+        // gameTitle.setEditable(false);
+        // gameTitle.setMaxWidth(310);
+        // gameTitle.setStyle("-fx-background-color: white;" + "-fx-border-color: black;" + "-fx-text-color: white");
+        // gameTitle.setFont(Font.font("Copperplate", FontWeight.BOLD, 24));
+
+        // Adding game logo
+        Image logo = new Image(getClass().getResource("Logo/logo_transparent.png").toExternalForm());
+        ImageView logoIV = new ImageView(logo);
+        logoIV.setPreserveRatio(true);
+        logoIV.setFitHeight(400);
+        logoIV.setFitWidth(400);
 
         Button explorationButton = new Button("Exploration Mode");
         Button sandboxButton = new Button("Sandbox Mode");
@@ -79,14 +87,15 @@ public class HelloApplication extends Application {
         gameModeHolder.setAlignment(Pos.CENTER);
         VBox buttonHolder = new VBox(30, gameModeHolder, exitButton);
         buttonHolder.setAlignment(Pos.CENTER);
-        VBox centerPiece = new VBox(200, gameTitle, buttonHolder);
+        VBox centerPiece = new VBox(200, logoIV, buttonHolder);
         centerPiece.setAlignment(Pos.CENTER);
+        centerPiece.setSpacing(10);
 
         // initialize and present Borderpane/scenes
         BorderPane borderPane = new BorderPane();
         borderPane.setBackground(startBackground);
         borderPane.setCenter(centerPiece);
-        Scene start = new Scene(borderPane, 1300, 850);
+        Scene start = new Scene(borderPane, 1280, 720);
 
         pStage.setTitle("Space Exploration Game");
         pStage.setScene(start);
@@ -94,7 +103,8 @@ public class HelloApplication extends Application {
     }
 
     public void loadUI() throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
+        // NOTE: NO LONGER USING HelloController
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("homeView.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1280, 720);
         scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
         sceneMap.put("main", scene);

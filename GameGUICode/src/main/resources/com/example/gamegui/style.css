@@ -6,5 +6,9 @@
 #fpInv {
 }
 
+#milkyWay_POI {
+    -fx-background-color: transparent;
+}
+
 .imageview {
 }
