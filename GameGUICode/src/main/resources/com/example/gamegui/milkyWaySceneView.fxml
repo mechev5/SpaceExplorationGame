@@ -43,6 +43,7 @@
             <ImageView fx:id="inv6"> </ImageView>
             <ImageView fx:id="inv7"> </ImageView>
             <ImageView fx:id="inv8"> </ImageView>
+            <Button fx:id="returnMilky"></Button>
         </FlowPane>
     </bottom>
 </BorderPane>

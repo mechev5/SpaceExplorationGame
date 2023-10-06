@@ -16,15 +16,8 @@ import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
-import javafx.scene.layout.BackgroundImage;
-import javafx.scene.layout.BackgroundSize;
+import javafx.scene.layout.*;
 import javafx.scene.image.Image;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.CornerRadii;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
@@ -37,8 +30,11 @@ import java.io.IOException;
 
 
 public class HelloApplication extends Application {
+
+
     Stage stage;
-    HashMap<String, Scene> sceneMap;
+    public static HashMap<String, Scene> sceneMap;
+    FileSwitcher christianFiles;
 
     @Override
     public void start(Stage pStage) throws IOException {
@@ -96,19 +92,23 @@ public class HelloApplication extends Application {
         borderPane.setBackground(startBackground);
         borderPane.setCenter(centerPiece);
         Scene start = new Scene(borderPane, 1280, 720);
-
+        sceneMap.put("start", start);
         pStage.setTitle("Space Exploration Game");
         pStage.setScene(start);
         pStage.show();
     }
 
     public void loadUI() throws IOException {
-        // NOTE: NO LONGER USING HelloController
+        // NOTE: NO LONGER USING com.example.gamegui.HelloController
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("homeView.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1280, 720);
         scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
         sceneMap.put("main", scene);
     }
+
+
+
+
 
     public static void main(String[] args) {
         launch();

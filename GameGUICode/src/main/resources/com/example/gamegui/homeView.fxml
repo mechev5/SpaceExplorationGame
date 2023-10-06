@@ -15,6 +15,7 @@
             <VBox translateY="-10">
                 <Label fx:id="fuelLabel"> </Label>
                 <Label fx:id="durabilityLabel"> </Label>
+                <Button fx:id="changeDestination"></Button>
             </VBox>
         </HBox>
     </top>

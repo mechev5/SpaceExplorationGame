@@ -9,7 +9,7 @@
 <?import javafx.scene.image.ImageView?>
 <BorderPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.kepler90b.Kep90f"
+            fx:controller="com.example.gamegui.Kep90g"
             fx:id="root">
     <VBox spacing = "200">
         <HBox spacing = "500">

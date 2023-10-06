@@ -1,5 +1,6 @@
 package com.example.gamegui;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -23,6 +24,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class homeController implements Initializable {
+    HelloApplication accessScenes;
+
     @FXML
     BorderPane root;
     @FXML
@@ -41,7 +44,7 @@ public class homeController implements Initializable {
     }
 
     @FXML
-    private Button menuButton, milkyWay_POI;
+    private Button menuButton, milkyWay_POI, changeDestination;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -51,6 +54,19 @@ public class homeController implements Initializable {
         maxFuel = 100;
         currDurability = 88.5;
         maxDurability = 100;
+        changeDestination.setText("Travel to another Galaxy");
+        changeDestination.setMinSize(100,100);
+        changeDestination.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                System.out.println("Entering MilkyWay");
+                try {
+                    changeGalaxies(actionEvent);
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        });
 
         // Show the variables on screen
         //locationLabel.setText("Location: " + location);
@@ -146,6 +162,15 @@ public class homeController implements Initializable {
         scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
         currStage.setScene(scene);
     }
+
+    public void changeGalaxies(ActionEvent event) throws IOException {
+        Stage currStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("galaxy.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 1280, 720);
+        scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
+        currStage.setScene(scene);
+    }
+
 
 
 }

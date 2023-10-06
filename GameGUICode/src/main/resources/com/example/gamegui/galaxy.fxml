@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.image.ImageView?>
+
+<BorderPane fx:id ="root" xmlns:fx=" http://javafx.com/fxml" fx:controller="com.example.gamegui.Galaxies">
+    <center>
+        <VBox>
+            <HBox>
+                <TextField fx:id="milkyText"></TextField>
+                <TextField fx:id="keplerText"></TextField>
+            </HBox>
+
+            <HBox fx:id = "galaxyMenu">
+                <Button fx:id="milkyway"></Button>
+                <Button fx:id="kepler"></Button>
+            </HBox>
+        </VBox>
+
+    </center>
+
+</BorderPane>

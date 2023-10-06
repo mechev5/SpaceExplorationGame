@@ -45,7 +45,7 @@ public class milkyWayController implements Initializable {
 
     @FXML
     private Button menuButton, neptune_button, uranus_button, saturn_button, jupiter_button
-            , mars_button, earth_button, venus_button, mercury_button, sun_button;
+            , mars_button, earth_button, venus_button, mercury_button, sun_button, returnMilky;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -65,6 +65,7 @@ public class milkyWayController implements Initializable {
         Image square = new Image(getClass().getResource("images/square.png").toExternalForm());
         int imageH = 512;
         int imageW = 512;
+
 
         inv1.setImage(square);
         inv2.setImage(square);
@@ -101,6 +102,8 @@ public class milkyWayController implements Initializable {
         inv6.setFitWidth(imageW / 5);
         inv7.setFitWidth(imageW / 5);
         inv8.setFitWidth(imageW / 5);
+
+        returnMilky.setText("Milky Way Hub");
 
         Image menuImage = new Image(getClass().getResource("images/pause.png").toExternalForm());
         ImageView menuIV = new ImageView(menuImage);
@@ -290,6 +293,25 @@ public class milkyWayController implements Initializable {
                 newStage.show();
             }
         });
+        returnMilky.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                System.out.println("Entering MilkyWay");
+                try {
+                    backToMilyWay(actionEvent);
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        });
+    }
+
+    public void backToMilyWay(ActionEvent event) throws IOException {
+        Stage currStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("homeView.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 1280, 720);
+        scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
+        currStage.setScene(scene);
     }
 
 }
