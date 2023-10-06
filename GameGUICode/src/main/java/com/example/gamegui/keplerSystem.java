@@ -8,8 +8,14 @@ package com.example.gamegui;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -22,6 +28,7 @@ import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
+import javafx.stage.Stage;
 
 public class keplerSystem implements Initializable {
     @FXML
@@ -63,9 +70,8 @@ public class keplerSystem implements Initializable {
     BackgroundImage WP_E_BG;
     Background WP_E_B;
     @FXML
-    private Button menuButton;
-    @FXML
-    private Button galaxyButton;
+    private Button menuButton, changeDestination, galaxyButton;
+
 
     public keplerSystem() {
         this.WP_E_BG = new BackgroundImage(this.WP_Edited, (BackgroundRepeat)null, (BackgroundRepeat)null, (BackgroundPosition)null, (BackgroundSize)null);
@@ -78,12 +84,12 @@ public class keplerSystem implements Initializable {
     }
 
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        this.location = "Gary, ID";
+        this.location = "Designation: Kepler";
         this.currFuel = 77.0;
         this.maxFuel = 100.0;
         this.currDurability = 88.5;
         this.maxDurability = 100.0;
-        this.locationLabel.setText("Location: " + this.location);
+        this.locationLabel.setText(this.location);
         this.fuelLabel.setText("Fuel: " + this.currFuel + " / " + this.maxFuel);
         this.durabilityLabel.setText("Durability: " + this.currDurability + " / " + this.maxDurability);
         Image square = new Image(this.getClass().getResource("images/square.png").toExternalForm());
@@ -138,6 +144,29 @@ public class keplerSystem implements Initializable {
         Background andromedaBackground = new Background(new BackgroundImage[]{andBg});
         this.root.setBackground(andromedaBackground);
 
+
+        changeDestination.setText("Travel to another Galaxy");
+        changeDestination.setMinSize(100,100);
+        changeDestination.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                System.out.println("Entering MilkyWay");
+                try {
+                    changeGalaxies(actionEvent);
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        });
+
+    }
+
+    public void changeGalaxies(ActionEvent event) throws IOException {
+        Stage currStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("galaxy.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 1280, 720);
+        scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
+        currStage.setScene(scene);
     }
 }
 

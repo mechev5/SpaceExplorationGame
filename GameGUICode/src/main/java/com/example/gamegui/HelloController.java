@@ -99,7 +99,7 @@ public class HelloController implements Initializable {
         menuButton.setGraphic(menuIV);
 
 // First, load the Andromeda image
-        Image andromeda = new Image("Andromeda galaxy.jpg");
+        Image andromeda = new Image("/images/Andromeda galaxy.jpg");
         BackgroundImage andBg = new BackgroundImage(
                 andromeda,
                 null,

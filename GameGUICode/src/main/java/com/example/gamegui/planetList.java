@@ -46,8 +46,8 @@ public class planetList implements Initializable {
     Button leftButton;
     @FXML
     Button middleButton;
-    @FXML
-    Button rightButton;
+//    @FXML
+//    Button rightButton;
     @FXML
     VBox topRow;
     @FXML
@@ -88,18 +88,21 @@ public class planetList implements Initializable {
         this.k90g.setImage(kg);
         this.k90h.setImage(kh);
         this.k90i.setImage(ki);
-        this.leftButton.setText("Left Button");
-        this.middleButton.setText("Middle Button");
-        this.rightButton.setText("Right Button");
+        leftButton.setMinSize(100,50);
+        //rightButton.setMinSize(100,50);
+        middleButton.setMinSize(150,50);
+        this.leftButton.setText("Exit");
+        this.middleButton.setText("Kepler Galaxy Hub");
+        //this.rightButton.setText("Exit");
         this.leftButton.setOnAction((e) -> {
             Platform.exit();
         });
         this.middleButton.setOnAction((e) -> {
             FileSwitcher.switchTo(FileStorage.KEPLERSOLARSYSTEM);
         });
-        this.rightButton.setOnAction((e) -> {
-            Platform.exit();
-        });
+//        this.rightButton.setOnAction((e) -> {
+//            Platform.exit();
+//        });
         this.k90b.setOnMouseClicked((e) -> {
             System.out.println("b clicked");
             FileSwitcher.switchTo(FileStorage.KEP_B);

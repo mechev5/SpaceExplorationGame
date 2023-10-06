@@ -25,18 +25,12 @@ public class FileSwitcher {
     public static void switchTo(FileStorage file) {
         try {
             Parent root;
-            if (sceneMap.containsKey(file)) {
-                System.out.println("Test01(Load)");
-                root = (Parent)sceneMap.get(file);
-                scene.setRoot(root);
-            } else {
-                System.out.println(file);
-                System.out.println("Test02(New)");
-                System.out.println(file.getFileName());
-                root = (Parent)FXMLLoader.load(FileStorage.class.getResource(file.getFileName()));
-                scene.setRoot(root);
-                sceneMap.put(file, root);
-            }
+//            System.out.println(file);
+//            System.out.println("Test02(New)");
+//            System.out.println(file.getFileName());
+            root = (Parent)FXMLLoader.load(FileStorage.class.getResource(file.getFileName()));
+            scene.setRoot(root);
+            sceneMap.put(file, root);
         } catch (IOException var3) {
             var3.printStackTrace();
         }

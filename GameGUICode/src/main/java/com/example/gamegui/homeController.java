@@ -49,7 +49,7 @@ public class homeController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         // Keep track of all stats using variables, until classes are made
-        location = "Gary, ID";
+        location = "Milky Way";
         currFuel = 77;
         maxFuel = 100;
         currDurability = 88.5;
@@ -69,7 +69,7 @@ public class homeController implements Initializable {
         });
 
         // Show the variables on screen
-        //locationLabel.setText("Location: " + location);
+        locationLabel.setText("Designation: " + location);
         fuelLabel.setText("Fuel: " + currFuel + " / " + maxFuel);
         durabilityLabel.setText("Durability: " + currDurability + " / " + maxDurability);
 

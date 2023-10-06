@@ -13,6 +13,7 @@
                 <Button fx:id="menuButton"> </Button>
             </VBox>
             <VBox translateY="-10">
+                <Label fx:id="locationLabel"></Label>
                 <Label fx:id="fuelLabel"> </Label>
                 <Label fx:id="durabilityLabel"> </Label>
                 <Button fx:id="changeDestination"></Button>
