@@ -20,7 +20,8 @@ import java.io.IOException;
         import javafx.stage.Stage;
 
 public class ChristianHello extends Application {
-    public ChristianHello() {
+    public ChristianHello() throws IOException {
+        JSONTest myTest = new JSONTest();
     }
 
     public void start(Stage stage) throws IOException {
