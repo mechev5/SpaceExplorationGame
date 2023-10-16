@@ -21,7 +21,17 @@ import java.io.IOException;
 
 public class ChristianHello extends Application {
     public ChristianHello() throws IOException {
-        JSONTest myTest = new JSONTest();
+        String save = "newSave4.json";
+        JSONTest myTest = new JSONTest(save);
+        // myTest.saving(myTest.getRoot(save), "newSave.json");
+        // System.out.println(myTest.userO2Curr);
+        myTest.editShipValues("O2", "Subtract", 50);
+        myTest.editShipValues("Durability", "Set", 80.7);
+        myTest.editShipValues("Fuel", "add", 10);
+        myTest.editShipValues("Durability", "add", 0.1);
+        myTest.editShipValues("O2", "add", 1.7);
+        // myTest.saving(myTest.getRoot(), "newSave2.json");
+        myTest.saving("newSave4.json");
     }
 
     public void start(Stage stage) throws IOException {
@@ -31,6 +41,10 @@ public class ChristianHello extends Application {
         FileSwitcher.switchTo(FileStorage.KEPLERSOLARSYSTEM);
         stage.setScene(scene);
         stage.show();
+    }
+
+    public void saveTesting(JSONTest mySave) throws IOException {
+
     }
 
     public static void main(String[] args) {
