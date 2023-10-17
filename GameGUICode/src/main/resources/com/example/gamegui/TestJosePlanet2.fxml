@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.image.ImageView?>
+
+<BorderPane fx:id="root" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gamegui.TestJosePlanet2">
+    <center>
+        <ScrollPane fitToWidth="true" fitToHeight="true">
+            <VBox alignment="CENTER">
+                <TextArea fx:id="infoTextArea" wrapText="true" prefWidth="400" prefHeight="200">
+                    2MASS J01033563-5515561 AB b is a gas giant exoplanet that orbits an unknown-type star.
+                    Its mass is 13 Jupiters, it takes 1767.2 years to complete one orbit of its star, and
+                    is 84.0 AU from its star. Its discovery was announced in 2013.
+                </TextArea>
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>
