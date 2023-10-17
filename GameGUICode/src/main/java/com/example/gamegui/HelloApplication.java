@@ -62,24 +62,24 @@ public class HelloApplication extends Application {
         logoIV.setFitWidth(400);
 
         Button explorationButton = new Button("Exploration Mode");
-        Button sandboxButton = new Button("Sandbox Mode");
+        Button creativeButton = new Button("Creative Mode");
         Button exitButton = new Button("Exit");
 
         // set Font
         explorationButton.setFont(Font.font("Papyrus", FontWeight.BOLD, 14));
-        sandboxButton.setFont(Font.font("Papyrus", FontWeight.BOLD, 14));
+        creativeButton.setFont(Font.font("Papyrus", FontWeight.BOLD, 14));
 
         // set button Size
-        sandboxButton.setMinSize(50, 50);
+        creativeButton.setMinSize(50, 50);
         explorationButton.setMinSize(50,50);
 
         //template exit commands
         explorationButton.setOnAction(e->pStage.setScene(sceneMap.get("main")));
         exitButton.setOnAction(e->Platform.exit());
-        sandboxButton.setOnAction(e->Platform.exit());
+        creativeButton.setOnAction(e->pStage.setScene(sceneMap.get("creative")));
 
         // holders that will hold the buttons
-        HBox gameModeHolder = new HBox(30, explorationButton, sandboxButton);
+        HBox gameModeHolder = new HBox(30, explorationButton, creativeButton);
         gameModeHolder.setAlignment(Pos.CENTER);
         VBox buttonHolder = new VBox(30, gameModeHolder, exitButton);
         buttonHolder.setAlignment(Pos.CENTER);
@@ -104,6 +104,11 @@ public class HelloApplication extends Application {
         Scene scene = new Scene(fxmlLoader.load(), 1280, 720);
         scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
         sceneMap.put("main", scene);
+
+        FXMLLoader fxmlLoader2 = new FXMLLoader(HelloApplication.class.getResource("creative.fxml"));
+        Scene sceneSB = new Scene(fxmlLoader2.load(), 1280, 720);
+        sceneSB.getStylesheets().add(getClass().getResource("style_creative.css").toExternalForm());
+        sceneMap.put("creative", sceneSB);
     }
 
 

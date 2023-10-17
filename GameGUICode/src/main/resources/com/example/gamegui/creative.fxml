@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.control.ToggleGroup?>
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gamegui.creativeController" style="-fx-background-color: black;">
+    <center>
+        <HBox fx:id="currImage_hbox" style="-fx-background-color: darkgray;" alignment="CENTER">
+            <ImageView fx:id="currImage"></ImageView>
+        </HBox>
+    </center>
+    <right>
+        <VBox fx:id="sidebar_vbox" style="-fx-background-color: black; -fx-padding: 5 10 10 5;" maxWidth="700" spacing="20">
+            <VBox>
+                <Label text="Grayscale"></Label>
+                <HBox alignment="BASELINE_CENTER">
+                    <ToggleButton fx:id="gray_on" text="On"></ToggleButton>
+                    <ToggleButton fx:id="gray_off" text="Off"></ToggleButton>
+                </HBox>
+            </VBox>
+            <VBox>
+                <Label text="Red Slider"></Label>
+                <HBox>
+                    <Label text="0"></Label>
+                    <Slider fx:id="r_slider" min="0" max="255"></Slider>
+                    <Label text="255"></Label>
+                </HBox>
+            </VBox>
+            <VBox>
+                <Label text="Green Slider"></Label>
+                <HBox>
+                    <Label text="0"></Label>
+                    <Slider fx:id="g_slider" min="0" max="255"></Slider>
+                    <Label text="255"></Label>
+                </HBox>
+            </VBox>
+            <VBox>
+                <Label text="Blue Slider"></Label>
+                <HBox>
+                    <Label text="0"></Label>
+                    <Slider fx:id="b_slider" min="0" max="255"></Slider>
+                    <Label text="255"></Label>
+                </HBox>
+            </VBox>
+            <VBox>
+                <Label text="Rotate"></Label>
+                <HBox alignment="BASELINE_CENTER">
+                    <Button fx:id="r_left"></Button>
+                    <Button fx:id="r_right"></Button>
+                </HBox>
+            </VBox>
+            <VBox>
+                <Label text="Mirror"></Label>
+                <HBox alignment="BASELINE_CENTER">
+                    <ToggleButton fx:id="mirror_on" text="On"></ToggleButton>
+                    <ToggleButton fx:id="mirror_off" text="Off"></ToggleButton>
+                </HBox>
+            </VBox>
+        </VBox>
+    </right>
+    <bottom>
+        <FlowPane fx:id = "fp" style="-fx-background-color: black; -fx-padding: 5 10 10 5;" hgap="4" alignment="BASELINE_CENTER">
+            <ImageView fx:id="prev"> </ImageView>
+            <ImageView fx:id="p1"> </ImageView>
+            <ImageView fx:id="p2"> </ImageView>
+            <ImageView fx:id="p3"> </ImageView>
+            <ImageView fx:id="p4"> </ImageView>
+            <ImageView fx:id="p5"> </ImageView>
+            <ImageView fx:id="p6"> </ImageView>
+            <ImageView fx:id="next"> </ImageView>
+        </FlowPane>
+    </bottom>
+</BorderPane>
