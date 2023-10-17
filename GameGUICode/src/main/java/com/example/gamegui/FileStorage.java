@@ -19,7 +19,9 @@ public enum FileStorage {
     KEP_F("kep-90f.fxml"),
     KEP_G("kep-90g.fxml"),
     KEP_H("kep-90h.fxml"),
-    KEP_I("kep-90i.fxml");
+    KEP_I("kep-90i.fxml"),
+
+    AndroSystem("Andromeda.fxml");
 
 
     private String fileName;

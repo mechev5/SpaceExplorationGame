@@ -2,6 +2,9 @@ package com.example.gamegui;
 
 import java.util.HashMap;
 
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+
 import javafx.animation.PauseTransition;
 import javafx.application.Application;
 import javafx.application.Platform;
@@ -35,6 +38,8 @@ public class HelloApplication extends Application {
     Stage stage;
     public static HashMap<String, Scene> sceneMap;
     FileSwitcher christianFiles;
+
+    MediaPlayer mediaPlayer;
 
     @Override
     public void start(Stage pStage) throws IOException {
@@ -74,7 +79,18 @@ public class HelloApplication extends Application {
         explorationButton.setMinSize(50,50);
 
         //template exit commands
-        explorationButton.setOnAction(e->pStage.setScene(sceneMap.get("main")));
+        explorationButton.setOnAction(e->{
+        Media media = new Media(getClass().getResource("Sounds/71150__timbre__simulation-of-nasa-rocket-launch.wav").toExternalForm());
+        mediaPlayer = new MediaPlayer(media);
+        mediaPlayer.setCycleCount(1);
+        mediaPlayer.play();
+        PauseTransition pause = new PauseTransition(Duration.seconds(15));
+        pause.setOnFinished(x->{
+            mediaPlayer.stop();
+            pStage.setScene(sceneMap.get("main"));
+        });
+        pause.play();
+        });
         exitButton.setOnAction(e->Platform.exit());
         creativeButton.setOnAction(e->pStage.setScene(sceneMap.get("creative")));
 

@@ -6,7 +6,7 @@
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.image.ImageView?>
 
-<BorderPane fx:id="root" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gamegui.homeController">
+<BorderPane fx:id="root" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gamegui.com.example.gamegui.homeController">
     <center>
         <ScrollPane fitToWidth="true" fitToHeight="true">
             <VBox alignment="CENTER">
