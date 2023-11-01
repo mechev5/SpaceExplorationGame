@@ -38,7 +38,7 @@ public class homeController implements Initializable {
     ImageView inv1, inv2, inv3, inv4, inv5, inv6, inv7, inv8;
 
     String location;
-    double currFuel, maxFuel, currDurability, maxDurability;
+    static public double currFuel, maxFuel, currDurability, maxDurability;
     @FXML
     protected void onHelloButtonClick() {
     }

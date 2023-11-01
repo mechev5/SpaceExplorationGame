@@ -85,12 +85,11 @@ public class keplerSystem implements Initializable {
 
     public void initialize(URL url, ResourceBundle resourceBundle) {
         this.location = "Designation: Kepler";
-        this.currFuel = 77.0;
         this.maxFuel = 100.0;
         this.currDurability = 88.5;
         this.maxDurability = 100.0;
         this.locationLabel.setText(this.location);
-        this.fuelLabel.setText("Fuel: " + this.currFuel + " / " + this.maxFuel);
+        this.fuelLabel.setText("Fuel: " + homeController.currFuel + " / " + this.maxFuel);
         this.durabilityLabel.setText("Durability: " + this.currDurability + " / " + this.maxDurability);
         Image square = new Image(this.getClass().getResource("images/square.png").toExternalForm());
         int imageH = 512;

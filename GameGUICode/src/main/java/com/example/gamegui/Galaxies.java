@@ -28,6 +28,7 @@ package com.example.gamegui;
     import java.util.ResourceBundle;
 
 public class Galaxies implements Initializable {
+
     @FXML
     AnchorPane root;
 
@@ -60,6 +61,8 @@ public class Galaxies implements Initializable {
 
         // Animation transition of rocket ship upon clicking on anchorpane
         root.setOnMouseClicked(e-> {
+            // update value because jose is worried about being stranded in space with no fuel
+            homeController.currFuel = homeController.currFuel - 10;
             PauseTransition pause = new PauseTransition(Duration.seconds(1));
             pause.setOnFinished(x->{
                 media.stop();
