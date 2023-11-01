@@ -1,5 +1,7 @@
 package com.example.gamegui;
 
+    import javafx.animation.PauseTransition;
+    import javafx.animation.TranslateTransition;
     import javafx.application.Platform;
     import javafx.event.ActionEvent;
     import javafx.event.EventHandler;
@@ -12,12 +14,11 @@ package com.example.gamegui;
     import javafx.scene.control.Label;
     import javafx.scene.image.Image;
     import javafx.scene.image.ImageView;
-    import javafx.scene.layout.BorderPane;
-    import javafx.scene.layout.FlowPane;
-    import javafx.scene.layout.HBox;
-    import javafx.scene.layout.Background;
-    import javafx.scene.layout.BackgroundImage;
+    import javafx.scene.layout.*;
+    import javafx.scene.media.Media;
+    import javafx.scene.media.MediaPlayer;
     import javafx.stage.Stage;
+    import javafx.util.Duration;
 
     import java.io.IOException;
     import java.net.URL;
@@ -28,61 +29,87 @@ package com.example.gamegui;
 
 public class Galaxies implements Initializable {
     @FXML
-    BorderPane root;
+    AnchorPane root;
+
 
     @FXML
-    HBox galaxyMenu;
+    ImageView playerShip;
+
 
     @FXML
-    protected void onHelloButtonClick() {
-    }
-
+    Button milkyway;
     @FXML
-    Button milkyway, kepler;
+    Button kepler;
+
+    TranslateTransition transition = new TranslateTransition();
+    MediaPlayer media;
+
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         // Keep track of all stats using variables, until classes are made
         root.setMinSize(1280, 720);
-        milkyway.setMinSize(640,720);
-        kepler.setMinSize(640, 720);
-        galaxyMenu.setMinSize(1280,720);
-        Image milkyWayImage = new Image(getClass().getResource("images/milkyWayBack2.jpg").toExternalForm());
-        ImageView milkyWayView = new ImageView(milkyWayImage);
-        Image keplerGalaxy = new Image(getClass().getResource("images/Kepler_02.jpg").toExternalForm());
-        ImageView keplerView = new ImageView(keplerGalaxy);
+        Image galaxyPic = new Image(getClass().getResource("images/GalaxyBackground.jpg").toExternalForm());
+        Background backg = new Background(new BackgroundImage(galaxyPic, null, null, null, new BackgroundSize(1300, 1260,false,false,false,false)));
+        root.setBackground(backg);
+        transition.setNode(playerShip);
+        media = new MediaPlayer(new Media(getClass().getResource("Sounds/340956__projectsu012__rocket-short.wav").toExternalForm()));
+        media.setCycleCount(1);
+        media.setVolume(0.1);
 
-        milkyWayView.fitHeightProperty().bind(milkyway.heightProperty());
-        milkyWayView.fitWidthProperty().bind(milkyway.widthProperty());
-
-        keplerView.fitHeightProperty().bind(kepler.heightProperty());
-        keplerView.fitWidthProperty().bind(kepler.widthProperty());
-
-        kepler.setGraphic(keplerView);
-        milkyway.setGraphic(milkyWayView);
-
-        milkyway.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent actionEvent) {
-                System.out.println("Entering MilkyWay");
-                try {
-                    enterMilkyWay(actionEvent);
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
-            }
+        // Animation transition of rocket ship upon clicking on anchorpane
+        root.setOnMouseClicked(e-> {
+            PauseTransition pause = new PauseTransition(Duration.seconds(1));
+            pause.setOnFinished(x->{
+                media.stop();
+            });
+            transition.stop();
+//            System.out.println(e.getX());
+//            System.out.println(e.getY());
+            transition.setToX(e.getX());
+            transition.setToY(e.getY());
+            transition.toXProperty();
+            transition.toYProperty();
+            transition.play();
+            media.play();
+            pause.play();
         });
 
-        kepler.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent actionEvent) {
-                System.out.println("Entering MilkyWay");
-                try {
-                    enterKepler(actionEvent);
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
-            }
+        // Animation transition of rocket ship upon clicking on button
+        milkyway.setOnMouseClicked(e-> {
+            PauseTransition pause = new PauseTransition(Duration.seconds(1));
+            pause.setOnFinished(x->{
+                media.stop();
+            });
+            transition.stop();
+//            System.out.println(e.getSceneX());
+//            System.out.println(e.getSceneY());
+            transition.setToX(e.getSceneX());
+            transition.setToY(e.getSceneY());
+            transition.toXProperty();
+            transition.toYProperty();
+            transition.play();
+            media.play();
+            pause.play();
+        });
+
+        // Same as above but for kepler button
+        kepler.setOnMouseClicked(e-> {
+            PauseTransition pause = new PauseTransition(Duration.seconds(1));
+            pause.setOnFinished(x->{
+                media.stop();
+            });
+            transition.stop();
+//            System.out.println(e.getSceneX());
+//            System.out.println(e.getSceneY());
+            transition.setToX(e.getSceneX());
+            transition.setToY(e.getSceneY());
+            transition.toXProperty();
+            transition.toYProperty();
+            transition.play();
+            media.play();
+            pause.play();
         });
 
 
@@ -92,8 +119,12 @@ public class Galaxies implements Initializable {
         Stage currStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("homeView.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1280, 720);
-        scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
-        currStage.setScene(scene);
+        PauseTransition pause = new PauseTransition(Duration.seconds(1));
+        pause.setOnFinished(x->{
+            scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
+            currStage.setScene(scene);
+        });
+        pause.play();
     }
     public void enterKepler(ActionEvent event) throws IOException {
         Stage currStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
@@ -101,6 +132,10 @@ public class Galaxies implements Initializable {
         Scene scene = new Scene(bP, 1280.0, 720.0);
         FileSwitcher.setScene(scene);
         FileSwitcher.switchTo(FileStorage.KEPLERSOLARSYSTEM);
-        currStage.setScene(scene);
+        PauseTransition pause = new PauseTransition(Duration.seconds(1));
+        pause.setOnFinished(x->{
+            currStage.setScene(scene);
+        });
+        pause.play();
     }
 }
