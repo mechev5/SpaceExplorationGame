@@ -35,11 +35,17 @@ import java.io.IOException;
 public class HelloApplication extends Application {
 
 
-    Stage stage;
+
     public static HashMap<String, Scene> sceneMap;
     FileSwitcher christianFiles;
 
     MediaPlayer mediaPlayer;
+
+    private static Stage stage;
+
+    public static Stage getStage() {
+        return stage;
+    }
 
     @Override
     public void start(Stage pStage) throws IOException {
@@ -83,21 +89,21 @@ public class HelloApplication extends Application {
 
         //template exit commands
         explorationButton.setOnAction(e->{
-        Media mediaStart = new Media(getClass().getResource("Sounds/71150__timbre__simulation-of-nasa-rocket-launch.wav").toExternalForm());
-        Media mediaOngoing = new Media(getClass().getResource("Sounds/396627__matrixxx__space-atmosphere-01.wav").toExternalForm());
-        mediaPlayer = new MediaPlayer(mediaStart);
-        mediaPlayer.setCycleCount(1);
-        mediaPlayer.play();
-        PauseTransition pause = new PauseTransition(Duration.seconds(15));
-        pause.setOnFinished(x->{
-            // add parent transition here I think, try it out tomorrow
-            mediaPlayer.stop();
-            mediaPlayer = new MediaPlayer(mediaOngoing);
-            mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
+            Media mediaStart = new Media(getClass().getResource("Sounds/71150__timbre__simulation-of-nasa-rocket-launch.wav").toExternalForm());
+            Media mediaOngoing = new Media(getClass().getResource("Sounds/396627__matrixxx__space-atmosphere-01.wav").toExternalForm());
+            mediaPlayer = new MediaPlayer(mediaStart);
+            mediaPlayer.setCycleCount(1);
             mediaPlayer.play();
-            pStage.setScene(sceneMap.get("main"));
-        });
-        pause.play();
+            PauseTransition pause = new PauseTransition(Duration.seconds(15));
+            pause.setOnFinished(x->{
+                // add parent transition here I think, try it out tomorrow
+                mediaPlayer.stop();
+                mediaPlayer = new MediaPlayer(mediaOngoing);
+                mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
+                mediaPlayer.play();
+                pStage.setScene(sceneMap.get("main"));
+            });
+            pause.play();
         });
         exitButton.setOnAction(e->Platform.exit());
         creativeButton.setOnAction(e->pStage.setScene(sceneMap.get("creative")));
