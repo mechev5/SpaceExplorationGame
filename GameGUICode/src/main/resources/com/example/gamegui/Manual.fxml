@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.image.ImageView?>
+<BorderPane fx:id="root" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gamegui.Manual">
+    <VBox fx:id = "master" spacing = "0">
+        <HBox spacing = "0">
+            <TextArea fx:id = "manualPart1"/>
+            <VBox spacing = "30">
+                <TextArea fx:id = "manualPart2"/>
+                <HBox spacing = "250">
+                    <Text></Text>
+                    <ImageView fx:id = "Inventory"/>
+                </HBox>
+                <TextArea fx:id = "manualPart3"/>
+                <HBox spacing = "250">
+                    <Text></Text>
+                    <ImageView fx:id = "Pause"/>
+                </HBox>
+                <TextArea fx:id = "manualPart4"/>
+                <HBox spacing = "250">
+                    <Text></Text>
+                    <ImageView fx:id = "Planets"/>
+                </HBox>
+            </VBox>
+        </HBox>
+        <HBox spacing = "600">
+            <Text></Text>
+            <Button fx:id = "menuButton"/>
+        </HBox>
+    </VBox>
+</BorderPane>

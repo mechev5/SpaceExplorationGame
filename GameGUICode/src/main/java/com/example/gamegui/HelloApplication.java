@@ -69,14 +69,17 @@ public class HelloApplication extends Application {
         Button explorationButton = new Button("Exploration Mode");
         Button creativeButton = new Button("Creative Mode");
         Button exitButton = new Button("Exit");
+        Button manualButton = new Button("Manual");
 
         // set Font
         explorationButton.setFont(Font.font("Papyrus", FontWeight.BOLD, 14));
         creativeButton.setFont(Font.font("Papyrus", FontWeight.BOLD, 14));
+        manualButton.setFont(Font.font("Papyrus", FontWeight.BOLD, 14));
 
         // set button Size
         creativeButton.setMinSize(50, 50);
         explorationButton.setMinSize(50,50);
+        manualButton.setMinSize(50,50);
 
         //template exit commands
         explorationButton.setOnAction(e->{
@@ -98,9 +101,10 @@ public class HelloApplication extends Application {
         });
         exitButton.setOnAction(e->Platform.exit());
         creativeButton.setOnAction(e->pStage.setScene(sceneMap.get("creative")));
+        manualButton.setOnAction(e->pStage.setScene(sceneMap.get("manual")));
 
         // holders that will hold the buttons
-        HBox gameModeHolder = new HBox(30, explorationButton, creativeButton);
+        HBox gameModeHolder = new HBox(30, explorationButton, creativeButton, manualButton);
         gameModeHolder.setAlignment(Pos.CENTER);
         VBox buttonHolder = new VBox(30, gameModeHolder, exitButton);
         buttonHolder.setAlignment(Pos.CENTER);
@@ -130,6 +134,11 @@ public class HelloApplication extends Application {
         Scene sceneSB = new Scene(fxmlLoader2.load(), 1280, 720);
         sceneSB.getStylesheets().add(getClass().getResource("style_creative.css").toExternalForm());
         sceneMap.put("creative", sceneSB);
+
+        FXMLLoader fxmlLoader3 = new FXMLLoader(HelloApplication.class.getResource("Manual.fxml"));
+        Scene sceneManual = new Scene(fxmlLoader3.load(), 1280, 720);
+        sceneManual.getStylesheets().add(getClass().getResource("style_manual.css").toExternalForm());
+        sceneMap.put("manual", sceneManual);
     }
 
 
