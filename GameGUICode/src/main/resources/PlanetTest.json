@@ -1,0 +1,179 @@
+{
+	"galaxies": [
+	{
+		"Galaxy": "Kepler90",
+		"Planet List": [
+		{
+			"Name": "b",
+			"Planet Type": "Super Earth",
+			"Discovery Date": 2013,
+			"Mass": "2.27 Earths",
+			"Planet Radius": "1.31 x Earth",
+			"Orbital Radius": 0.074,
+			"Orbital Period": 7,
+			"Drops": [
+			{
+				"MineralType1":0.70
+			},
+			{
+				"MineralType1":0.55
+			},
+			{
+				"MineralType2":0.30
+			}
+			]
+		},
+		{
+			"Name": "c",
+			"Planet Type": "Super Earth",
+			"Discovery Date": 2013,
+			"Mass": "1.81 Earths",
+			"Planet Radius": "1.19 x Earth",
+			"Orbital Radius": 0.089,
+			"Orbital Period": 8.7,
+			"Drops": [
+			{
+				"MineralType1":0.40
+			},
+			{
+				"MineralType2":0.30
+			},
+			{
+				"MineralType2":0.25
+			}
+			]
+		},
+		{
+			"Name": "d",
+			"Planet Type": "Neptune-like",
+			"Discovery Date": 2013,
+			"Mass": "8.6 Earths",
+			"Planet Radius": "0.256 x Jupiter",
+			"Orbital Radius": 0.32,
+			"Orbital Period": 59.7,
+			"Drops": [
+			{
+				"MineralType1":0.70
+			},
+			{
+				"MineralType1":0.55
+			},
+			{
+				"MineralType2":0.30
+			}
+			]
+		},
+		{
+			"Name": "e",
+			"Planet Type": "Neptune-like",
+			"Discovery Date": 2013,
+			"Mass": "7.56 Earths",
+			"Planet Radius": "0.237 x Jupiter",
+			"Orbital Radius": 0.42,
+			"Orbital Period": 91.9,
+			"Drops": [
+			{
+				"MineralType3":0.60
+			},
+			{
+				"MineralType3":0.45
+			},
+			{
+				"MineralType4":0.15
+			}
+			]
+		},
+		{
+			"Name": "f",
+			"Planet Type": "Neptune-like",
+			"Discovery Date": 2013,
+			"Mass": "8.65 Earths",
+			"Planet Radius": "0.257 x Jupiter",
+			"Orbital Radius": 0.48,
+			"Orbital Period": 124.9,
+			"Drops": [
+			{
+				"MineralType3":0.40
+			},
+			{
+				"MineralType4":0.25
+			},
+			{
+				"MineralType4":0.20
+			}
+			]
+		},
+		{
+			"Name": "g",
+			"Planet Type": "Gas Giant",
+			"Discovery Date": 2013,
+			"Mass": "0.8 Jupiters",
+			"Planet Radius": "0.723 x Jupiter",
+			"Orbital Radius": 0.71,
+			"Orbital Period": 210.6,
+			"Drops": [
+			{
+				"GasType1":0.70
+			},
+			{
+				"GasType1":0.55
+			},
+			{
+				"GasType2":0.30
+			}
+			]
+		},
+		{
+			"Name": "h",
+			"Planet Type": "Gas Giant",
+			"Discovery Date": 2013,
+			"Mass": "1.2 Jupiters",
+			"Planet Radius": "1.008 x Jupiter",
+			"Orbital Radius": 1.01,
+			"Orbital Period": 331.6,
+			"Drops": [
+			{
+				"GasType1":0.40
+			},
+			{
+				"GasType1":0.35
+			},
+			{
+				"GasType2":0.30
+			},
+			{
+				"GasType2":0.20
+			},
+			{
+				"GasType2":0.15
+			}
+			]
+		},
+		{
+			"Name": "i",
+			"Planet Type": "Super Earth",
+			"Discovery Date": 2017,
+			"Mass": "2.3 Earths",
+			"Planet Radius": "1.32 x Earth",
+			"Orbital Radius": 0.20,
+			"Orbital Period": 14.4,
+			"Drops": [
+			{
+				"MineralType1":0.70
+			},
+			{
+				"MineralType1":0.55
+			},
+			{
+				"MineralType2":0.55
+			},
+			{
+				"MineralType2":0.30
+			}
+			]
+		}
+		]
+			
+	}
+	]
+}

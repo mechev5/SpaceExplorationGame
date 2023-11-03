@@ -38,7 +38,9 @@ public class milkyWayController implements Initializable {
     StackPane sp;
 
     String location;
-    double currFuel, maxFuel, currDurability, maxDurability;
+
+    // don't use these, access global variables from homeController
+    // double currFuel, maxFuel, currDurability, maxDurability;
     @FXML
     protected void onHelloButtonClick() {
     }
@@ -51,10 +53,10 @@ public class milkyWayController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         // Keep track of all stats using variables, until classes are made
         location = "Gary, ID";
-        currFuel = 77;
-        maxFuel = 100;
-        currDurability = 88.5;
-        maxDurability = 100;
+//        currFuel = 77;
+//        maxFuel = 100;
+//        currDurability = 88.5;
+//        maxDurability = 100;
         scanArea.setMinSize(100.0, 100.0);
         scanArea.setEditable(false);
 

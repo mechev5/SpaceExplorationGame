@@ -62,10 +62,6 @@ public class keplerSystem implements Initializable {
     @FXML
     ImageView gl;
     String location;
-    double currFuel;
-    double maxFuel;
-    double currDurability;
-    double maxDurability;
     Image WP_Edited = new Image(getClass().getResource("images/WP_Edited.png").toExternalForm());
     BackgroundImage WP_E_BG;
     Background WP_E_B;
@@ -85,12 +81,10 @@ public class keplerSystem implements Initializable {
 
     public void initialize(URL url, ResourceBundle resourceBundle) {
         this.location = "Designation: Kepler";
-        this.maxFuel = 100.0;
-        this.currDurability = 88.5;
-        this.maxDurability = 100.0;
+
         this.locationLabel.setText(this.location);
-        this.fuelLabel.setText("Fuel: " + homeController.currFuel + " / " + this.maxFuel);
-        this.durabilityLabel.setText("Durability: " + this.currDurability + " / " + this.maxDurability);
+        this.fuelLabel.setText("Fuel: " + homeController.currFuel + " / " + homeController.maxFuel);
+        this.durabilityLabel.setText("Durability: " + homeController.currDurability + " / " + homeController.maxDurability);
         Image square = new Image(this.getClass().getResource("images/square.png").toExternalForm());
         int imageH = 512;
         int imageW = 512;

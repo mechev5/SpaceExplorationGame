@@ -38,7 +38,9 @@ public class homeController implements Initializable {
     ImageView inv1, inv2, inv3, inv4, inv5, inv6, inv7, inv8;
 
     String location;
-    static public double currFuel, maxFuel, currDurability, maxDurability;
+    static public double currFuel = 100.0, maxFuel = 100.0, currDurability = 100.0, maxDurability = 100.0;
+
+
     @FXML
     protected void onHelloButtonClick() {
     }
@@ -50,10 +52,6 @@ public class homeController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         // Keep track of all stats using variables, until classes are made
         location = "Milky Way";
-        currFuel = 77;
-        maxFuel = 100;
-        currDurability = 88.5;
-        maxDurability = 100;
         changeDestination.setText("Travel to another Galaxy");
         changeDestination.setMinSize(100,100);
         changeDestination.setOnAction(new EventHandler<ActionEvent>() {
