@@ -8,6 +8,7 @@ module com.example.gamegui {
     requires org.kordamp.ikonli.javafx;
     requires com.fasterxml.jackson.core;
     requires com.fasterxml.jackson.databind;
+    requires java.desktop;
 
 
     opens com.example.gamegui to javafx.fxml;

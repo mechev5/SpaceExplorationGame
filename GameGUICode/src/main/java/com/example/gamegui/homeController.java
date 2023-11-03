@@ -119,7 +119,7 @@ public class homeController implements Initializable {
         menuIV.setPreserveRatio(true);
         menuIV.setFitWidth(imageW / 8);
         menuIV.setFitHeight(imageH / 8);
-        menuButton.setGraphic(menuIV);
+        //menuButton.setGraphic(menuIV);
 
         // Milky Way Point of Interest
         // Set the background color to transparent in styles.css
@@ -132,7 +132,7 @@ public class homeController implements Initializable {
         milkyWay_POI.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                System.out.println("Entering MilkyWay");
+                //System.out.println("Entering MilkyWay");
                 try {
                     enterMilkyWay(actionEvent);
                 } catch (IOException e) {

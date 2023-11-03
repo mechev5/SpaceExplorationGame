@@ -6,44 +6,50 @@
 
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.image.ImageView?>
-<BorderPane fx:id="root" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gamegui.milkyWayController">
-    <top>
-        <HBox alignment="BASELINE_CENTER" spacing="940">
-            <VBox translateY="10">
-                <Button fx:id="menuButton"> </Button>
-            </VBox>
-            <VBox translateY="-10">
-                <Label fx:id="fuelLabel"> </Label>
-                <Label fx:id="durabilityLabel"> </Label>
-            </VBox>
+<StackPane fx:id="sp" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gamegui.milkyWayController">
+    <VBox alignment="TOP_RIGHT" translateX="250">
+        <HBox alignment="TOP_RIGHT">
+            <TextArea fx:id="scanArea"></TextArea>
         </HBox>
-    </top>
+    </VBox>
+    <BorderPane fx:id="root">
+        <top>
+            <HBox alignment="BASELINE_CENTER" spacing="940">
+            </HBox>
+        </top>
 
-    <center>
-        <HBox alignment="BASELINE_CENTER" translateY="200">
-            <Button fx:id="neptune_button" translateY="-40"></Button>
-            <Button fx:id="saturn_button" translateY="-30"></Button>
-            <Button fx:id="mars_button" translateY="-20"></Button>
-            <Button fx:id="venus_button" translateY="-10"></Button>
-            <Button fx:id="sun_button"></Button>
-            <Button fx:id="mercury_button" translateY="10"></Button>
-            <Button fx:id="earth_button" translateY="20"></Button>
-            <Button fx:id="jupiter_button" translateY="30"></Button>
-            <Button fx:id="uranus_button" translateY="40"></Button>
-        </HBox>
-    </center>
+        <center>
+            <HBox translateX="50" translateY="80">
+                <VBox spacing="80">
+                    <HBox alignment="BASELINE_CENTER">
+                        <Button fx:id="neptune_button" translateX="0" translateY="0"></Button>
+                        <Button fx:id="saturn_button" translateX="0" translateY="0"></Button>
+                        <Button fx:id="mars_button" translateX="0" translateY="0"></Button>
+                        <Button fx:id="venus_button" translateX="0" translateY="0"></Button>
+                    </HBox>
+                    <HBox alignment="BASELINE_CENTER">
+                        <Button fx:id="mercury_button" translateX="0" translateY="0"></Button>
+                        <Button fx:id="earth_button" translateX="0" translateY="0"></Button>
+                        <Button fx:id="jupiter_button" translateX="0" translateY="0"></Button>
+                        <Button fx:id="uranus_button" translateX="0" translateY="0"></Button>
+                    </HBox>
+                </VBox>
+                <Button fx:id="sun_button" translateX="-65" translateY="160"></Button>
+            </HBox>
+        </center>
 
-    <bottom>
-        <FlowPane fx:id="fpInv" vgap="4" hgap="4" alignment="BASELINE_CENTER">
-            <ImageView fx:id="inv1"> </ImageView>
-            <ImageView fx:id="inv2"> </ImageView>
-            <ImageView fx:id="inv3"> </ImageView>
-            <ImageView fx:id="inv4"> </ImageView>
-            <ImageView fx:id="inv5"> </ImageView>
-            <ImageView fx:id="inv6"> </ImageView>
-            <ImageView fx:id="inv7"> </ImageView>
-            <ImageView fx:id="inv8"> </ImageView>
-            <Button fx:id="returnMilky"></Button>
-        </FlowPane>
-    </bottom>
-</BorderPane>
+        <bottom>
+            <FlowPane fx:id="fpInv" vgap="4" hgap="4" alignment="BASELINE_CENTER">
+                <ImageView fx:id="inv1"> </ImageView>
+                <ImageView fx:id="inv2"> </ImageView>
+                <ImageView fx:id="inv3"> </ImageView>
+                <ImageView fx:id="inv4"> </ImageView>
+                <ImageView fx:id="inv5"> </ImageView>
+                <ImageView fx:id="inv6"> </ImageView>
+                <ImageView fx:id="inv7"> </ImageView>
+                <ImageView fx:id="inv8"> </ImageView>
+                <Button fx:id="returnMilky"></Button>
+            </FlowPane>
+        </bottom>
+    </BorderPane>
+</StackPane>

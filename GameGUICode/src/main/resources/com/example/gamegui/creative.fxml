@@ -24,27 +24,27 @@
                 </HBox>
             </VBox>
             <VBox>
-                <Label text="Red Slider"></Label>
+                <Label text="Red Slider" visible="false"></Label>
                 <HBox>
-                    <Label text="0"></Label>
+                    <Label text="0" visible="false"></Label>
                     <Slider fx:id="r_slider" min="0" max="255"></Slider>
-                    <Label text="255"></Label>
+                    <Label text="255" visible="false"></Label>
                 </HBox>
             </VBox>
             <VBox>
-                <Label text="Green Slider"></Label>
+                <Label text="Green Slider" visible="false"></Label>
                 <HBox>
-                    <Label text="0"></Label>
+                    <Label text="0" visible="false"></Label>
                     <Slider fx:id="g_slider" min="0" max="255"></Slider>
-                    <Label text="255"></Label>
+                    <Label text="255" visible="false"></Label>
                 </HBox>
             </VBox>
             <VBox>
-                <Label text="Blue Slider"></Label>
+                <Label text="Blue Slider" visible="false"></Label>
                 <HBox>
-                    <Label text="0"></Label>
+                    <Label text="0" visible="false"></Label>
                     <Slider fx:id="b_slider" min="0" max="255"></Slider>
-                    <Label text="255"></Label>
+                    <Label text="255" visible="false"></Label>
                 </HBox>
             </VBox>
             <VBox>
@@ -60,6 +60,9 @@
                     <ToggleButton fx:id="mirror_on" text="On"></ToggleButton>
                     <ToggleButton fx:id="mirror_off" text="Off"></ToggleButton>
                 </HBox>
+            </VBox>
+            <VBox>
+                <Button fx:id="export">Export</Button>
             </VBox>
         </VBox>
     </right>
