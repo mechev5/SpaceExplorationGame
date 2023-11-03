@@ -46,7 +46,7 @@ public class homeController implements Initializable {
     }
 
     @FXML
-    private Button menuButton, milkyWay_POI, changeDestination;
+    private Button menuButton, milkyWay_POI, changeDestination, exit;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -148,6 +148,13 @@ public class homeController implements Initializable {
                 null,
                 null
         );
+        exit.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                Stage currStage = HelloApplication.getStage();
+                currStage.setScene(HelloApplication.sceneMap.get("start"));
+            }
+        });
         Background milkyWayBackground = new Background(mlkBg);
         root.setBackground(milkyWayBackground);
 

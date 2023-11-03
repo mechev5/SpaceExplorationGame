@@ -62,7 +62,10 @@
                 </HBox>
             </VBox>
             <VBox>
-                <Button fx:id="export">Export</Button>
+                <HBox>
+                    <Button fx:id="export" style="-fx-background-color: green; -fx-text-fill: white;">Export</Button>
+                    <Button fx:id="exit"  style="-fx-background-color: red; -fx-text-fill: white">Exit</Button>
+                </HBox>
             </VBox>
         </VBox>
     </right>

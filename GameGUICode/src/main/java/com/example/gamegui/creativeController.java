@@ -15,6 +15,8 @@ import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+import javafx.stage.Stage;
+
 import javax.imageio.ImageIO;
 
 import java.net.URL;
@@ -41,7 +43,7 @@ public class creativeController implements Initializable {
     @FXML
     Slider r_slider, g_slider, b_slider;
     @FXML
-    Button export;
+    Button export, exit;
 
     ArrayList<FilterImage> filters;
 
@@ -178,6 +180,13 @@ public class creativeController implements Initializable {
                 //System.out.println("Exporting");
                 WritableImage exp = currImage.snapshot(null, null);
 
+            }
+        });
+        exit.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                Stage currStage = HelloApplication.getStage();
+                currStage.setScene(HelloApplication.sceneMap.get("start"));
             }
         });
     }

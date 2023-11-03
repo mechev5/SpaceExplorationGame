@@ -82,6 +82,8 @@ public class HelloApplication extends Application {
         creativeButton.setFont(Font.font("Papyrus", FontWeight.BOLD, 14));
         manualButton.setFont(Font.font("Papyrus", FontWeight.BOLD, 14));
 
+        exitButton.setStyle("-fx-text-fill: white; -fx-background-color: red;");
+
         // set button Size
         creativeButton.setMinSize(50, 50);
         explorationButton.setMinSize(50,50);
@@ -94,7 +96,7 @@ public class HelloApplication extends Application {
             mediaPlayer = new MediaPlayer(mediaStart);
             mediaPlayer.setCycleCount(1);
             mediaPlayer.play();
-            PauseTransition pause = new PauseTransition(Duration.seconds(15));
+            PauseTransition pause = new PauseTransition(Duration.seconds(.15));
             pause.setOnFinished(x->{
                 // add parent transition here I think, try it out tomorrow
                 mediaPlayer.stop();
