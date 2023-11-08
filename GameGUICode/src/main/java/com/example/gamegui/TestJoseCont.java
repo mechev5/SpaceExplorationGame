@@ -95,7 +95,7 @@ public class TestJoseCont implements Initializable {
         });
 
 
-        Image Andro = new Image(getClass().getResource("images/Andromeda galaxy.jpg").toExternalForm());
+        Image Andro = new Image(getClass().getResource("images/Andromeda_galaxy.jpg").toExternalForm());
         BackgroundImage mlkBg = new BackgroundImage(
                 Andro,
                 null,

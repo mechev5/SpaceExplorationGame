@@ -178,4 +178,15 @@ public class Galaxies implements Initializable {
         });
         pause.play();
     }
+
+    public void enterAndro(ActionEvent event) throws IOException {
+        Stage currStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("AScene1.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 1280, 720);
+        PauseTransition pause = new PauseTransition(Duration.seconds(1));
+        pause.setOnFinished(x->{
+            currStage.setScene(scene);
+        });
+        pause.play();
+    }
 }

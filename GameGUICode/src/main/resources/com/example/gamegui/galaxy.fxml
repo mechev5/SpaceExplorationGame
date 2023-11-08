@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gamegui.Galaxies">
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gamegui.Galaxies">
    <children>
       <ImageView fx:id="playerShip" fitHeight="83.0" fitWidth="117.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -16,7 +16,8 @@
       </ImageView>
       <Button fx:id="milkyway" layoutX="229.0" layoutY="400.0" mnemonicParsing="false" onAction="#enterMilkyWay" text="MilkyWay" />
       <Button fx:id="kepler" layoutX="712.0" layoutY="400.0" mnemonicParsing="false" onAction="#enterKepler" text="Kepler" />
-      <TextField fx:id="AsteroidAlert" layoutX="245.0" layoutY="34.0" prefHeight="60.0" prefWidth="492.0" style="-fx-background-color: red" text="ALERT ASTEROIDS ALERT" visible="false" editable="false">
+      <Button layoutX="1073.0" layoutY="400.0" mnemonicParsing="false" onAction="#enterAndro" text="Andromeda" />
+      <TextField fx:id="AsteroidAlert" editable="false" layoutX="245.0" layoutY="34.0" prefHeight="60.0" prefWidth="492.0" style="-fx-background-color: red" text="ALERT ASTEROIDS ALERT" visible="false">
          <font>
             <Font size="40.0" />
          </font>

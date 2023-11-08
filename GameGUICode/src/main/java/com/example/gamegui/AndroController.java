@@ -2,6 +2,7 @@ package com.example.gamegui;
 
 import java.io.IOException;
 
+import javafx.animation.PauseTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,6 +20,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.control.TextArea;
+import javafx.util.Duration;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -33,6 +35,11 @@ public class AndroController {
     private Stage stage;
     private Scene scene;
     private Parent root;
+
+    double fuel = homeController.currFuel;
+    double dur = homeController.currDurability;
+    double maxfuel = homeController.maxFuel;
+    double maxdur = homeController.maxDurability;
 
     @FXML
     Label locationLabel, fuelLabel, durabilityLabel;
@@ -83,6 +90,54 @@ public class AndroController {
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+    }
+
+    public void switchToScene7(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("AScene7.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void switchToScene8(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("AScene8.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void switchToScene9(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("AScene9.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void switchToScene10(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("AScene10.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void switchToScene11(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("AScene11.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void enterGalaxy(ActionEvent event) throws IOException {
+        Stage currStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("galaxy.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 1280, 720);
+        scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
+        currStage.setScene(scene);
     }
 
 }
