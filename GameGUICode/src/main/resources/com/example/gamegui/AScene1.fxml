@@ -6,6 +6,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1270.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gamegui.AndroController">
     <children>
@@ -19,7 +20,7 @@
             <Image url="@images/planet5.jpg" />
          </image>
       </ImageView>
-        <Label layoutX="226.0" layoutY="71.0" text="Andromeda" textFill="WHITE">
+        <Label layoutX="226.0" layoutY="71.0" textFill="WHITE">
          <font>
             <Font size="50.0" />
          </font>
@@ -39,7 +40,7 @@
             <Font size="20.0" />
          </font>
       </Button>
-      <Button layoutX="30.0" layoutY="56.0" mnemonicParsing="false" onAction="#enterGalaxy" text="Explore Back">
+      <Button layoutX="1006.0" layoutY="125.0" mnemonicParsing="false" onAction="#enterGalaxy" text="Travel to another Galaxy">
          <font>
             <Font size="20.0" />
          </font></Button>
@@ -73,21 +74,6 @@
             <Image url="@images/planet4.png" />
          </image>
       </ImageView>
-      <Label layoutX="857.0" layoutY="59.0" text="High Fuel Returns" textFill="WHITE">
-         <font>
-            <Font size="30.0" />
-         </font>
-      </Label>
-      <Label layoutX="276.0" layoutY="24.0" text="Galaxy" textFill="WHITE">
-         <font>
-            <Font size="30.0" />
-         </font>
-      </Label>
-      <Label layoutX="912.0" layoutY="12.0" text="Benefits" textFill="WHITE">
-         <font>
-            <Font size="30.0" />
-         </font>
-      </Label>
       <Button layoutX="74.0" layoutY="593.0" mnemonicParsing="false" onAction="#switchToScene7" text="Button" />
       <Button layoutX="351.0" layoutY="631.0" mnemonicParsing="false" onAction="#switchToScene8" text="Button" />
       <Button layoutX="631.0" layoutY="644.0" mnemonicParsing="false" onAction="#switchToScene9" text="Button" />
@@ -118,5 +104,10 @@
             <Image url="@images/planet11.png" />
          </image>
       </ImageView>
+      <Text fill="WHITE" layoutX="934.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Destination: Andromeda">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Text>
     </children>
 </AnchorPane>

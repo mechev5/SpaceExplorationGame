@@ -16,7 +16,7 @@
       </ImageView>
       <Button fx:id="milkyway" layoutX="229.0" layoutY="400.0" mnemonicParsing="false" onAction="#enterMilkyWay" text="MilkyWay" />
       <Button fx:id="kepler" layoutX="712.0" layoutY="400.0" mnemonicParsing="false" onAction="#enterKepler" text="Kepler" />
-      <Button layoutX="1073.0" layoutY="400.0" mnemonicParsing="false" onAction="#enterAndro" text="Andromeda" />
+      <Button fx:id="Andro" layoutX="1073.0" layoutY="400.0" mnemonicParsing="false" onAction="#enterAndro" text="Andromeda" />
       <TextField fx:id="AsteroidAlert" editable="false" layoutX="245.0" layoutY="34.0" prefHeight="60.0" prefWidth="492.0" style="-fx-background-color: red" text="ALERT ASTEROIDS ALERT" visible="false">
          <font>
             <Font size="40.0" />

@@ -46,6 +46,8 @@ public class Galaxies implements Initializable {
     Button milkyway;
     @FXML
     Button kepler;
+    @FXML
+    Button Andro;
 
     TranslateTransition transition = new TranslateTransition();
     MediaPlayer media;
@@ -152,6 +154,22 @@ public class Galaxies implements Initializable {
             pause.play();
         });
 
+        Andro.setOnMouseClicked(e-> {
+            PauseTransition pause = new PauseTransition(Duration.seconds(1));
+            pause.setOnFinished(x->{
+                media.stop();
+            });
+            transition.stop();
+//            System.out.println(e.getSceneX());
+//            System.out.println(e.getSceneY());
+            transition.setToX(e.getSceneX());
+            transition.setToY(e.getSceneY());
+            transition.toXProperty();
+            transition.toYProperty();
+            transition.play();
+            media.play();
+            pause.play();
+        });
 
     }
 
@@ -181,6 +199,7 @@ public class Galaxies implements Initializable {
 
     public void enterAndro(ActionEvent event) throws IOException {
         Stage currStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        //maybe crea
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("AScene1.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1280, 720);
         PauseTransition pause = new PauseTransition(Duration.seconds(1));
