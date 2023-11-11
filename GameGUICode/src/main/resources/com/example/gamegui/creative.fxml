@@ -24,27 +24,11 @@
                 </HBox>
             </VBox>
             <VBox>
-                <Label text="Red Slider" visible="false"></Label>
+                <Label text="Size"></Label>
                 <HBox>
-                    <Label text="0" visible="false"></Label>
-                    <Slider fx:id="r_slider" min="0" max="255"></Slider>
-                    <Label text="255" visible="false"></Label>
-                </HBox>
-            </VBox>
-            <VBox>
-                <Label text="Green Slider" visible="false"></Label>
-                <HBox>
-                    <Label text="0" visible="false"></Label>
-                    <Slider fx:id="g_slider" min="0" max="255"></Slider>
-                    <Label text="255" visible="false"></Label>
-                </HBox>
-            </VBox>
-            <VBox>
-                <Label text="Blue Slider" visible="false"></Label>
-                <HBox>
-                    <Label text="0" visible="false"></Label>
-                    <Slider fx:id="b_slider" min="0" max="255"></Slider>
-                    <Label text="255" visible="false"></Label>
+                    <Label text="0"></Label>
+                    <Slider fx:id="size_slider" min="0" max="150"></Slider>
+                    <Label text="150"></Label>
                 </HBox>
             </VBox>
             <VBox>
@@ -71,14 +55,20 @@
     </right>
     <bottom>
         <FlowPane fx:id = "fp" style="-fx-background-color: black; -fx-padding: 5 10 10 5;" hgap="4" alignment="BASELINE_CENTER">
-            <ImageView fx:id="prev"> </ImageView>
-            <ImageView fx:id="p1"> </ImageView>
-            <ImageView fx:id="p2"> </ImageView>
-            <ImageView fx:id="p3"> </ImageView>
-            <ImageView fx:id="p4"> </ImageView>
-            <ImageView fx:id="p5"> </ImageView>
-            <ImageView fx:id="p6"> </ImageView>
-            <ImageView fx:id="next"> </ImageView>
+            <VBox fx:id="tg_vbox">
+                <ToggleButton fx:id="planets_tb" text="Planets"></ToggleButton>
+                <ToggleButton fx:id="backgrounds_tb" text="Backgrounds"></ToggleButton>
+            </VBox>
+            <HBox fx:id="bottom_hbox">
+                <ImageView fx:id="prev"> </ImageView>
+                <ImageView fx:id="p1"> </ImageView>
+                <ImageView fx:id="p2"> </ImageView>
+                <ImageView fx:id="p3"> </ImageView>
+                <ImageView fx:id="p4"> </ImageView>
+                <ImageView fx:id="p5"> </ImageView>
+                <ImageView fx:id="p6"> </ImageView>
+                <ImageView fx:id="next"> </ImageView>
+            </HBox>
         </FlowPane>
     </bottom>
 </BorderPane>
