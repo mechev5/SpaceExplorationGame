@@ -2,6 +2,7 @@ module com.example.gamegui {
     requires javafx.controls;
     requires javafx.fxml;
     requires javafx.media;
+    requires javafx.swing;
 
 
     requires org.controlsfx.controls;

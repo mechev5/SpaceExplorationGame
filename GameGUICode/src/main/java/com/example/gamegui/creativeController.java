@@ -2,6 +2,7 @@ package com.example.gamegui;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -18,11 +19,11 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 
+import javax.imageio.ImageIO;
+import java.io.File;
+import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.ResourceBundle;
+import java.util.*;
 import java.util.function.Function;
 
 public class creativeController implements Initializable {
@@ -256,8 +257,15 @@ public class creativeController implements Initializable {
             @Override
             public void handle(ActionEvent actionEvent) {
                 //System.out.println("Exporting");
-                WritableImage exp = currImage.snapshot(null, null);
-
+                WritableImage exp = new WritableImage((int) currImage_hbox.getWidth(), (int) currImage_hbox.getHeight());
+                currImage_hbox.snapshot(null, exp);
+                try {
+                    File outputImgFile = new File("custom_wallpaper.png");
+                    ImageIO.write(Objects.requireNonNull(SwingFXUtils.fromFXImage(exp, null)), "png", outputImgFile);
+                    System.out.println("Image saved to " + outputImgFile.getAbsolutePath());
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
             }
         });
         exit.setOnAction(new EventHandler<ActionEvent>() {
