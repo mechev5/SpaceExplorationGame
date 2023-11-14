@@ -1,5 +1,6 @@
 package com.example.gamegui;
 
+import javafx.animation.FadeTransition;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -14,6 +15,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 import java.io.IOException;
 import java.net.URL;
@@ -36,6 +38,8 @@ public class milkyWayController implements Initializable {
     TextArea scanArea;
     @FXML
     StackPane sp;
+
+    BorderPane fadeBP;
 
     String location;
 
@@ -60,6 +64,9 @@ public class milkyWayController implements Initializable {
         scanArea.setMinSize(100.0, 100.0);
         scanArea.setEditable(false);
 
+        fadeBP = new BorderPane();
+        fadeBP.setStyle("-fx-background-color: #000000;");
+
         // Show the variables on screen
         //locationLabel.setText("Location: " + location);
         //fuelLabel.setText("Fuel: " + currFuel + " / " + maxFuel);
@@ -69,52 +76,6 @@ public class milkyWayController implements Initializable {
         Image square = new Image(getClass().getResource("images/square.png").toExternalForm());
         int imageH = 512;
         int imageW = 512;
-
-
-        inv1.setImage(square);
-        inv2.setImage(square);
-        inv3.setImage(square);
-        inv4.setImage(square);
-        inv5.setImage(square);
-        inv6.setImage(square);
-        inv7.setImage(square);
-        inv8.setImage(square);
-
-        inv1.setPreserveRatio(true);
-        inv2.setPreserveRatio(true);
-        inv3.setPreserveRatio(true);
-        inv4.setPreserveRatio(true);
-        inv5.setPreserveRatio(true);
-        inv6.setPreserveRatio(true);
-        inv7.setPreserveRatio(true);
-        inv8.setPreserveRatio(true);
-
-        inv1.setFitHeight(imageH / 5);
-        inv2.setFitHeight(imageH / 5);
-        inv3.setFitHeight(imageH / 5);
-        inv4.setFitHeight(imageH / 5);
-        inv5.setFitHeight(imageH / 5);
-        inv6.setFitHeight(imageH / 5);
-        inv7.setFitHeight(imageH / 5);
-        inv8.setFitHeight(imageH / 5);
-
-        inv1.setFitWidth(imageW / 5);
-        inv2.setFitWidth(imageW / 5);
-        inv3.setFitWidth(imageW / 5);
-        inv4.setFitWidth(imageW / 5);
-        inv5.setFitWidth(imageW / 5);
-        inv6.setFitWidth(imageW / 5);
-        inv7.setFitWidth(imageW / 5);
-        inv8.setFitWidth(imageW / 5);
-
-        inv1.setVisible(false);
-        inv2.setVisible(false);
-        inv3.setVisible(false);
-        inv4.setVisible(false);
-        inv5.setVisible(false);
-        inv6.setVisible(false);
-        inv7.setVisible(false);
-        inv8.setVisible(false);
 
 
         returnMilky.setText("Milky Way Hub");
@@ -137,6 +98,7 @@ public class milkyWayController implements Initializable {
         Background milkyWayBackground = new Background(mlkBg);
         sp.setBackground(milkyWayBackground);
         loadPlanets();
+        HelloApplication.sceneMap.put("milkyway", sp.getScene());
     }
 
     public void loadPlanets() {
@@ -165,167 +127,181 @@ public class milkyWayController implements Initializable {
         venus_button.setGraphic(images.get("venus"));
 
         // Set event handlers (set buttons to open pop up window with info on planet)
+        // Flat rate of 5 fuel per planet visit
         earth_button.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-//                Stage newStage =  new Stage();
-//                FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("earthView.fxml"));
-//                Scene scene = null;
-//                try {
-//                    scene = new Scene(fxmlLoader.load(), 600, 600);
-//                } catch (IOException e) {
-//                    throw new RuntimeException(e);
-//                }
-//                scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
-//                newStage.setTitle("Earth");
-//                newStage.setScene(scene);
-//                newStage.show();
-                scanArea.setMinSize(200.0, 100.0);
-                scanArea.setText("Name: Earth\nPlanet Type: Terrestrial\nMass: 5.972 × 10^24 kg\nPlanet Radius: 6378 km\nOrbital Radius: 1 AU\nOrbital Period: 365 days");
+                homeController.currFuel = homeController.currFuel - 5.0;
+                Stage newStage =  HelloApplication.getStage();
+                FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("earthView.fxml"));
+                Scene scene = null;
+                try {
+                    scene = new Scene(fxmlLoader.load(), 1280, 720);
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+                scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
+                newStage.setTitle("Earth");
+                newStage.setScene(scene);
+                newStage.show();
+                // scanArea.setMinSize(200.0, 100.0);
+                // scanArea.setText("Name: Earth\nPlanet Type: Terrestrial\nMass: 5.972 × 10^24 kg\nPlanet Radius: 6378 km\nOrbital Radius: 1 AU\nOrbital Period: 365 days");
             }
         });
         jupiter_button.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-//                Stage newStage =  new Stage();
-//                FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("jupiterView.fxml"));
-//                Scene scene = null;
-//                try {
-//                    scene = new Scene(fxmlLoader.load(), 600, 600);
-//                } catch (IOException e) {
-//                    throw new RuntimeException(e);
-//                }
-//                scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
-//                newStage.setTitle("Earth");
-//                newStage.setScene(scene);
-//                newStage.show();
-                scanArea.setMinSize(200.0, 100.0);
-                scanArea.setText("Name: Jupiter\nPlanet Type: Gas\nMass: 1.8981 × 10^27 kg\nPlanet Radius: 69,911 km\nOrbital Radius: 5 AU\nOrbital Period: 4,330 days");
+                homeController.currFuel = homeController.currFuel - 5.0;
+                Stage newStage =  HelloApplication.getStage();
+                FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("jupiterView.fxml"));
+                Scene scene = null;
+                try {
+                    scene = new Scene(fxmlLoader.load(), 1280, 720);
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+                scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
+                newStage.setTitle("Jupiter");
+                newStage.setScene(scene);
+                newStage.show();
+                //scanArea.setMinSize(200.0, 100.0);
+                // scanArea.setText("Name: Jupiter\nPlanet Type: Gas\nMass: 1.8981 × 10^27 kg\nPlanet Radius: 69,911 km\nOrbital Radius: 5 AU\nOrbital Period: 4,330 days");
             }
         });
         mars_button.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-//                Stage newStage =  new Stage();
-//                FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("marsView.fxml"));
-//                Scene scene = null;
-//                try {
-//                    scene = new Scene(fxmlLoader.load(), 600, 600);
-//                } catch (IOException e) {
-//                    throw new RuntimeException(e);
-//                }
-//                scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
-//                newStage.setTitle("Mars");
-//                newStage.setScene(scene);
-//                newStage.show();
-                scanArea.setMinSize(200.0, 100.0);
-                scanArea.setText("Name: Mars\nPlanet Type: Terrestrial\nMass: 6.41693 × 10^23 kg\nPlanet Radius: 3,390 km\nOrbital Radius: 1.5 AU\nOrbital Period: 687 days");
+                homeController.currFuel = homeController.currFuel - 5.0;
+                Stage newStage =  HelloApplication.getStage();
+                FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("marsView.fxml"));
+                Scene scene = null;
+                try {
+                    scene = new Scene(fxmlLoader.load(), 1280, 720);
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+                scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
+                newStage.setTitle("Mars");
+                newStage.setScene(scene);
+                newStage.show();
+                // scanArea.setMinSize(200.0, 100.0);
+                // scanArea.setText("Name: Mars\nPlanet Type: Terrestrial\nMass: 6.41693 × 10^23 kg\nPlanet Radius: 3,390 km\nOrbital Radius: 1.5 AU\nOrbital Period: 687 days");
             }
         });
 
         mercury_button.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-//                Stage newStage =  new Stage();
-//                FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("mercuryView.fxml"));
-//                Scene scene = null;
-//                try {
-//                    scene = new Scene(fxmlLoader.load(), 600, 600);
-//                } catch (IOException e) {
-//                    throw new RuntimeException(e);
-//                }
-//                scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
-//                newStage.setTitle("Mercury");
-//                newStage.setScene(scene);
-//                newStage.show();
-                scanArea.setMinSize(200.0, 100.0);
-                scanArea.setText("Name: Mercury\nPlanet Type: Terrestrial\nMass: 3.285 × 10^23 kg\nPlanet Radius: 2,440 km\nOrbital Radius: 0.4 AU\nOrbital Period: 88 days");
+                homeController.currFuel = homeController.currFuel - 5.0;
+                Stage newStage =  HelloApplication.getStage();
+                FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("mercuryView.fxml"));
+                Scene scene = null;
+                try {
+                    scene = new Scene(fxmlLoader.load(), 1280, 720);
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+                scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
+                newStage.setTitle("Mercury");
+                newStage.setScene(scene);
+                newStage.show();
+                // scanArea.setMinSize(200.0, 100.0);
+                // scanArea.setText("Name: Mercury\nPlanet Type: Terrestrial\nMass: 3.285 × 10^23 kg\nPlanet Radius: 2,440 km\nOrbital Radius: 0.4 AU\nOrbital Period: 88 days");
             }
         });
 
         neptune_button.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-//                Stage newStage =  new Stage();
-//                FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("neptuneView.fxml"));
-//                Scene scene = null;
-//                try {
-//                    scene = new Scene(fxmlLoader.load(), 600, 600);
-//                } catch (IOException e) {
-//                    throw new RuntimeException(e);
-//                }
-//                scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
-//                newStage.setTitle("Neptune");
-//                newStage.setScene(scene);
-//                newStage.show();
-                scanArea.setText("Name: Neptune\nPlanet Type: Gas\nMass: 1.024 × 10^26 kg\nPlanet Radius: 24,622 km\nOrbital Radius: 30 AU\nOrbital Period: 60,190 days");
-                scanArea.setMinSize(200.0, 100.0);
+                homeController.currFuel = homeController.currFuel - 5.0;
+                Stage newStage =  HelloApplication.getStage();
+                FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("neptuneView.fxml"));
+                Scene scene = null;
+                try {
+                    scene = new Scene(fxmlLoader.load(), 1280, 720);
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+                scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
+                newStage.setTitle("Neptune");
+                newStage.setScene(scene);
+                newStage.show();
+                // scanArea.setText("Name: Neptune\nPlanet Type: Gas\nMass: 1.024 × 10^26 kg\nPlanet Radius: 24,622 km\nOrbital Radius: 30 AU\nOrbital Period: 60,190 days");
+                // scanArea.setMinSize(200.0, 100.0);
             }
         });
 
         saturn_button.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-//                Stage newStage =  new Stage();
-//                FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("saturnView.fxml"));
-//                Scene scene = null;
-//                try {
-//                    scene = new Scene(fxmlLoader.load(), 600, 600);
-//                } catch (IOException e) {
-//                    throw new RuntimeException(e);
-//                }
-//                scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
-//                newStage.setTitle("Saturn");
-//                newStage.setScene(scene);
-//                newStage.show();
-                scanArea.setText("Name: Saturn\nPlanet Type: Gas\nMass: 5.6832 × 1026 kg\nPlanet Radius: 58,232 km\nOrbital Radius: 9 AU\nOrbital Period: 10,756 days");
-                scanArea.setMinSize(200.0, 100.0);
+                homeController.currFuel = homeController.currFuel - 5.0;
+                Stage newStage =  HelloApplication.getStage();
+                FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("saturnView.fxml"));
+                Scene scene = null;
+                try {
+                    scene = new Scene(fxmlLoader.load(), 1280, 720);
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+                scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
+                newStage.setTitle("Saturn");
+                newStage.setScene(scene);
+                newStage.show();
+                // scanArea.setText("Name: Saturn\nPlanet Type: Gas\nMass: 5.6832 × 1026 kg\nPlanet Radius: 58,232 km\nOrbital Radius: 9 AU\nOrbital Period: 10,756 days");
+                // scanArea.setMinSize(200.0, 100.0);
             }
         });
 
         uranus_button.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-//                Stage newStage =  new Stage();
-//                FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("uranusView.fxml"));
-//                Scene scene = null;
-//                try {
-//                    scene = new Scene(fxmlLoader.load(), 600, 600);
-//                } catch (IOException e) {
-//                    throw new RuntimeException(e);
-//                }
-//                scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
-//                newStage.setTitle("uranus");
-//                newStage.setScene(scene);
-//                newStage.show();
-                scanArea.setText("Name: Uranus\nPlanet Type: Gas\nMass: 8.681 × 10^25 kg\nPlanet Radius: 25,362 km\nOrbital Radius: 19.8 AU\nOrbital Period: 30,687 days");
-                scanArea.setMinSize(200.0, 100.0);
+                homeController.currFuel = homeController.currFuel - 5.0;
+                Stage newStage =  HelloApplication.getStage();
+                FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("uranusView.fxml"));
+                Scene scene = null;
+                try {
+                    scene = new Scene(fxmlLoader.load(), 1280, 720);
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+                scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
+                newStage.setTitle("Uranus");
+                newStage.setScene(scene);
+                newStage.show();
+                // scanArea.setText("Name: Uranus\nPlanet Type: Gas\nMass: 8.681 × 10^25 kg\nPlanet Radius: 25,362 km\nOrbital Radius: 19.8 AU\nOrbital Period: 30,687 days");
+                // scanArea.setMinSize(200.0, 100.0);
             }
         });
 
         venus_button.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-//                Stage newStage =  new Stage();
-//                FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("venusView.fxml"));
-//                Scene scene = null;
-//                try {
-//                    scene = new Scene(fxmlLoader.load(), 600, 600);
-//                } catch (IOException e) {
-//                    throw new RuntimeException(e);
-//                }
-//                scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
-//                newStage.setTitle("Venus");
-//                newStage.setScene(scene);
-//                newStage.show();
-                scanArea.setText("Name: Venus\nPlanet Type: Terrestrial\nMass: 4.867 × 10^24 kg\nPlanet Radius: 6,051 km\nOrbital Radius: 0.7 AU\nOrbital Period: 225 days");
-                scanArea.setMinSize(200.0, 100.0);
+                homeController.currFuel = homeController.currFuel - 5.0;
+                Stage newStage =  HelloApplication.getStage();
+                FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("venusView.fxml"));
+                Scene scene = null;
+                try {
+                    scene = new Scene(fxmlLoader.load(), 1280, 720);
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+                scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
+                newStage.setTitle("Venus");
+                newStage.setScene(scene);
+                newStage.show();
+                // scanArea.setText("Name: Venus\nPlanet Type: Terrestrial\nMass: 4.867 × 10^24 kg\nPlanet Radius: 6,051 km\nOrbital Radius: 0.7 AU\nOrbital Period: 225 days");
+                // scanArea.setMinSize(200.0, 100.0);
             }
         });
         sun_button.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
                 scanArea.setText("");
+                HelloApplication.getStage().setScene(new Scene(fadeBP));
+                FadeTransition ft = new FadeTransition(Duration.millis(3000), fadeBP);
+                ft.setFromValue(0.0);
+                ft.setToValue(1.0);
+                ft.play();
             }
         });
         returnMilky.setOnAction(new EventHandler<ActionEvent>() {

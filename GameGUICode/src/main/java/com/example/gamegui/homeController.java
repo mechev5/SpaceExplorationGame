@@ -34,8 +34,6 @@ public class homeController implements Initializable {
     Label locationLabel, fuelLabel, durabilityLabel;
     @FXML
     private HBox botMenu;
-    @FXML
-    ImageView inv1, inv2, inv3, inv4, inv5, inv6, inv7, inv8;
 
     String location;
     static public double currFuel = 100.0, maxFuel = 100.0, currDurability = 100.0, maxDurability = 100.0;
@@ -75,42 +73,6 @@ public class homeController implements Initializable {
         Image square = new Image(getClass().getResource("images/square.png").toExternalForm());
         int imageH = 512;
         int imageW = 512;
-
-        inv1.setImage(square);
-        inv2.setImage(square);
-        inv3.setImage(square);
-        inv4.setImage(square);
-        inv5.setImage(square);
-        inv6.setImage(square);
-        inv7.setImage(square);
-        inv8.setImage(square);
-
-        inv1.setPreserveRatio(true);
-        inv2.setPreserveRatio(true);
-        inv3.setPreserveRatio(true);
-        inv4.setPreserveRatio(true);
-        inv5.setPreserveRatio(true);
-        inv6.setPreserveRatio(true);
-        inv7.setPreserveRatio(true);
-        inv8.setPreserveRatio(true);
-
-        inv1.setFitHeight(imageH / 5);
-        inv2.setFitHeight(imageH / 5);
-        inv3.setFitHeight(imageH / 5);
-        inv4.setFitHeight(imageH / 5);
-        inv5.setFitHeight(imageH / 5);
-        inv6.setFitHeight(imageH / 5);
-        inv7.setFitHeight(imageH / 5);
-        inv8.setFitHeight(imageH / 5);
-
-        inv1.setFitWidth(imageW / 5);
-        inv2.setFitWidth(imageW / 5);
-        inv3.setFitWidth(imageW / 5);
-        inv4.setFitWidth(imageW / 5);
-        inv5.setFitWidth(imageW / 5);
-        inv6.setFitWidth(imageW / 5);
-        inv7.setFitWidth(imageW / 5);
-        inv8.setFitWidth(imageW / 5);
 
         Image menuImage = new Image(getClass().getResource("images/pause.png").toExternalForm());
         ImageView menuIV = new ImageView(menuImage);

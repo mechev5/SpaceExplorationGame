@@ -7,7 +7,7 @@
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.image.ImageView?>
 <StackPane fx:id="sp" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gamegui.milkyWayController">
-    <VBox alignment="TOP_RIGHT" translateX="250">
+    <VBox alignment="TOP_RIGHT" translateX="250" visible="false">
         <HBox alignment="TOP_RIGHT">
             <TextArea fx:id="scanArea"></TextArea>
         </HBox>

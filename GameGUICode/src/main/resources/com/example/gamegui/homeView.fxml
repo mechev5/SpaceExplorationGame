@@ -30,15 +30,5 @@
     </center>
 
     <bottom>
-        <FlowPane fx:id="fpInv" vgap="4" hgap="4" alignment="BASELINE_CENTER">
-            <ImageView fx:id="inv1"> </ImageView>
-            <ImageView fx:id="inv2"> </ImageView>
-            <ImageView fx:id="inv3"> </ImageView>
-            <ImageView fx:id="inv4"> </ImageView>
-            <ImageView fx:id="inv5"> </ImageView>
-            <ImageView fx:id="inv6"> </ImageView>
-            <ImageView fx:id="inv7"> </ImageView>
-            <ImageView fx:id="inv8"> </ImageView>
-        </FlowPane>
     </bottom>
 </BorderPane>
