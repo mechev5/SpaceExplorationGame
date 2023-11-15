@@ -87,7 +87,7 @@ public class Galaxies implements Initializable {
             // update value because jose is worried about being stranded in space with no fuel
             int randomCheck = rand.nextInt(10);
             System.out.println(randomCheck);
-            if (randomCheck < 2){
+            if (randomCheck < 1){
                 PauseTransition pause = new PauseTransition(Duration.seconds(4));
                 AsteroidAlert.setVisible(true);
 
@@ -140,7 +140,7 @@ public class Galaxies implements Initializable {
         milkyway.setOnMouseClicked(e-> {
             int randomCheck = rand.nextInt(10);
             System.out.println(randomCheck);
-            if (randomCheck < 2){
+            if (randomCheck < 1){
                 PauseTransition pause = new PauseTransition(Duration.seconds(4));
                 AsteroidAlert.setVisible(true);
 
@@ -195,7 +195,7 @@ public class Galaxies implements Initializable {
         kepler.setOnMouseClicked(e-> {
             int randomCheck = rand.nextInt(10);
             System.out.println(randomCheck);
-            if (randomCheck < 2){
+            if (randomCheck < 1){
                 PauseTransition pause = new PauseTransition(Duration.seconds(4));
                 AsteroidAlert.setVisible(true);
 
@@ -251,7 +251,7 @@ public class Galaxies implements Initializable {
         Andro.setOnMouseClicked(e-> {
             int randomCheck = rand.nextInt(10);
             System.out.println(randomCheck);
-            if (randomCheck < 2){
+            if (randomCheck < 1){
                 PauseTransition pause = new PauseTransition(Duration.seconds(4));
                 AsteroidAlert.setVisible(true);
 
