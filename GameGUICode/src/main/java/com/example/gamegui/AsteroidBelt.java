@@ -93,6 +93,7 @@ public class AsteroidBelt implements Initializable {
             PauseTransition gameFinish = new PauseTransition(Duration.seconds(5));
 
             gameFinish.setOnFinished(x->{
+                homeController.playerScore += 100;
                 Stage currStage = HelloApplication.getStage();
                 FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("galaxy.fxml"));
                 try {
@@ -114,7 +115,7 @@ public class AsteroidBelt implements Initializable {
                     double timeLapsed = TimeUnit.MILLISECONDS.toSeconds(finish - start);
                     System.out.println("Previous Durability:");
                     System.out.println(homeController.currDurability);
-                    double damageTaken = round((timeLapsed * 0.09), 2);
+                    double damageTaken = round((timeLapsed * 0.75), 2);
                     homeController.currDurability = round(homeController.currDurability - damageTaken,2);
                     System.out.println("New Durability:");
                     System.out.println(homeController.currDurability);
@@ -144,6 +145,7 @@ public class AsteroidBelt implements Initializable {
             PauseTransition gameFinish = new PauseTransition(Duration.seconds(5));
 
             gameFinish.setOnFinished(x->{
+                homeController.playerScore += 100;
                 Stage currStage = HelloApplication.getStage();
                 FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("galaxy.fxml"));
                 try {
@@ -165,7 +167,7 @@ public class AsteroidBelt implements Initializable {
                     double timeLapsed = TimeUnit.MILLISECONDS.toSeconds(finish - start);
                     System.out.println("Previous Durability:");
                     System.out.println(homeController.currDurability);
-                    double damageTaken = round((timeLapsed * 0.09), 2);
+                    double damageTaken = round((timeLapsed *  0.75), 2);
                     homeController.currDurability = round(homeController.currDurability - damageTaken,2);
                     System.out.println("New Durability:");
                     System.out.println(homeController.currDurability);
@@ -194,6 +196,7 @@ public class AsteroidBelt implements Initializable {
             PauseTransition gameFinish = new PauseTransition(Duration.seconds(5));
 
             gameFinish.setOnFinished(x->{
+                homeController.playerScore += 100;
                 Stage currStage = HelloApplication.getStage();
                 FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("galaxy.fxml"));
                 try {
@@ -214,7 +217,7 @@ public class AsteroidBelt implements Initializable {
                     double timeLapsed = TimeUnit.MILLISECONDS.toSeconds(finish - start);
                     System.out.println("Previous Durability:");
                     System.out.println(homeController.currDurability);
-                    double damageTaken = round((timeLapsed * 0.09), 2);
+                    double damageTaken = round((timeLapsed *  0.75), 2);
                     homeController.currDurability = round(homeController.currDurability - damageTaken, 2);
                     System.out.println("New Durability:");
                     System.out.println(homeController.currDurability);
@@ -244,6 +247,7 @@ public class AsteroidBelt implements Initializable {
             PauseTransition gameFinish = new PauseTransition(Duration.seconds(5));
 
             gameFinish.setOnFinished(x->{
+                homeController.playerScore += 100;
                 Stage currStage = HelloApplication.getStage();
                 FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("galaxy.fxml"));
                 try {
@@ -265,7 +269,7 @@ public class AsteroidBelt implements Initializable {
                     double timeLapsed = TimeUnit.MILLISECONDS.toSeconds(finish - start);
                     System.out.println("Previous Durability:");
                     System.out.println(homeController.currDurability);
-                    double damageTaken = round((timeLapsed * 0.09), 2);
+                    double damageTaken = round((timeLapsed *  0.75), 2);
                     homeController.currDurability = round(homeController.currDurability - damageTaken,2);
                     System.out.println("New Durability:");
                     System.out.println(homeController.currDurability);
@@ -282,6 +286,7 @@ public class AsteroidBelt implements Initializable {
         asteroid5.setOnMouseClicked(e->{
             PauseTransition pauseLaser = new PauseTransition(Duration.seconds(1));
             pauseLaser.setOnFinished(x->{
+                homeController.playerScore += 100;
                 lasers.stop();
                 asteroid5.setVisible(false);
                 asteroid5.setDisable(true);
@@ -314,7 +319,7 @@ public class AsteroidBelt implements Initializable {
                     double timeLapsed = TimeUnit.MILLISECONDS.toSeconds(finish - start);
                     System.out.println("Previous Durability:");
                     System.out.println(homeController.currDurability);
-                    double damageTaken = round((timeLapsed * 0.09), 2);
+                    double damageTaken = round((timeLapsed *  0.75), 2);
                     homeController.currDurability = round(homeController.currDurability - damageTaken,2);
                     System.out.println("New Durability:");
                     System.out.println(homeController.currDurability);
@@ -343,6 +348,7 @@ public class AsteroidBelt implements Initializable {
             PauseTransition gameFinish = new PauseTransition(Duration.seconds(5));
 
             gameFinish.setOnFinished(x->{
+                homeController.playerScore += 100;
                 Stage currStage = HelloApplication.getStage();
                 FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("galaxy.fxml"));
                 try {
@@ -363,7 +369,7 @@ public class AsteroidBelt implements Initializable {
                     double timeLapsed = TimeUnit.MILLISECONDS.toSeconds(finish - start);
                     System.out.println("Previous Durability:");
                     System.out.println(homeController.currDurability);
-                    double damageTaken = round((timeLapsed * 0.09), 2);
+                    double damageTaken = round((timeLapsed *  0.75), 2);
                     homeController.currDurability = round(homeController.currDurability - damageTaken,2);
                     System.out.println("New Durability:");
                     System.out.println(homeController.currDurability);
@@ -391,6 +397,7 @@ public class AsteroidBelt implements Initializable {
             PauseTransition gameFinish = new PauseTransition(Duration.seconds(5));
 
             gameFinish.setOnFinished(x->{
+                homeController.playerScore += 100;
                 Stage currStage = HelloApplication.getStage();
                 FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("galaxy.fxml"));
                 try {
@@ -411,7 +418,7 @@ public class AsteroidBelt implements Initializable {
                     double timeLapsed = TimeUnit.MILLISECONDS.toSeconds(finish - start);
                     System.out.println("Previous Durability:");
                     System.out.println(homeController.currDurability);
-                    double damageTaken = round((timeLapsed * 0.09), 2);
+                    double damageTaken = round((timeLapsed *  0.75), 2);
                     homeController.currDurability = round(homeController.currDurability - damageTaken,2);
                     System.out.println("New Durability:");
                     System.out.println(homeController.currDurability);

@@ -31,13 +31,13 @@ public class homeController implements Initializable {
     @FXML
     FlowPane fpInv;
     @FXML
-    Label locationLabel, fuelLabel, durabilityLabel;
+    Label locationLabel, fuelLabel, durabilityLabel, scoreLabel;
     @FXML
     private HBox botMenu;
 
     String location;
     static public double currFuel = 100.0, maxFuel = 100.0, currDurability = 100.0, maxDurability = 100.0;
-
+    static public int playerScore = 0;
 
     @FXML
     protected void onHelloButtonClick() {
@@ -65,9 +65,14 @@ public class homeController implements Initializable {
         });
 
         // Show the variables on screen
+        locationLabel.setMinSize(400, 17);
         locationLabel.setText("Designation: " + location);
-        fuelLabel.setText("Fuel: " + currFuel + " / " + maxFuel);
+        fuelLabel.setMinSize(400, 17);
+        fuelLabel.setText("Fuel: " + AsteroidBelt.round(currFuel, 1) + " / " + maxFuel);
+        durabilityLabel.setMinSize(400, 17);
         durabilityLabel.setText("Durability: " + currDurability + " / " + maxDurability);
+        scoreLabel.setMinSize(400, 17);
+        scoreLabel.setText("Score: " + playerScore);
 
         // This will all get cleaned up [hopefully]
         Image square = new Image(getClass().getResource("images/square.png").toExternalForm());

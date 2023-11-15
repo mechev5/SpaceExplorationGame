@@ -1,6 +1,7 @@
 package com.example.gamegui;
 
     import javafx.animation.PauseTransition;
+    import javafx.animation.PathTransition;
     import javafx.animation.TranslateTransition;
     import javafx.application.Platform;
     import javafx.event.ActionEvent;
@@ -15,11 +16,13 @@ package com.example.gamegui;
     import javafx.scene.control.TextField;
     import javafx.scene.image.Image;
     import javafx.scene.image.ImageView;
+    import javafx.scene.input.MouseEvent;
     import javafx.scene.layout.*;
     import javafx.scene.media.Media;
     import javafx.scene.media.MediaPlayer;
     import javafx.stage.Stage;
     import javafx.util.Duration;
+    import org.controlsfx.control.tableview2.filter.filtereditor.SouthFilter;
 
     import java.io.IOException;
     import java.net.URL;
@@ -28,8 +31,11 @@ package com.example.gamegui;
     import java.util.Map;
     import java.util.ResourceBundle;
     import java.util.Random;
+    import java.lang.Math;
 
 public class Galaxies implements Initializable {
+
+    static public double xPos = 229.0, yPos = 400.0;
 
     @FXML
     AnchorPane root;
@@ -48,6 +54,8 @@ public class Galaxies implements Initializable {
     Button kepler;
     @FXML
     Button Andro;
+    @FXML
+    Button testMining;
 
     TranslateTransition transition = new TranslateTransition();
     MediaPlayer media;
@@ -60,6 +68,11 @@ public class Galaxies implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         // Keep track of all stats using variables, until classes are made
         root.setMinSize(1280, 720);
+        playerShip.setX(xPos);
+        playerShip.setY(yPos);
+        playerShip.setTranslateX(0);
+        playerShip.setTranslateY(0);
+        System.out.println("Player X and Y: " + playerShip.getX() + " - " + playerShip.getY());
         Image galaxyPic = new Image(getClass().getResource("images/GalaxyBackground.jpg").toExternalForm());
         Background backg = new Background(new BackgroundImage(galaxyPic, null, null, null, new BackgroundSize(1300, 1260,false,false,false,false)));
         root.setBackground(backg);
@@ -99,19 +112,24 @@ public class Galaxies implements Initializable {
 
             }
             else{
-                homeController.currFuel = homeController.currFuel - 5;
+                homeController.currFuel -= AsteroidBelt.round(Math.sqrt(Math.pow(Math.max(e.getX(), xPos) - Math.min(xPos,e.getX()), 2) + Math.pow(Math.max(e.getY(), yPos) - Math.min(yPos,e.getY()), 2)) / 50, 0);
+                System.out.println(AsteroidBelt.round(Math.sqrt(Math.pow(Math.max(e.getX(), xPos) - Math.min(xPos,e.getX()), 2) + Math.pow(Math.max(e.getY(), yPos) - Math.min(yPos,e.getY()), 2)) / 50, 0));
                 PauseTransition pause = new PauseTransition(Duration.seconds(1));
                 pause.setOnFinished(x->{
                     media.stop();
                 });
                 transition.stop();
-//            System.out.println(e.getX());
-//            System.out.println(e.getY());
-                transition.setToX(e.getX());
-                transition.setToY(e.getY());
+
+//
+
+                transition.setToX(e.getX() - playerShip.getX());
+                transition.setToY(e.getY() - playerShip.getY());
                 transition.toXProperty();
                 transition.toYProperty();
-                transition.play();
+                xPos = e.getX();
+                yPos = e.getY();
+
+                transition.playFromStart();
                 media.play();
                 pause.play();
             }
@@ -120,60 +138,190 @@ public class Galaxies implements Initializable {
 
         // Animation transition of rocket ship upon clicking on button
         milkyway.setOnMouseClicked(e-> {
-            PauseTransition pause = new PauseTransition(Duration.seconds(1));
-            pause.setOnFinished(x->{
-                media.stop();
-            });
-            transition.stop();
-//            System.out.println(e.getSceneX());
-//            System.out.println(e.getSceneY());
-            transition.setToX(e.getSceneX());
-            transition.setToY(e.getSceneY());
-            transition.toXProperty();
-            transition.toYProperty();
-            transition.play();
-            media.play();
-            pause.play();
+            int randomCheck = rand.nextInt(10);
+            System.out.println(randomCheck);
+            if (randomCheck < 2){
+                PauseTransition pause = new PauseTransition(Duration.seconds(4));
+                AsteroidAlert.setVisible(true);
+
+                pause.setOnFinished(x->{
+                    AsteroidAlert.setVisible(false);
+                    alarmMedia.stop();
+                    Stage currStage = HelloApplication.getStage();
+                    FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("AsteroidBelt.fxml"));
+                    try {
+                        Scene asteroidScene = new Scene(fxmlLoader.load(), 1280, 720);
+                        asteroidScene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
+                        currStage.setScene(asteroidScene);
+                    }
+                    catch (IOException y){
+                        System.out.println("Failure in scene asteroid scene transition");
+                        System.out.println(y);
+                    }
+                });
+                alarmMedia.play();
+                pause.play();
+
+            }
+            else {
+                homeController.currFuel -= AsteroidBelt.round(Math.sqrt(Math.pow(Math.max(e.getSceneX(), xPos) - Math.min(xPos,e.getSceneX()), 2) + Math.pow(Math.max(e.getSceneY(), yPos) - Math.min(yPos,e.getSceneY()), 2)) / 50, 0);
+                System.out.println(AsteroidBelt.round(Math.sqrt(Math.pow(Math.max(e.getSceneX(), xPos) - Math.min(xPos,e.getSceneX()), 2) + Math.pow(Math.max(e.getSceneY(), yPos) - Math.min(yPos,e.getSceneY()), 2)) / 50, 0));
+                PauseTransition pause = new PauseTransition(Duration.seconds(1));
+                pause.setOnFinished(x -> {
+                    media.stop();
+                    try {
+                        enterMilkyWay(e);
+                    }
+                    catch (IOException l){
+                        System.out.println(l);
+                    }
+                });
+                transition.stop();
+
+                transition.setToX(e.getSceneX() - playerShip.getX());
+                transition.setToY(e.getSceneY() - playerShip.getY());
+                transition.toXProperty();
+                transition.toYProperty();
+                xPos = e.getSceneX();
+                yPos = e.getSceneY();
+
+                transition.play();
+                media.play();
+                pause.play();
+            }
         });
 
         // Same as above but for kepler button
         kepler.setOnMouseClicked(e-> {
-            PauseTransition pause = new PauseTransition(Duration.seconds(1));
-            pause.setOnFinished(x->{
-                media.stop();
-            });
-            transition.stop();
-//            System.out.println(e.getSceneX());
-//            System.out.println(e.getSceneY());
-            transition.setToX(e.getSceneX());
-            transition.setToY(e.getSceneY());
-            transition.toXProperty();
-            transition.toYProperty();
-            transition.play();
-            media.play();
-            pause.play();
+            int randomCheck = rand.nextInt(10);
+            System.out.println(randomCheck);
+            if (randomCheck < 2){
+                PauseTransition pause = new PauseTransition(Duration.seconds(4));
+                AsteroidAlert.setVisible(true);
+
+                pause.setOnFinished(x->{
+                    AsteroidAlert.setVisible(false);
+                    alarmMedia.stop();
+                    Stage currStage = HelloApplication.getStage();
+                    FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("AsteroidBelt.fxml"));
+                    try {
+                        Scene asteroidScene = new Scene(fxmlLoader.load(), 1280, 720);
+                        asteroidScene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
+                        currStage.setScene(asteroidScene);
+                    }
+                    catch (IOException y){
+                        System.out.println("Failure in scene asteroid scene transition");
+                        System.out.println(y);
+                    }
+                });
+                alarmMedia.play();
+                pause.play();
+
+            }
+            else {
+                homeController.currFuel -= AsteroidBelt.round(Math.sqrt(Math.pow(Math.max(e.getSceneX(), xPos) - Math.min(xPos,e.getSceneX()), 2) + Math.pow(Math.max(e.getSceneY(), yPos) - Math.min(yPos,e.getSceneY()), 2)) / 50, 0);
+                System.out.println(AsteroidBelt.round(Math.sqrt(Math.pow(Math.max(e.getSceneX(), xPos) - Math.min(xPos,e.getSceneX()), 2) + Math.pow(Math.max(e.getSceneY(), yPos) - Math.min(yPos,e.getSceneY()), 2)) / 50, 0));
+                PauseTransition pause = new PauseTransition(Duration.seconds(1));
+                pause.setOnFinished(x -> {
+                    media.stop();
+                    try {
+                        enterKepler(e);
+                    }
+                    catch (IOException l){
+                        System.out.println(l);
+                    }
+
+                });
+                transition.stop();
+
+                transition.setToX(e.getSceneX() - playerShip.getX());
+                transition.setToY(e.getSceneY() - playerShip.getY());
+                transition.toXProperty();
+                transition.toYProperty();
+                xPos = e.getSceneX();
+                yPos = e.getSceneY();
+
+
+                transition.play();
+                media.play();
+                pause.play();
+            }
         });
 
         Andro.setOnMouseClicked(e-> {
-            PauseTransition pause = new PauseTransition(Duration.seconds(1));
-            pause.setOnFinished(x->{
-                media.stop();
-            });
-            transition.stop();
-//            System.out.println(e.getSceneX());
-//            System.out.println(e.getSceneY());
-            transition.setToX(e.getSceneX());
-            transition.setToY(e.getSceneY());
-            transition.toXProperty();
-            transition.toYProperty();
-            transition.play();
-            media.play();
-            pause.play();
+            int randomCheck = rand.nextInt(10);
+            System.out.println(randomCheck);
+            if (randomCheck < 2){
+                PauseTransition pause = new PauseTransition(Duration.seconds(4));
+                AsteroidAlert.setVisible(true);
+
+                pause.setOnFinished(x->{
+                    AsteroidAlert.setVisible(false);
+                    alarmMedia.stop();
+                    Stage currStage = HelloApplication.getStage();
+                    FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("AsteroidBelt.fxml"));
+                    try {
+                        Scene asteroidScene = new Scene(fxmlLoader.load(), 1280, 720);
+                        asteroidScene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
+                        currStage.setScene(asteroidScene);
+                    }
+                    catch (IOException y){
+                        System.out.println("Failure in scene asteroid scene transition");
+                        System.out.println(y);
+                    }
+                });
+                alarmMedia.play();
+                pause.play();
+
+            }
+            else {
+                homeController.currFuel -= AsteroidBelt.round(Math.sqrt(Math.pow(Math.max(e.getSceneX(), xPos) - Math.min(xPos,e.getSceneX()), 2) + Math.pow(Math.max(e.getSceneY(), yPos) - Math.min(yPos,e.getSceneY()), 2)) / 50, 0);
+                System.out.println(AsteroidBelt.round(Math.sqrt(Math.pow(Math.max(e.getSceneX(), xPos) - Math.min(xPos,e.getSceneX()), 2) + Math.pow(Math.max(e.getSceneY(), yPos) - Math.min(yPos,e.getSceneY()), 2)) / 50, 0));
+                PauseTransition pause = new PauseTransition(Duration.seconds(1));
+                pause.setOnFinished(x -> {
+                    media.stop();
+                    try {
+                        enterAndro(e);
+                    }
+                    catch (IOException l){
+                        System.out.println(l);
+                    }
+
+                });
+                transition.stop();
+
+
+
+                transition.setToX(e.getSceneX() - playerShip.getX());
+                transition.setToY(e.getSceneY() - playerShip.getY());
+                transition.toXProperty();
+                transition.toYProperty();
+                xPos = e.getSceneX();
+                yPos = e.getSceneY();
+
+                transition.play();
+                media.play();
+                pause.play();
+            }
+        });
+
+        testMining.setOnMouseClicked(e->{
+            Stage currStage = HelloApplication.getStage();
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("fuelMine.fxml"));
+            try {
+                Scene asteroidScene = new Scene(fxmlLoader.load(), 1280, 720);
+                asteroidScene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
+                currStage.setScene(asteroidScene);
+            }
+            catch (IOException y){
+                System.out.println("Failure in scene asteroid scene transition");
+                System.out.println(y);
+            }
         });
 
     }
 
-    public void enterMilkyWay(ActionEvent event) throws IOException {
+    public void enterMilkyWay(MouseEvent event) throws IOException {
         Stage currStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("homeView.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1280, 720);
@@ -184,7 +332,7 @@ public class Galaxies implements Initializable {
         });
         pause.play();
     }
-    public void enterKepler(ActionEvent event) throws IOException {
+    public void enterKepler(MouseEvent event) throws IOException {
         Stage currStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         BorderPane bP = new BorderPane();
         Scene scene = new Scene(bP, 1280.0, 720.0);
@@ -197,7 +345,7 @@ public class Galaxies implements Initializable {
         pause.play();
     }
 
-    public void enterAndro(ActionEvent event) throws IOException {
+    public void enterAndro(MouseEvent event) throws IOException {
         Stage currStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         //maybe crea
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("AScene1.fxml"));
@@ -208,4 +356,6 @@ public class Galaxies implements Initializable {
         });
         pause.play();
     }
+
+
 }

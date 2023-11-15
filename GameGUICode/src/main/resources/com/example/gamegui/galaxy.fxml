@@ -14,13 +14,14 @@
             <Image url="@images/rocketship.png" />
          </image>
       </ImageView>
-      <Button fx:id="milkyway" layoutX="229.0" layoutY="400.0" mnemonicParsing="false" onAction="#enterMilkyWay" text="MilkyWay" />
-      <Button fx:id="kepler" layoutX="712.0" layoutY="400.0" mnemonicParsing="false" onAction="#enterKepler" text="Kepler" />
-      <Button fx:id="Andro" layoutX="1073.0" layoutY="400.0" mnemonicParsing="false" onAction="#enterAndro" text="Andromeda" />
+      <Button fx:id="milkyway" layoutX="229.0" layoutY="400.0" mnemonicParsing="false" text="MilkyWay" />
+      <Button fx:id="kepler" layoutX="712.0" layoutY="400.0" mnemonicParsing="false" text="Kepler" />
+      <Button fx:id="Andro" layoutX="1073.0" layoutY="400.0" mnemonicParsing="false" text="Andromeda" />
       <TextField fx:id="AsteroidAlert" editable="false" layoutX="245.0" layoutY="34.0" prefHeight="60.0" prefWidth="492.0" style="-fx-background-color: red" text="ALERT ASTEROIDS ALERT" visible="false">
          <font>
             <Font size="40.0" />
          </font>
       </TextField>
+      <Button fx:id="testMining" layoutX="876.0" layoutY="94.0" mnemonicParsing="false" text="Test" />
    </children>
 </AnchorPane>

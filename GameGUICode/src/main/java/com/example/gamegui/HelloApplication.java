@@ -2,6 +2,7 @@ package com.example.gamegui;
 
 import java.util.HashMap;
 
+import javafx.scene.input.KeyEvent;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 
@@ -53,6 +54,8 @@ public class HelloApplication extends Application {
         stage.setTitle("Space Exploration");
         sceneMap = new HashMap<String,Scene>();
         loadUI();
+
+
 
         // set up the background of the start up menu
         Image backgroundPic = new Image(getClass().getResource("images/RocketLaunch.jpg").toExternalForm());
