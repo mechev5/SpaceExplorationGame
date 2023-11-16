@@ -63,9 +63,14 @@ public class AndroController implements Initializable {
     public void switchToScene2(ActionEvent event) throws IOException {
         int randomCheck = rand.nextInt(10);
         System.out.println(randomCheck);
-        if(randomCheck > 1){
+        if(randomCheck > 5){
             if(homeController.currFuel < 100){
-                homeController.currFuel = homeController.currFuel+5;
+                double fuel = homeController.currFuel;
+                if(fuel + 5 > 100){
+                    homeController.currFuel = 100;
+                }else{
+                    homeController.currFuel = homeController.currFuel+5;
+                }
             }
             Parent root = FXMLLoader.load(getClass().getResource("AScene2.fxml"));
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -90,7 +95,12 @@ public class AndroController implements Initializable {
         System.out.println(randomCheck);
         if(randomCheck > 2){
             if(homeController.currFuel < 100){
-                homeController.currFuel = homeController.currFuel+5;
+                double fuel = homeController.currFuel;
+                if(fuel + 5 > 100){
+                    homeController.currFuel = 100;
+                }else{
+                    homeController.currFuel = homeController.currFuel+5;
+                }
             }
 //            homeController.currFuel = homeController.currFuel+5;
             Parent root = FXMLLoader.load(getClass().getResource("AScene3.fxml"));
@@ -114,7 +124,12 @@ public class AndroController implements Initializable {
         System.out.println(randomCheck);
         if(randomCheck > 2){
             if(homeController.currFuel < 100){
-                homeController.currFuel = homeController.currFuel+5;
+                double fuel = homeController.currFuel;
+                if(fuel + 5 > 100){
+                    homeController.currFuel = 100;
+                }else{
+                    homeController.currFuel = homeController.currFuel+5;
+                }
             }
             Parent root = FXMLLoader.load(getClass().getResource("AScene4.fxml"));
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -137,7 +152,12 @@ public class AndroController implements Initializable {
         System.out.println(randomCheck);
         if(randomCheck > 2){
             if(homeController.currFuel < 100){
-                homeController.currFuel = homeController.currFuel+5;
+                double fuel = homeController.currFuel;
+                if(fuel + 5 > 100){
+                    homeController.currFuel = 100;
+                }else{
+                    homeController.currFuel = homeController.currFuel+5;
+                }
             }
             Parent root = FXMLLoader.load(getClass().getResource("AScene5.fxml"));
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -160,7 +180,12 @@ public class AndroController implements Initializable {
         System.out.println(randomCheck);
         if(randomCheck > 2){
             if(homeController.currFuel < 100){
-                homeController.currFuel = homeController.currFuel+5;
+                double fuel = homeController.currFuel;
+                if(fuel + 5 > 100){
+                    homeController.currFuel = 100;
+                }else{
+                    homeController.currFuel = homeController.currFuel+5;
+                }
             }
             Parent root = FXMLLoader.load(getClass().getResource("AScene6.fxml"));
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -183,7 +208,12 @@ public class AndroController implements Initializable {
         System.out.println(randomCheck);
         if(randomCheck > 2){
             if(homeController.currFuel < 100){
-                homeController.currFuel = homeController.currFuel+5;
+                double fuel = homeController.currFuel;
+                if(fuel + 5 > 100){
+                    homeController.currFuel = 100;
+                }else{
+                    homeController.currFuel = homeController.currFuel+5;
+                }
             }
             Parent root = FXMLLoader.load(getClass().getResource("AScene7.fxml"));
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -206,7 +236,12 @@ public class AndroController implements Initializable {
         System.out.println(randomCheck);
         if(randomCheck > 2){
             if(homeController.currFuel < 100){
-                homeController.currFuel = homeController.currFuel+5;
+                double fuel = homeController.currFuel;
+                if(fuel + 5 > 100){
+                    homeController.currFuel = 100;
+                }else{
+                    homeController.currFuel = homeController.currFuel+5;
+                }
             }
             Parent root = FXMLLoader.load(getClass().getResource("AScene8.fxml"));
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -229,7 +264,12 @@ public class AndroController implements Initializable {
         System.out.println(randomCheck);
         if(randomCheck > 2){
             if(homeController.currFuel < 100){
-                homeController.currFuel = homeController.currFuel+5;
+                double fuel = homeController.currFuel;
+                if(fuel + 5 > 100){
+                    homeController.currFuel = 100;
+                }else{
+                    homeController.currFuel = homeController.currFuel+5;
+                }
             }
             Parent root = FXMLLoader.load(getClass().getResource("AScene9.fxml"));
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -252,7 +292,12 @@ public class AndroController implements Initializable {
         System.out.println(randomCheck);
         if(randomCheck > 2){
             if(homeController.currFuel < 100){
-                homeController.currFuel = homeController.currFuel+5;
+                double fuel = homeController.currFuel;
+                if(fuel + 5 > 100){
+                    homeController.currFuel = 100;
+                }else{
+                    homeController.currFuel = homeController.currFuel+5;
+                }
             }
             Parent root = FXMLLoader.load(getClass().getResource("AScene10.fxml"));
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -275,7 +320,12 @@ public class AndroController implements Initializable {
         System.out.println(randomCheck);
         if(randomCheck > 2){
             if(homeController.currFuel < 100){
-                homeController.currFuel = homeController.currFuel+5;
+                double fuel = homeController.currFuel;
+                if(fuel + 5 > 100){
+                    homeController.currFuel = 100;
+                }else{
+                    homeController.currFuel = homeController.currFuel+5;
+                }
             }
             Parent root = FXMLLoader.load(getClass().getResource("AScene11.fxml"));
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -311,6 +361,7 @@ public class AndroController implements Initializable {
             stage.show();
         }else{
             //switch to damaged hull and lost of fuel due to pirates or nah
+
             homeController.currFuel = homeController.currFuel-15;
             Parent root = FXMLLoader.load(getClass().getResource("A_Evade_Fail.fxml"));
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -334,10 +385,20 @@ public class AndroController implements Initializable {
         }else{
             //switch to damaged hull and lost of fuel due to pirates or nah
             if(homeController.currFuel < 100){
-                homeController.currFuel = homeController.currFuel+10;
+                double fuel = homeController.currFuel;
+                if(fuel + 5 > 100){
+                    homeController.currFuel = 100;
+                }else{
+                    homeController.currFuel = homeController.currFuel+10;
+                }
             }
             if(homeController.currDurability < 100){
-                homeController.currDurability = homeController.currDurability+15;
+                double dur = homeController.currDurability;
+                if(dur + 5 > 100){
+                    homeController.currDurability = 100;
+                }else{
+                    homeController.currDurability = homeController.currDurability+15;
+                }
             }
             Parent root = FXMLLoader.load(getClass().getResource("A_Fight_Suc.fxml"));
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();

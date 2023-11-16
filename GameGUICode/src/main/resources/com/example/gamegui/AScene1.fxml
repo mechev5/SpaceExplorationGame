@@ -84,7 +84,7 @@
             <Font size="50.0" />
          </font>
         </Label>
-        <Button layoutX="609.0" layoutY="147.0" mnemonicParsing="false" onAction="#switchToScene2" text="TRAPPIST">
+        <Button layoutX="595.0" layoutY="146.0" mnemonicParsing="false" onAction="#switchToScene2" text="Pirate Cove">
             <font>
                 <Font size="20.0" />
             </font>
