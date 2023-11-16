@@ -111,6 +111,9 @@ public class Manual implements Initializable {
         manualPart3.setEditable(false);
         manualPart4.setEditable(false);
 
+        manualPart3.setVisible(false);
+        Pause.setVisible(false);
+
         menuButton.setMinSize(100, 50);
         menuButton.setText("Main Menu");
         menuButton.setOnAction((e) -> {

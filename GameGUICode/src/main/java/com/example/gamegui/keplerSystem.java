@@ -28,6 +28,8 @@ import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 
 public class keplerSystem implements Initializable {
@@ -147,7 +149,14 @@ public class keplerSystem implements Initializable {
         inv6.setVisible(false);
         inv7.setVisible(false);
         inv8.setVisible(false);
+        menuButton.setVisible(false);
 
+        locationLabel.setFont(Font.font("Tahoma", 24));
+        locationLabel.setStyle("-fx-text-fill: white;");
+        fuelLabel.setFont(Font.font("Tahoma", 24));
+        fuelLabel.setStyle("-fx-text-fill: white;");
+        durabilityLabel.setFont(Font.font("Tahoma", 24));
+        durabilityLabel.setStyle("-fx-text-fill: white;");
 
         changeDestination.setText("Travel to another Galaxy");
         changeDestination.setMinSize(100,100);
