@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1270.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gamegui.AndroController">
+   <children>
+
+      <ImageView fitHeight="728.0" fitWidth="1314.0" layoutX="-15.0" layoutY="-7.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/oxygen.jpg" />
+         </image>
+      </ImageView>
+      <Button layoutX="476.0" layoutY="531.0" mnemonicParsing="false" onAction="#Fight" text="Fight of the Pirates">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Button>
+      <TextArea layoutX="331.0" layoutY="54.0" prefHeight="156.0" prefWidth="673.0" text="Your Spaceship is beening chased by pirates. Choose one &#10;of these options but know that risk and rewards &#10;might vary.">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </TextArea>
+      <Button layoutX="460.0" layoutY="413.0" mnemonicParsing="false" onAction="#Negotiate" text="Negotiate with Pirates">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Button>
+      <Button layoutX="494.0" layoutY="289.0" mnemonicParsing="false" onAction="#Evade" text="Evade the pirates">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Button>
+
+      <Label fx:id="fuelLabel" layoutX="934.0" layoutY="300.0" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="durabilityLabel" layoutX="934.0" layoutY="330.0" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+
+      <Text fill="WHITE" layoutX="941.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reminder">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

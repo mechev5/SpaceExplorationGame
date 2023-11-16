@@ -11,6 +11,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 import javafx.event.EventHandler;
 import javafx.fxml.Initializable;
@@ -21,14 +23,15 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.control.TextArea;
 import javafx.util.Duration;
+
+import java.util.Arrays;
 import java.util.Random;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.concurrent.TimeUnit;
 
 
-
-
-public class AndroController {
+public class AndroController implements Initializable {
     @FXML
     ImageView inv1, inv2, inv3, inv4, inv5, inv6, inv7, inv8;
     private Stage stage;
@@ -37,13 +40,16 @@ public class AndroController {
     Random rand = new Random();
 
     double fuel = homeController.currFuel;
-    double dur = homeController.currDurability;
+    double durability = homeController.currDurability;
     double maxfuel = homeController.maxFuel;
     double maxdur = homeController.maxDurability;
 
     @FXML
     Label locationLabel, fuelLabel, durabilityLabel;
 
+    int max_added_fuel = 20;
+    int added_fuel = 0;
+    Boolean test = true;
 
     public void switchToScene1(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("AScene1.fxml"));
@@ -53,95 +59,237 @@ public class AndroController {
         stage.show();
     }
 
+
     public void switchToScene2(ActionEvent event) throws IOException {
-        //if random number < 2 then switch to mini game, else AScene2.fxml
-        //call random function -oxygen, use oxygen game
         int randomCheck = rand.nextInt(10);
         System.out.println(randomCheck);
-        if(randomCheck < 2){
-            fuel = fuel+5;
+        if(randomCheck > 1){
+            if(homeController.currFuel < 100){
+                homeController.currFuel = homeController.currFuel+5;
+            }
+            Parent root = FXMLLoader.load(getClass().getResource("AScene2.fxml"));
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
         }else{
-            fuel = fuel-5;
-        }
-        //
+            //switch to damaged hull and lost of fuel due to pirates or nah
 
-        Parent root = FXMLLoader.load(getClass().getResource("AScene2.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+            Parent root = FXMLLoader.load(getClass().getResource("And_Game.fxml"));
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }
     }
 
+
+
     public void switchToScene3(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("AScene3.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        int randomCheck = rand.nextInt(10);
+        System.out.println(randomCheck);
+        if(randomCheck > 2){
+            if(homeController.currFuel < 100){
+                homeController.currFuel = homeController.currFuel+5;
+            }
+//            homeController.currFuel = homeController.currFuel+5;
+            Parent root = FXMLLoader.load(getClass().getResource("AScene3.fxml"));
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }else{
+            //switch to damaged hull and lost of fuel due to pirates or nah
+
+            Parent root = FXMLLoader.load(getClass().getResource("And_Game.fxml"));
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }
     }
 
     public void switchToScene4(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("AScene4.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        int randomCheck = rand.nextInt(10);
+        System.out.println(randomCheck);
+        if(randomCheck > 2){
+            if(homeController.currFuel < 100){
+                homeController.currFuel = homeController.currFuel+5;
+            }
+            Parent root = FXMLLoader.load(getClass().getResource("AScene4.fxml"));
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }else{
+            //switch to damaged hull and lost of fuel due to pirates or nah
+
+            Parent root = FXMLLoader.load(getClass().getResource("And_Game.fxml"));
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }
     }
 
     public void switchToScene5(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("AScene5.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        int randomCheck = rand.nextInt(10);
+        System.out.println(randomCheck);
+        if(randomCheck > 2){
+            if(homeController.currFuel < 100){
+                homeController.currFuel = homeController.currFuel+5;
+            }
+            Parent root = FXMLLoader.load(getClass().getResource("AScene5.fxml"));
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }else{
+            //switch to damaged hull and lost of fuel due to pirates or nah
+
+            Parent root = FXMLLoader.load(getClass().getResource("And_Game.fxml"));
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }
     }
 
     public void switchToScene6(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("AScene6.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        int randomCheck = rand.nextInt(10);
+        System.out.println(randomCheck);
+        if(randomCheck > 2){
+            if(homeController.currFuel < 100){
+                homeController.currFuel = homeController.currFuel+5;
+            }
+            Parent root = FXMLLoader.load(getClass().getResource("AScene6.fxml"));
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }else{
+            //switch to damaged hull and lost of fuel due to pirates or nah
+
+            Parent root = FXMLLoader.load(getClass().getResource("And_Game.fxml"));
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }
     }
 
     public void switchToScene7(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("AScene7.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        int randomCheck = rand.nextInt(10);
+        System.out.println(randomCheck);
+        if(randomCheck > 2){
+            if(homeController.currFuel < 100){
+                homeController.currFuel = homeController.currFuel+5;
+            }
+            Parent root = FXMLLoader.load(getClass().getResource("AScene7.fxml"));
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }else{
+            //switch to damaged hull and lost of fuel due to pirates or nah
+
+            Parent root = FXMLLoader.load(getClass().getResource("And_Game.fxml"));
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }
     }
 
     public void switchToScene8(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("AScene8.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        int randomCheck = rand.nextInt(10);
+        System.out.println(randomCheck);
+        if(randomCheck > 2){
+            if(homeController.currFuel < 100){
+                homeController.currFuel = homeController.currFuel+5;
+            }
+            Parent root = FXMLLoader.load(getClass().getResource("AScene8.fxml"));
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }else{
+            //switch to damaged hull and lost of fuel due to pirates or nah
+
+            Parent root = FXMLLoader.load(getClass().getResource("And_Game.fxml"));
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }
     }
 
     public void switchToScene9(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("AScene9.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        int randomCheck = rand.nextInt(10);
+        System.out.println(randomCheck);
+        if(randomCheck > 2){
+            if(homeController.currFuel < 100){
+                homeController.currFuel = homeController.currFuel+5;
+            }
+            Parent root = FXMLLoader.load(getClass().getResource("AScene9.fxml"));
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }else{
+            //switch to damaged hull and lost of fuel due to pirates or nah
+
+            Parent root = FXMLLoader.load(getClass().getResource("And_Game.fxml"));
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }
     }
 
     public void switchToScene10(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("AScene10.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        int randomCheck = rand.nextInt(10);
+        System.out.println(randomCheck);
+        if(randomCheck > 2){
+            if(homeController.currFuel < 100){
+                homeController.currFuel = homeController.currFuel+5;
+            }
+            Parent root = FXMLLoader.load(getClass().getResource("AScene10.fxml"));
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }else{
+            //switch to damaged hull and lost of fuel due to pirates or nah
+
+            Parent root = FXMLLoader.load(getClass().getResource("And_Game.fxml"));
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }
     }
 
     public void switchToScene11(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("AScene11.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        int randomCheck = rand.nextInt(10);
+        System.out.println(randomCheck);
+        if(randomCheck > 2){
+            if(homeController.currFuel < 100){
+                homeController.currFuel = homeController.currFuel+5;
+            }
+            Parent root = FXMLLoader.load(getClass().getResource("AScene11.fxml"));
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }else{
+            //switch to damaged hull and lost of fuel due to pirates or nah
+            Parent root = FXMLLoader.load(getClass().getResource("And_Game.fxml"));
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }
     }
 
     public void enterGalaxy(ActionEvent event) throws IOException {
@@ -152,7 +300,62 @@ public class AndroController {
         currStage.setScene(scene);
     }
 
-//    public void initialize(URL url, ResourceBundle resourceBundle) {
+    public void Evade(ActionEvent event) throws IOException {
+        int randomCheck = rand.nextInt(10);
+        System.out.println(randomCheck);
+        if(randomCheck > 3){ //70% to evade
+            Parent root = FXMLLoader.load(getClass().getResource("A_Evade_Suc.fxml"));
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }else{
+            //switch to damaged hull and lost of fuel due to pirates or nah
+            homeController.currFuel = homeController.currFuel-15;
+            Parent root = FXMLLoader.load(getClass().getResource("A_Evade_Fail.fxml"));
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }
+    }
+
+    public void Fight(ActionEvent event) throws IOException {
+        int randomCheck = rand.nextInt(10);
+        System.out.println(randomCheck);
+        if(randomCheck > 4){ //60% you fail, 40% you suc
+            homeController.currFuel = homeController.currFuel-10;
+            homeController.currDurability = homeController.currDurability-10;
+            Parent root = FXMLLoader.load(getClass().getResource("A_Fight_Fail.fxml"));
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }else{
+            //switch to damaged hull and lost of fuel due to pirates or nah
+            if(homeController.currFuel < 100){
+                homeController.currFuel = homeController.currFuel+10;
+            }
+            if(homeController.currDurability < 100){
+                homeController.currDurability = homeController.currDurability+15;
+            }
+            Parent root = FXMLLoader.load(getClass().getResource("A_Fight_Suc.fxml"));
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }
+    }
+
+    public void Negotiate(ActionEvent event) throws IOException {
+        homeController.currFuel = homeController.currFuel-5;
+        Stage currStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("A_Negotiate.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 1280, 720);
+        scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
+        currStage.setScene(scene);
+    }
+    //    public void initialize(URL url, ResourceBundle resourceBundle) {
 ////        this.locationLabel.setText(this.location);
 //        this.fuelLabel.setText("Fuel: " + homeController.currFuel + " / " + homeController.maxFuel);
 //        this.durabilityLabel.setText("Durability: " + homeController.currDurability + " / " + homeController.maxDurability);
@@ -160,4 +363,29 @@ public class AndroController {
 //        int imageH = 512;
 //        int imageW = 512;
 //    }
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+//        this.locationLabel.setText(this.location);
+        this.fuelLabel.setText("Fuel: " + homeController.currFuel + " / " + homeController.maxFuel);
+        this.durabilityLabel.setText("Durability: " + homeController.currDurability + " / " + homeController.maxDurability);
+
+    }
 }
+
+//ideas:
+//if random number < 2 then switch to mini game, else AScene2.fxml
+//call random function -oxygen, use oxygen game
+//        if (test){
+//            homeController.currFuel = 50;
+//            test=false;
+//        }
+
+//            }else{
+//                //switch, Galaxy empty -> next to switch back to planet (Ascne2.fxml
+//            }
+
+//            if(max_added_fuel != added_fuel && homeController.currFuel != homeController.maxFuel){
+
+//            System.out.println(added_fuel);
+//            System.out.println(max_added_fuel);
+//            if(max_added_fuel != 0){
+//                max_added_fuel = max_added_fuel-1;

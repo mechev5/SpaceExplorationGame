@@ -8,25 +8,43 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
-            prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gamegui.AndroController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1270.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gamegui.AndroController">
     <children>
-      <ImageView fitHeight="474.0" fitWidth="381.0" layoutX="116.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="1061.0" fitWidth="1408.0" layoutX="-93.0" layoutY="-184.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/Andromeda_galaxy.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="602.0" fitWidth="527.0" layoutX="-2.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@images/Square1.jpg" />
          </image>
       </ImageView>
-        <Label layoutX="249.0" layoutY="35.0" text="Trappist-1d" textFill="WHITE">
+        <Label layoutX="758.0" layoutY="184.0" text="Trappist-1d" textFill="WHITE">
             <font>
-                <Font size="20.0" />
+                <Font size="50.0" />
             </font>
         </Label>
-        <Button layoutX="210.0" layoutY="178.0" mnemonicParsing="false" onAction="#switchToScene1" text="Switch to scene 1">
+        <Button layoutX="176.0" layoutY="557.0" mnemonicParsing="false" onAction="#switchToScene1" prefHeight="74.0" prefWidth="170.0" text="Return">
             <font>
                 <Font size="20.0" />
             </font>
         </Button>
-      <TextArea layoutX="77.0" layoutY="121.0" prefHeight="165.0" prefWidth="458.0" text="TRAPPIST-1d is one of seven Earth-sized planets in the TRAPPIST-1 system. &#10;About 40 light-years from Earth, TRAPPIST-1 is unusual both for its &#10;number of small rocky planets and the number in the habitable zone. &#10;Several of the artist's illustrations shown above portray possible water&#10; or ice in the system– the proximity of the planets to their red &#10;dwarf star may indicate that any of them could have water on their surface. &#10;This artist's concept shows TRAPPIST-1d with a narrow band of water near the &#10;terminator, the divide between a hot, dry day and an ice-covered night side." />
-      <Button layoutX="274.0" layoutY="339.0" mnemonicParsing="false" onAction="#switchToScene1" text="Return" />
+      <TextArea layoutX="525.0" layoutY="258.0" prefHeight="258.0" prefWidth="722.0" text="TRAPPIST-1d is one of seven Earth-sized planets in the TRAPPIST-1 system. &#10;About 40 light-years from Earth, TRAPPIST-1 is unusual both for its &#10;number of small rocky planets and the number in the habitable zone. &#10;Several of the artist's illustrations shown above portray possible water&#10; or ice in the system– the proximity of the planets to their red &#10;dwarf star may indicate that any of them could have water on their surface. &#10;This artist's concept shows TRAPPIST-1d with a narrow band of water near the &#10;terminator, the divide between a hot, dry day and an ice-covered night side.">
+         <font>
+            <Font size="20.0" />
+         </font></TextArea>
+
+        <Label fx:id="fuelLabel" layoutX="934.0" layoutY="73.0" textFill="WHITE">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Label>
+        <Label fx:id="durabilityLabel" layoutX="934.0" layoutY="103.0" textFill="WHITE">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Label>
+
     </children>
 </AnchorPane>

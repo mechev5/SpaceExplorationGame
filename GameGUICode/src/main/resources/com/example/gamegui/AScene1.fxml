@@ -15,9 +15,68 @@
             <Image url="@images/Andromeda_galaxy.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="207.0" fitWidth="213.0" layoutX="21.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="388.0" fitWidth="435.0" layoutX="-54.0" layoutY="-83.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@images/planet5.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="278.0" fitWidth="253.0" layoutX="533.0" layoutY="-16.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/Square1.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="329.0" fitWidth="344.0" layoutX="99.0" layoutY="417.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/Square2.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="269.0" fitWidth="276.0" layoutX="940.0" layoutY="226.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/Square3.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="255.0" fitWidth="276.0" layoutX="270.0" layoutY="-15.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/planet4.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="422.0" fitWidth="736.0" layoutX="-232.0" layoutY="163.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/planet7.png" />
+         </image>
+      </ImageView>
+
+<!-- from 10 600       934 43 -->
+        <Label fx:id="fuelLabel" layoutX="934.0" layoutY="73.0" textFill="WHITE">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Label>
+        <Label fx:id="durabilityLabel" layoutX="934.0" layoutY="103.0" textFill="WHITE">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Label>
+<!--        -->
+
+      <ImageView fitHeight="285.0" fitWidth="491.0" layoutX="131.0" layoutY="221.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/planet8.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="340.0" fitWidth="368.0" layoutX="459.0" layoutY="240.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/planet9.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="224.0" fitWidth="228.0" layoutX="399.0" layoutY="465.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/planet10.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="233.0" fitWidth="307.0" layoutX="739.0" layoutY="433.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/planet11.png" />
          </image>
       </ImageView>
         <Label layoutX="226.0" layoutY="71.0" textFill="WHITE">
@@ -25,85 +84,55 @@
             <Font size="50.0" />
          </font>
         </Label>
-        <Button layoutX="601.0" layoutY="350.0" mnemonicParsing="false" onAction="#switchToScene2" text="TRAPPIST">
+        <Button layoutX="609.0" layoutY="147.0" mnemonicParsing="false" onAction="#switchToScene2" text="TRAPPIST">
             <font>
                 <Font size="20.0" />
             </font>
         </Button>
-      <Button layoutX="1104.0" layoutY="444.0" mnemonicParsing="false" onAction="#switchToScene4" text="42 Dra">
+      <Button layoutX="1034.0" layoutY="397.0" mnemonicParsing="false" onAction="#switchToScene4" text="42 Dra">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Button layoutX="836.0" layoutY="389.0" mnemonicParsing="false" onAction="#switchToScene3" text="2MASS">
+      <Button layoutX="204.0" layoutY="625.0" mnemonicParsing="false" onAction="#switchToScene3" text="2MASS">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Button layoutX="1006.0" layoutY="125.0" mnemonicParsing="false" onAction="#enterGalaxy" text="Travel to another Galaxy">
+      <Button layoutX="974.0" layoutY="168.0" mnemonicParsing="false" onAction="#enterGalaxy" text="Travel to another Galaxy">
          <font>
             <Font size="20.0" />
          </font></Button>
-      <Button layoutX="312.0" layoutY="374.0" mnemonicParsing="false" onAction="#switchToScene5" text="51 Pegasi b">
+      <Button layoutX="95.0" layoutY="167.0" mnemonicParsing="false" onAction="#switchToScene6" text="Aurigae">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Button layoutX="66.0" layoutY="321.0" mnemonicParsing="false" onAction="#switchToScene6" text="Aurigae">
+      <Button layoutX="352.0" layoutY="175.0" mnemonicParsing="false" onAction="#switchToScene5" text="51 Pegasi b">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <ImageView fitHeight="215.0" fitWidth="213.0" layoutX="547.0" layoutY="134.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@images/Square1.jpg" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="207.0" fitWidth="207.0" layoutX="773.0" layoutY="185.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@images/Square2.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="234.0" fitWidth="218.0" layoutX="1031.0" layoutY="195.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@images/Square3.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="205.0" fitWidth="207.0" layoutX="272.0" layoutY="173.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@images/planet4.png" />
-         </image>
-      </ImageView>
-      <Button layoutX="74.0" layoutY="593.0" mnemonicParsing="false" onAction="#switchToScene7" text="Button" />
-      <Button layoutX="351.0" layoutY="631.0" mnemonicParsing="false" onAction="#switchToScene8" text="Button" />
-      <Button layoutX="631.0" layoutY="644.0" mnemonicParsing="false" onAction="#switchToScene9" text="Button" />
-      <Button layoutX="851.0" layoutY="644.0" mnemonicParsing="false" onAction="#switchToScene10" text="Button" />
-      <Button layoutX="1130.0" layoutY="644.0" mnemonicParsing="false" onAction="#switchToScene11" text="Button" />
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutY="447.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@images/planet7.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="275.0" layoutY="464.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@images/planet8.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="551.0" layoutY="471.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@images/planet9.jpg" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="781.0" layoutY="471.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@images/planet10.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="1040.0" layoutY="486.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@images/planet11.png" />
-         </image>
-      </ImageView>
+      <Button layoutX="99.0" layoutY="406.0" mnemonicParsing="false" onAction="#switchToScene7" text="BD+20">
+         <font>
+            <Font size="20.0" />
+         </font></Button>
+      <Button layoutX="312.0" layoutY="435.0" mnemonicParsing="false" onAction="#switchToScene8" text="Beta Pictoris">
+         <font>
+            <Font size="20.0" />
+         </font></Button>
+      <Button layoutX="597.0" layoutY="417.0" mnemonicParsing="false" onAction="#switchToScene9" text="CI Tauri">
+         <font>
+            <Font size="20.0" />
+         </font></Button>
+      <Button layoutX="447.0" layoutY="604.0" mnemonicParsing="false" onAction="#switchToScene10" text="Venaticorum">
+         <font>
+            <Font size="20.0" />
+         </font></Button>
+      <Button layoutX="828.0" layoutY="596.0" mnemonicParsing="false" onAction="#switchToScene11" text="EPIC">
+         <font>
+            <Font size="20.0" />
+         </font></Button>
       <Text fill="WHITE" layoutX="934.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Destination: Andromeda">
          <font>
             <Font size="30.0" />

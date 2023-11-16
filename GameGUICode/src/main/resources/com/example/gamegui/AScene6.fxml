@@ -9,23 +9,42 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gamegui.AndroController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1270.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gamegui.AndroController">
     <children>
-        <ImageView fitHeight="543.0" fitWidth="550.0" layoutX="29.0" layoutY="-62.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="1061.0" fitWidth="1408.0" layoutX="-83.0" layoutY="-174.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/Andromeda_galaxy.jpg" />
+         </image>
+      </ImageView>
+        <ImageView fitHeight="876.0" fitWidth="890.0" layoutX="-139.0" layoutY="-156.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@images/planet5.jpg" />
             </image>
         </ImageView>
-        <Label layoutX="243.0" layoutY="35.0" text="AB Aurigae b" textFill="WHITE">
+        <Label layoutX="758.0" layoutY="184.0" text="AB Aurigae b" textFill="WHITE">
+            <font>
+                <Font size="50.0" />
+            </font>
+        </Label>
+        <Button layoutX="176.0" layoutY="557.0" mnemonicParsing="false" onAction="#switchToScene1" prefHeight="74.0" prefWidth="170.0" text="Return">
+         <font>
+            <Font size="20.0" />
+         </font></Button>
+        <VBox layoutX="43.0" layoutY="100.0" prefHeight="200.0" prefWidth="507.0" />
+        <Label fx:id="fuelLabel" layoutX="934.0" layoutY="73.0" textFill="WHITE">
             <font>
                 <Font size="20.0" />
             </font>
         </Label>
-        <Button layoutX="274.0" layoutY="344.0" mnemonicParsing="false" onAction="#switchToScene1" text="Return" />
-        <VBox layoutX="43.0" layoutY="100.0" prefHeight="200.0" prefWidth="507.0">
-            <children>
-                <TextArea prefHeight="121.0" prefWidth="507.0" text="AB Aurigae b is a gas giant exoplanet that orbits an A-type star. &#10;Its mass is 9 Jupiters, it takes 587.7 years to complete one orbit of its star, &#10;and is 93.9 AU from its star. Its discovery was announced in 2022." />
-            </children>
-        </VBox>
+        <Label fx:id="durabilityLabel" layoutX="934.0" layoutY="103.0" textFill="WHITE">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Label>
+          <TextArea layoutX="597.0" layoutY="291.0" prefHeight="138.0" prefWidth="677.0" text="AB Aurigae b is a gas giant exoplanet that orbits an A-type star. &#10;Its mass is 9 Jupiters, it takes 587.7 years to complete one orbit of its star, &#10;and is 93.9 AU from its star. Its discovery was announced in 2022.">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </TextArea>
     </children>
 </AnchorPane>
