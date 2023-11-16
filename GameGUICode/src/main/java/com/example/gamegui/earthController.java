@@ -27,7 +27,7 @@ import java.util.ResourceBundle;
 public class earthController implements Initializable {
 
     @FXML
-    Button back_button, scan_button;
+    Button back_button, scan_button, fuel_button;
     @FXML
     ImageView load_iv;
     @FXML
@@ -98,6 +98,22 @@ public class earthController implements Initializable {
                 visiblePause.play();
                 //textarea.appendText(info);
 
+            }
+        });
+        fuel_button.setOnAction(e->{
+            Stage currStage = HelloApplication.getStage();
+            HelloApplication.setHolderScene(currStage.getScene());
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("fuelMine.fxml"));
+            HelloApplication.lastScene = "earthView.fxml";
+            HelloApplication.setHolderScene(null);
+            try {
+                Scene fuelScene = new Scene(fxmlLoader.load(), 1280, 720);
+                fuelScene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
+                currStage.setScene(fuelScene);
+            }
+            catch (IOException y){
+                System.out.println("Failure in scene asteroid scene transition");
+                System.out.println(y);
             }
         });
     }

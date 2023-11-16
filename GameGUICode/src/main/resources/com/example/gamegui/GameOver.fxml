@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.image.ImageView?>
+<BorderPane fx:id = "root"
+            xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.gamegui.GameOver">
+
+    <top>
+        <TextArea fx:id = "score"/>
+    </top>
+
+    <center>
+        <ImageView fx:id = "deathScene"/>
+    </center>
+
+    <bottom>
+        <VBox alignment="CENTER">
+            <TextArea fx:id = "deathCause"/>
+            <TextArea fx:id = "deathText"/>
+            <HBox alignment="CENTER" spacing = "500">
+                <Button fx:id = "continueGame"/>
+                <Button fx:id = "exitGame"/>
+            </HBox>
+            <Text></Text>
+        </VBox>
+    </bottom>
+
+</BorderPane>

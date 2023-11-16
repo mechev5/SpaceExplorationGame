@@ -39,6 +39,8 @@ public class homeController implements Initializable {
     static public double currFuel = 100.0, maxFuel = 100.0, currDurability = 100.0, maxDurability = 100.0;
     static public int playerScore = 0;
 
+    static public String k90Planet = "None";
+
     @FXML
     protected void onHelloButtonClick() {
     }

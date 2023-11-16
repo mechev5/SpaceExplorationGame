@@ -1,0 +1,31 @@
+.label {
+    -fx-text-fill: white;
+    -fx-font: 24px Tahoma;
+}
+
+.text-area{
+    -fx-font: 16px Tahoma;
+    -fx-text-fill: #b61e1e;
+    -fx-background-color: rgba(0, 0, 0, 0);
+}
+
+.text-area .scroll-pane {
+    -fx-background-color: transparent;
+}
+
+.text-area .scroll-pane .viewport{
+    -fx-background-color: transparent;
+}
+
+
+.text-area .scroll-pane .content{
+    -fx-background-color: transparent;
+}
+
+#deathCause{
+    -fx-font: 36px Stencil
+}
+
+#score{
+    -fx-font: 40px Tahoma
+}

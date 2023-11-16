@@ -40,8 +40,16 @@ public class Kep90f implements Initializable {
         this.kepX.setImage(k);
         this.planetText.setMinSize(600.0, 300.0);
         this.planetText.setText("Name: Kepler-90f\nPlanet Type: Neptune-like\nDiscovery Date: 2013\nMass: 8.65 Earths\nPlanet Radius: 0.257 x Jupiter\nOrbital Radius: 0.48 AU\nOrbital Period: 124.9 days");
+        this.planetText.setEditable(false);
         this.toPlanet.setText("Explore Planet");
+        this.toPlanet.setMinSize(200,50);
+        this.toPlanet.setOnAction((e) -> {
+            homeController.k90Planet = "f";
+            homeController.playerScore = homeController.playerScore + 10;
+            FileSwitcher.switchTo(FileStorage.PLANETDEST);
+        });
         this.backButton.setText("Return to List");
+        this.backButton.setMinSize(200,50);
         this.backButton.setOnAction((e) -> {
             FileSwitcher.switchTo(FileStorage.PLANETLIST);
         });

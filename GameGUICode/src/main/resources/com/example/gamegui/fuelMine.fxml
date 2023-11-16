@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="root" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gamegui.fuelMining">
+<AnchorPane fx:id="root" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gamegui.fuelMining">
    <children>
       <Button fx:id="button1" layoutX="120.0" layoutY="42.0" mnemonicParsing="false" onAction="#setPress" prefHeight="172.0" prefWidth="307.0" text="CLICK TO BEGIN" />
       <ImageView fx:id="flameImage" fitHeight="150.0" fitWidth="200.0" layoutX="1090.0" layoutY="149.0" pickOnBounds="true" preserveRatio="true">
@@ -17,9 +17,14 @@
          </image>
       </ImageView>
       <ProgressBar fx:id="fuelGauge" layoutX="980.0" layoutY="420.0" prefHeight="110.0" prefWidth="328.0" progress="0.0" rotate="-90.0" />
-      <TextArea fx:id="endGame" editable="false" layoutX="626.0" layoutY="149.0" prefHeight="150.0" prefWidth="320.0" style="-fx-border-radius: 5em" visible="false">
+      <TextArea fx:id="endGame" editable="false" layoutX="626.0" layoutY="149.0" prefHeight="77.0" prefWidth="200.0" style="-fx-border-radius: 5em" visible="false">
          <font>
-            <Font name="Times New Roman" size="19.0" />
+            <Font name="Times New Roman" size="24.0" />
+         </font>
+      </TextArea>
+      <TextArea fx:id="instructionText" editable="false" layoutX="129.0" layoutY="226.0" prefHeight="85.0" prefWidth="290.0" text="Quickly press your Spacebar to gain fuel!" wrapText="true">
+         <font>
+            <Font name="System Bold" size="24.0" />
          </font>
       </TextArea>
    </children>

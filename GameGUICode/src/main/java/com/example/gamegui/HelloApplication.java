@@ -40,9 +40,17 @@ public class HelloApplication extends Application {
     public static HashMap<String, Scene> sceneMap;
     FileSwitcher christianFiles;
 
-    MediaPlayer mediaPlayer;
+    public static MediaPlayer mediaPlayer;
 
     private static Stage stage;
+
+    public static String lastScene;
+
+    private static Scene holderScene = null;
+
+    public static Scene getHolderScene(){ return holderScene; }
+
+    public static void setHolderScene(Scene scene){ holderScene = scene; }
 
     public static Stage getStage() {
         return stage;
@@ -54,6 +62,10 @@ public class HelloApplication extends Application {
         stage.setTitle("Space Exploration");
         sceneMap = new HashMap<String,Scene>();
         loadUI();
+        Media launchMedia = new Media(getClass().getResource("Sounds/242550__foolboymedia__chode-to-dub-step.wav").toExternalForm());
+        mediaPlayer = new MediaPlayer(launchMedia);
+        mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
+        mediaPlayer.play();
 
 
 
@@ -96,10 +108,11 @@ public class HelloApplication extends Application {
         explorationButton.setOnAction(e->{
             Media mediaStart = new Media(getClass().getResource("Sounds/71150__timbre__simulation-of-nasa-rocket-launch.wav").toExternalForm());
             Media mediaOngoing = new Media(getClass().getResource("Sounds/396627__matrixxx__space-atmosphere-01.wav").toExternalForm());
+            mediaPlayer.stop();
             mediaPlayer = new MediaPlayer(mediaStart);
             mediaPlayer.setCycleCount(1);
             mediaPlayer.play();
-            PauseTransition pause = new PauseTransition(Duration.seconds(.15));
+            PauseTransition pause = new PauseTransition(Duration.seconds(15));
             pause.setOnFinished(x->{
                 // add parent transition here I think, try it out tomorrow
                 mediaPlayer.stop();
@@ -135,6 +148,12 @@ public class HelloApplication extends Application {
     }
 
     public void loadUI() throws IOException {
+        try{
+            mediaPlayer.stop();
+        }
+        catch (Exception e){
+            System.out.println("No media loaded");
+        }
         // NOTE: NO LONGER USING com.example.gamegui.HelloController
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("homeView.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1280, 720);
@@ -150,6 +169,16 @@ public class HelloApplication extends Application {
         Scene sceneManual = new Scene(fxmlLoader3.load(), 1280, 720);
         sceneManual.getStylesheets().add(getClass().getResource("style_manual.css").toExternalForm());
         sceneMap.put("manual", sceneManual);
+
+        FXMLLoader fxmlLoader4 = new FXMLLoader(HelloApplication.class.getResource("GameOver.fxml"));
+        Scene sceneDeath = new Scene(fxmlLoader4.load(), 1280, 720);
+        sceneDeath.getStylesheets().add(getClass().getResource("GameOver.css").toExternalForm());
+        sceneMap.put("death", sceneDeath);
+
+        FXMLLoader fxmlLoader5 = new FXMLLoader(HelloApplication.class.getResource("kepler-system.fxml"));
+        Scene sceneKepler = new Scene(fxmlLoader5.load(), 1280, 720);
+        sceneKepler.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
+        sceneMap.put("kepler", sceneKepler);
     }
 
 

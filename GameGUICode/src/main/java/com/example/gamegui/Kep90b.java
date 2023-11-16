@@ -41,8 +41,16 @@ public class Kep90b implements Initializable {
         this.kepX.setImage(k);
         this.planetText.setMinSize(600.0, 300.0);
         this.planetText.setText("Name: Kepler-90b\nPlanet Type: Super Earth\nDiscovery Date: 2013\nMass: 2.27 Earths\nPlanet Radius: 1.31 x Earth\nOrbital Radius: 0.074 AU\nOrbital Period: 7 days");
+        this.planetText.setEditable(false);
         this.toPlanet.setText("Explore Planet");
+        this.toPlanet.setMinSize(200,50);
+        this.toPlanet.setOnAction((e) -> {
+            homeController.k90Planet = "b";
+            homeController.playerScore = homeController.playerScore + 10;
+            FileSwitcher.switchTo(FileStorage.PLANETDEST);
+        });
         this.backButton.setText("Return to List");
+        this.backButton.setMinSize(200,50);
         this.backButton.setOnAction((e) -> {
             FileSwitcher.switchTo(FileStorage.PLANETLIST);
         });
