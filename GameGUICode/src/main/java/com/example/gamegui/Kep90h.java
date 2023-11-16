@@ -38,7 +38,7 @@ public class Kep90h implements Initializable {
         Image k = new Image(this.getClass().getResource("planetImages/Kepler-90h.png").toExternalForm());
         this.kepX.setImage(k);
         this.planetText.setMinSize(600.0, 300.0);
-        this.planetText.setText("Name: Kepler-90b\nPlanet Type: Gas Giant\nDiscovery Date: 2013\nMass: 1.2 Jupiters\nPlanet Radius: 1.008 x Jupiter\nOrbital Radius: 1.01 AU\nOrbital Period: 331.6 days");
+        this.planetText.setText("Name: Kepler-90h\nPlanet Type: Gas Giant\nDiscovery Date: 2013\nMass: 1.2 Jupiters\nPlanet Radius: 1.008 x Jupiter\nOrbital Radius: 1.01 AU\nOrbital Period: 331.6 days");
         this.planetText.setEditable(false);
         this.toPlanet.setText("Explore Planet");
         this.toPlanet.setMinSize(200,50);

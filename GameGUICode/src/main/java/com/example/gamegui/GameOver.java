@@ -1,5 +1,6 @@
 package com.example.gamegui;
 
+import javafx.animation.PauseTransition;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -10,7 +11,10 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -31,6 +35,7 @@ public class GameOver implements Initializable {
     Button continueGame;
     @FXML
     Button exitGame;
+
 
 
     @Override
@@ -74,6 +79,13 @@ public class GameOver implements Initializable {
         continueGame.setText("Menu");
         exitGame.setText("Exit");
         continueGame.setOnAction((e)-> {
+            HelloApplication.mediaPlayer.stop();
+            Media launchMedia = new Media(getClass().getResource("Sounds/242550__foolboymedia__chode-to-dub-step.wav").toExternalForm());
+            HelloApplication.mediaPlayer= new MediaPlayer(launchMedia);
+            HelloApplication.mediaPlayer.seek(Duration.ZERO);
+            HelloApplication.mediaPlayer.play();
+            Galaxies.xPos = 229.0;
+            Galaxies.yPos = 400.0;
             homeController.currFuel = 100;
             homeController.currDurability = 100;
             homeController.playerScore = 0;
@@ -86,10 +98,35 @@ public class GameOver implements Initializable {
 
         if (homeController.currFuel <= 0) {
             this.deathScene.setImage(deathMethod);
+            try {
+                HelloApplication.mediaPlayer.stop();
+                Media lost = new Media(getClass().getResource("Sounds/fuelGameover.wav").toExternalForm());
+                HelloApplication.mediaPlayer = new MediaPlayer(lost);
+                HelloApplication.mediaPlayer.seek(Duration.ZERO);
+                HelloApplication.mediaPlayer.play();
+            }
+            catch (Exception e){
+                System.out.println("Failure loading media");
+            }
             deathCause.setText("Stranded");
             deathText.setText(deathByFuel);
         } else if (homeController.currDurability <= 0){
             this.deathScene.setImage(deathMethod2);
+
+            try {
+                HelloApplication.mediaPlayer.stop();
+                Media shipWrecked = new Media(getClass().getResource("Sounds/durabilityWreck.wav").toExternalForm());
+                HelloApplication.mediaPlayer = new MediaPlayer(shipWrecked);
+                PauseTransition pause = new PauseTransition(Duration.seconds(3));
+                HelloApplication.mediaPlayer.seek(Duration.ZERO);
+                HelloApplication.mediaPlayer.play();
+
+
+            }
+            catch (Exception e){
+                System.out.println("Failure loading in explosion media");
+            }
+
             deathCause.setText("Destroyed");
             deathText.setText(deathByDurability);
         } else {

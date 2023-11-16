@@ -42,7 +42,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gamegui.jupiterController">
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/18" fx:controller="com.example.gamegui.jupiterController">
   <children>
     <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" VBox.vgrow="ALWAYS">
          <children>
@@ -87,7 +87,7 @@
                               <Font size="24.0" />
                            </font>
                         </Label>
-                        <Label fx:id="fuel_label" text="100" textFill="WHITE">
+                        <Label fx:id="fuel_label" textFill="WHITE">
                            <font>
                               <Font name="Century" size="24.0" />
                            </font>
@@ -135,6 +135,18 @@
                   <Image url="@images/load.gif" />
                </image>
             </ImageView>
+            <Button fx:id="fuel_button" layoutX="991.0" layoutY="363.0" mnemonicParsing="false" prefHeight="78.0" prefWidth="208.0" style="-fx-background-color: black; -fx-background-radius: 5em;" text="Gather Fuel" textFill="#f24a1d">
+               <graphic>
+                  <ImageView fitHeight="55.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/jerrycan.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </Button>
          </children>
     </AnchorPane>
   </children>

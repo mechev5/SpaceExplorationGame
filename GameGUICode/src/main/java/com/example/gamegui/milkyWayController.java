@@ -132,6 +132,20 @@ public class milkyWayController implements Initializable {
             @Override
             public void handle(ActionEvent actionEvent) {
                 homeController.currFuel = homeController.currFuel - 5.0;
+                if (homeController.currFuel <= 0){
+                    Stage currStage = HelloApplication.getStage();
+                    FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("GameOver.fxml"));
+                    try {
+                        Scene asteroidScene = new Scene(fxmlLoader.load(), 1280, 720);
+                        asteroidScene.getStylesheets().add(getClass().getResource("GameOver.css").toExternalForm());
+                        currStage.setScene(asteroidScene);
+                    }
+                    catch (IOException y){
+                        System.out.println("GameOver");
+                        System.out.println(y);
+                    }
+                    return;
+                }
                 Stage newStage =  HelloApplication.getStage();
                 FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("earthView.fxml"));
                 Scene scene = null;
@@ -152,6 +166,20 @@ public class milkyWayController implements Initializable {
             @Override
             public void handle(ActionEvent actionEvent) {
                 homeController.currFuel = homeController.currFuel - 5.0;
+                if (homeController.currFuel <= 0){
+                    Stage currStage = HelloApplication.getStage();
+                    FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("GameOver.fxml"));
+                    try {
+                        Scene asteroidScene = new Scene(fxmlLoader.load(), 1280, 720);
+                        asteroidScene.getStylesheets().add(getClass().getResource("GameOver.css").toExternalForm());
+                        currStage.setScene(asteroidScene);
+                    }
+                    catch (IOException y){
+                        System.out.println("GameOver");
+                        System.out.println(y);
+                    }
+                    return;
+                }
                 Stage newStage =  HelloApplication.getStage();
                 FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("jupiterView.fxml"));
                 Scene scene = null;
@@ -172,6 +200,20 @@ public class milkyWayController implements Initializable {
             @Override
             public void handle(ActionEvent actionEvent) {
                 homeController.currFuel = homeController.currFuel - 5.0;
+                if (homeController.currFuel <= 0){
+                    Stage currStage = HelloApplication.getStage();
+                    FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("GameOver.fxml"));
+                    try {
+                        Scene asteroidScene = new Scene(fxmlLoader.load(), 1280, 720);
+                        asteroidScene.getStylesheets().add(getClass().getResource("GameOver.css").toExternalForm());
+                        currStage.setScene(asteroidScene);
+                    }
+                    catch (IOException y){
+                        System.out.println("GameOver");
+                        System.out.println(y);
+                    }
+                    return;
+                }
                 Stage newStage =  HelloApplication.getStage();
                 FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("marsView.fxml"));
                 Scene scene = null;
@@ -193,6 +235,20 @@ public class milkyWayController implements Initializable {
             @Override
             public void handle(ActionEvent actionEvent) {
                 homeController.currFuel = homeController.currFuel - 5.0;
+                if (homeController.currFuel <= 0){
+                    Stage currStage = HelloApplication.getStage();
+                    FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("GameOver.fxml"));
+                    try {
+                        Scene asteroidScene = new Scene(fxmlLoader.load(), 1280, 720);
+                        asteroidScene.getStylesheets().add(getClass().getResource("GameOver.css").toExternalForm());
+                        currStage.setScene(asteroidScene);
+                    }
+                    catch (IOException y){
+                        System.out.println("GameOver");
+                        System.out.println(y);
+                    }
+                    return;
+                }
                 Stage newStage =  HelloApplication.getStage();
                 FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("mercuryView.fxml"));
                 Scene scene = null;
@@ -214,6 +270,20 @@ public class milkyWayController implements Initializable {
             @Override
             public void handle(ActionEvent actionEvent) {
                 homeController.currFuel = homeController.currFuel - 5.0;
+                if (homeController.currFuel <= 0){
+                    Stage currStage = HelloApplication.getStage();
+                    FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("GameOver.fxml"));
+                    try {
+                        Scene asteroidScene = new Scene(fxmlLoader.load(), 1280, 720);
+                        asteroidScene.getStylesheets().add(getClass().getResource("GameOver.css").toExternalForm());
+                        currStage.setScene(asteroidScene);
+                    }
+                    catch (IOException y){
+                        System.out.println("GameOver");
+                        System.out.println(y);
+                    }
+                    return;
+                }
                 Stage newStage =  HelloApplication.getStage();
                 FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("neptuneView.fxml"));
                 Scene scene = null;
@@ -235,6 +305,20 @@ public class milkyWayController implements Initializable {
             @Override
             public void handle(ActionEvent actionEvent) {
                 homeController.currFuel = homeController.currFuel - 5.0;
+                if (homeController.currFuel <= 0){
+                    Stage currStage = HelloApplication.getStage();
+                    FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("GameOver.fxml"));
+                    try {
+                        Scene asteroidScene = new Scene(fxmlLoader.load(), 1280, 720);
+                        asteroidScene.getStylesheets().add(getClass().getResource("GameOver.css").toExternalForm());
+                        currStage.setScene(asteroidScene);
+                    }
+                    catch (IOException y){
+                        System.out.println("GameOver");
+                        System.out.println(y);
+                    }
+                    return;
+                }
                 Stage newStage =  HelloApplication.getStage();
                 FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("saturnView.fxml"));
                 Scene scene = null;
@@ -256,6 +340,20 @@ public class milkyWayController implements Initializable {
             @Override
             public void handle(ActionEvent actionEvent) {
                 homeController.currFuel = homeController.currFuel - 5.0;
+                if (homeController.currFuel <= 0){
+                    Stage currStage = HelloApplication.getStage();
+                    FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("GameOver.fxml"));
+                    try {
+                        Scene asteroidScene = new Scene(fxmlLoader.load(), 1280, 720);
+                        asteroidScene.getStylesheets().add(getClass().getResource("GameOver.css").toExternalForm());
+                        currStage.setScene(asteroidScene);
+                    }
+                    catch (IOException y){
+                        System.out.println("GameOver");
+                        System.out.println(y);
+                    }
+                    return;
+                }
                 Stage newStage =  HelloApplication.getStage();
                 FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("uranusView.fxml"));
                 Scene scene = null;
@@ -277,6 +375,20 @@ public class milkyWayController implements Initializable {
             @Override
             public void handle(ActionEvent actionEvent) {
                 homeController.currFuel = homeController.currFuel - 5.0;
+                if (homeController.currFuel <= 0){
+                    Stage currStage = HelloApplication.getStage();
+                    FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("GameOver.fxml"));
+                    try {
+                        Scene asteroidScene = new Scene(fxmlLoader.load(), 1280, 720);
+                        asteroidScene.getStylesheets().add(getClass().getResource("GameOver.css").toExternalForm());
+                        currStage.setScene(asteroidScene);
+                    }
+                    catch (IOException y){
+                        System.out.println("GameOver");
+                        System.out.println(y);
+                    }
+                    return;
+                }
                 Stage newStage =  HelloApplication.getStage();
                 FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("venusView.fxml"));
                 Scene scene = null;

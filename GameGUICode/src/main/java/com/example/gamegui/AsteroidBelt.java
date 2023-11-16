@@ -37,8 +37,8 @@ public class AsteroidBelt implements Initializable {
     @FXML
     ImageView asteroid1, asteroid2, asteroid3, asteroid4, asteroid5, asteroid6, asteroid7;
 
-    MediaPlayer explosions;
-    MediaPlayer lasers;
+    public static MediaPlayer explosions;
+    public static MediaPlayer lasers;
 
     Boolean[] asteroidDead = new Boolean[7];
 
@@ -73,6 +73,8 @@ public class AsteroidBelt implements Initializable {
         explosions.setVolume(1);
 
         root.setBackground(backg);
+        Instructions.setEditable(false);
+        GameReport.setEditable(false);
 
         Instructions.setText("Click on the Asteroids to detroy them! Hurry!!\nThe longer you take the more damage your ship takes!");
 
@@ -81,11 +83,13 @@ public class AsteroidBelt implements Initializable {
         asteroid1.setOnMouseClicked(e->{
             PauseTransition pauseLaser = new PauseTransition(Duration.seconds(1));
             pauseLaser.setOnFinished(x->{
-                lasers.stop();
+
                 asteroid1.setVisible(false);
                 asteroid1.setDisable(true);
+                explosions.seek(Duration.ZERO);
                 explosions.play();
             });
+            lasers.seek(Duration.ZERO);
             lasers.play();
             pauseLaser.play();
 
@@ -93,7 +97,7 @@ public class AsteroidBelt implements Initializable {
             PauseTransition gameFinish = new PauseTransition(Duration.seconds(5));
 
             gameFinish.setOnFinished(x->{
-                homeController.playerScore += 100;
+                homeController.playerScore += 1000;
                 Stage currStage = HelloApplication.getStage();
                 FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("galaxy.fxml"));
                 try {
@@ -108,22 +112,24 @@ public class AsteroidBelt implements Initializable {
             });
 
             pauseExplosion.setOnFinished(x->{
-                explosions.stop();
                 asteroidDead[0] = true;
                 if (checkAllDead(asteroidDead)){
                     long finish = System.currentTimeMillis();
                     double timeLapsed = TimeUnit.MILLISECONDS.toSeconds(finish - start);
                     System.out.println("Previous Durability:");
                     System.out.println(homeController.currDurability);
-                    double damageTaken = round((timeLapsed * 0.75), 2);
+                    double damageTaken = round((timeLapsed *  9.0), 2);
                     homeController.currDurability = round(homeController.currDurability - damageTaken,2);
                     System.out.println("New Durability:");
                     System.out.println(homeController.currDurability);
                     GameReport.setText("Time Taken: " + timeLapsed + "\nDamage Taken: " + damageTaken);
                     GameReport.setVisible(true);
-
-                    gameFinish.play();
-
+                    if (checkDamage()){
+                        return;
+                    }
+                    else {
+                        gameFinish.play();
+                    }
                 }
             });
 
@@ -133,11 +139,12 @@ public class AsteroidBelt implements Initializable {
         asteroid2.setOnMouseClicked(e->{
             PauseTransition pauseLaser = new PauseTransition(Duration.seconds(1));
             pauseLaser.setOnFinished(x->{
-                lasers.stop();
                 asteroid2.setVisible(false);
                 asteroid2.setDisable(true);
+                explosions.seek(Duration.ZERO);
                 explosions.play();
             });
+            lasers.seek(Duration.ZERO);
             lasers.play();
             pauseLaser.play();
 
@@ -145,7 +152,7 @@ public class AsteroidBelt implements Initializable {
             PauseTransition gameFinish = new PauseTransition(Duration.seconds(5));
 
             gameFinish.setOnFinished(x->{
-                homeController.playerScore += 100;
+                homeController.playerScore += 1000;
                 Stage currStage = HelloApplication.getStage();
                 FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("galaxy.fxml"));
                 try {
@@ -160,21 +167,25 @@ public class AsteroidBelt implements Initializable {
             });
 
             pauseExplosion.setOnFinished(x->{
-                explosions.stop();
+
                 asteroidDead[1] = true;
                 if (checkAllDead(asteroidDead)){
                     long finish = System.currentTimeMillis();
                     double timeLapsed = TimeUnit.MILLISECONDS.toSeconds(finish - start);
                     System.out.println("Previous Durability:");
                     System.out.println(homeController.currDurability);
-                    double damageTaken = round((timeLapsed *  0.75), 2);
+                    double damageTaken = round((timeLapsed *  9.0), 2);
                     homeController.currDurability = round(homeController.currDurability - damageTaken,2);
                     System.out.println("New Durability:");
                     System.out.println(homeController.currDurability);
                     GameReport.setText("Time Taken: " + timeLapsed + "\nDamage Taken: " + damageTaken);
                     GameReport.setVisible(true);
-
-                    gameFinish.play();
+                    if (checkDamage()){
+                        return;
+                    }
+                    else {
+                        gameFinish.play();
+                    }
                 }
             });
 
@@ -184,11 +195,12 @@ public class AsteroidBelt implements Initializable {
         asteroid3.setOnMouseClicked(e->{
             PauseTransition pauseLaser = new PauseTransition(Duration.seconds(1));
             pauseLaser.setOnFinished(x->{
-                lasers.stop();
                 asteroid3.setVisible(false);
                 asteroid3.setDisable(true);
+                explosions.seek(Duration.ZERO);
                 explosions.play();
             });
+            lasers.seek(Duration.ZERO);
             lasers.play();
             pauseLaser.play();
 
@@ -196,7 +208,7 @@ public class AsteroidBelt implements Initializable {
             PauseTransition gameFinish = new PauseTransition(Duration.seconds(5));
 
             gameFinish.setOnFinished(x->{
-                homeController.playerScore += 100;
+                homeController.playerScore += 1000;
                 Stage currStage = HelloApplication.getStage();
                 FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("galaxy.fxml"));
                 try {
@@ -210,21 +222,24 @@ public class AsteroidBelt implements Initializable {
                 }
             });
             pauseExplosion.setOnFinished(x->{
-                explosions.stop();
                 asteroidDead[2] = true;
                 if (checkAllDead(asteroidDead)){
                     long finish = System.currentTimeMillis();
                     double timeLapsed = TimeUnit.MILLISECONDS.toSeconds(finish - start);
                     System.out.println("Previous Durability:");
                     System.out.println(homeController.currDurability);
-                    double damageTaken = round((timeLapsed *  0.75), 2);
-                    homeController.currDurability = round(homeController.currDurability - damageTaken, 2);
+                    double damageTaken = round((timeLapsed *  9.0), 2);
+                    homeController.currDurability = round(homeController.currDurability - damageTaken,2);
                     System.out.println("New Durability:");
                     System.out.println(homeController.currDurability);
                     GameReport.setText("Time Taken: " + timeLapsed + "\nDamage Taken: " + damageTaken);
                     GameReport.setVisible(true);
-
-                    gameFinish.play();
+                    if (checkDamage()){
+                        return;
+                    }
+                    else {
+                        gameFinish.play();
+                    }
 
                 }
             });
@@ -235,11 +250,12 @@ public class AsteroidBelt implements Initializable {
         asteroid4.setOnMouseClicked(e->{
             PauseTransition pauseLaser = new PauseTransition(Duration.seconds(1));
             pauseLaser.setOnFinished(x->{
-                lasers.stop();
                 asteroid4.setVisible(false);
                 asteroid4.setDisable(true);
+                explosions.seek(Duration.ZERO);
                 explosions.play();
             });
+            lasers.seek(Duration.ZERO);
             lasers.play();
             pauseLaser.play();
 
@@ -247,7 +263,7 @@ public class AsteroidBelt implements Initializable {
             PauseTransition gameFinish = new PauseTransition(Duration.seconds(5));
 
             gameFinish.setOnFinished(x->{
-                homeController.playerScore += 100;
+                homeController.playerScore += 1000;
                 Stage currStage = HelloApplication.getStage();
                 FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("galaxy.fxml"));
                 try {
@@ -262,21 +278,25 @@ public class AsteroidBelt implements Initializable {
             });
 
             pauseExplosion.setOnFinished(x->{
-                explosions.stop();
+
                 asteroidDead[3] = true;
                 if (checkAllDead(asteroidDead)){
                     long finish = System.currentTimeMillis();
                     double timeLapsed = TimeUnit.MILLISECONDS.toSeconds(finish - start);
                     System.out.println("Previous Durability:");
                     System.out.println(homeController.currDurability);
-                    double damageTaken = round((timeLapsed *  0.75), 2);
+                    double damageTaken = round((timeLapsed *  9.0), 2);
                     homeController.currDurability = round(homeController.currDurability - damageTaken,2);
                     System.out.println("New Durability:");
                     System.out.println(homeController.currDurability);
                     GameReport.setText("Time Taken: " + timeLapsed + "\nDamage Taken: " + damageTaken);
                     GameReport.setVisible(true);
-
-                    gameFinish.play();
+                    if (checkDamage()){
+                        return;
+                    }
+                    else {
+                        gameFinish.play();
+                    }
                 }
             });
 
@@ -286,12 +306,13 @@ public class AsteroidBelt implements Initializable {
         asteroid5.setOnMouseClicked(e->{
             PauseTransition pauseLaser = new PauseTransition(Duration.seconds(1));
             pauseLaser.setOnFinished(x->{
-                homeController.playerScore += 100;
-                lasers.stop();
+                homeController.playerScore += 1000;
                 asteroid5.setVisible(false);
                 asteroid5.setDisable(true);
+                explosions.seek(Duration.ZERO);
                 explosions.play();
             });
+            lasers.seek(Duration.ZERO);
             lasers.play();
             pauseLaser.play();
 
@@ -312,21 +333,24 @@ public class AsteroidBelt implements Initializable {
                 }
             });
             pauseExplosion.setOnFinished(x->{
-                explosions.stop();
                 asteroidDead[4] = true;
-                if (checkAllDead(asteroidDead)){
+                if (checkAllDead(asteroidDead)) {
                     long finish = System.currentTimeMillis();
                     double timeLapsed = TimeUnit.MILLISECONDS.toSeconds(finish - start);
                     System.out.println("Previous Durability:");
                     System.out.println(homeController.currDurability);
-                    double damageTaken = round((timeLapsed *  0.75), 2);
+                    double damageTaken = round((timeLapsed *  9.0), 2);
                     homeController.currDurability = round(homeController.currDurability - damageTaken,2);
                     System.out.println("New Durability:");
                     System.out.println(homeController.currDurability);
                     GameReport.setText("Time Taken: " + timeLapsed + "\nDamage Taken: " + damageTaken);
                     GameReport.setVisible(true);
-
-                    gameFinish.play();
+                    if (checkDamage()){
+                        return;
+                    }
+                    else {
+                        gameFinish.play();
+                    }
                 }
             });
 
@@ -336,11 +360,12 @@ public class AsteroidBelt implements Initializable {
         asteroid6.setOnMouseClicked(e->{
             PauseTransition pauseLaser = new PauseTransition(Duration.seconds(1));
             pauseLaser.setOnFinished(x->{
-                lasers.stop();
                 asteroid6.setVisible(false);
                 asteroid6.setDisable(true);
+                explosions.seek(Duration.ZERO);
                 explosions.play();
             });
+            lasers.seek(Duration.ZERO);
             lasers.play();
             pauseLaser.play();
 
@@ -348,7 +373,7 @@ public class AsteroidBelt implements Initializable {
             PauseTransition gameFinish = new PauseTransition(Duration.seconds(5));
 
             gameFinish.setOnFinished(x->{
-                homeController.playerScore += 100;
+                homeController.playerScore += 1000;
                 Stage currStage = HelloApplication.getStage();
                 FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("galaxy.fxml"));
                 try {
@@ -362,20 +387,24 @@ public class AsteroidBelt implements Initializable {
                 }
             });
             pauseExplosion.setOnFinished(x->{
-                explosions.stop();
                 asteroidDead[5] = true;
                 if (checkAllDead(asteroidDead)){
                     long finish = System.currentTimeMillis();
                     double timeLapsed = TimeUnit.MILLISECONDS.toSeconds(finish - start);
                     System.out.println("Previous Durability:");
                     System.out.println(homeController.currDurability);
-                    double damageTaken = round((timeLapsed *  0.75), 2);
+                    double damageTaken = round((timeLapsed *  9.0), 2);
                     homeController.currDurability = round(homeController.currDurability - damageTaken,2);
                     System.out.println("New Durability:");
                     System.out.println(homeController.currDurability);
                     GameReport.setText("Time Taken: " + timeLapsed + "\nDamage Taken: " + damageTaken);
                     GameReport.setVisible(true);
-                    gameFinish.play();
+                    if (checkDamage()){
+                        return;
+                    }
+                    else {
+                        gameFinish.play();
+                    }
                 }
             });
 
@@ -385,11 +414,13 @@ public class AsteroidBelt implements Initializable {
         asteroid7.setOnMouseClicked(e->{
             PauseTransition pauseLaser = new PauseTransition(Duration.seconds(1));
             pauseLaser.setOnFinished(x->{
-                lasers.stop();
+
                 asteroid7.setVisible(false);
                 asteroid7.setDisable(true);
+                explosions.seek(Duration.ZERO);
                 explosions.play();
             });
+            lasers.seek(Duration.ZERO);
             lasers.play();
             pauseLaser.play();
 
@@ -397,7 +428,7 @@ public class AsteroidBelt implements Initializable {
             PauseTransition gameFinish = new PauseTransition(Duration.seconds(5));
 
             gameFinish.setOnFinished(x->{
-                homeController.playerScore += 100;
+                homeController.playerScore += 1000;
                 Stage currStage = HelloApplication.getStage();
                 FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("galaxy.fxml"));
                 try {
@@ -411,26 +442,48 @@ public class AsteroidBelt implements Initializable {
                 }
             });
             pauseExplosion.setOnFinished(x->{
-                explosions.stop();
                 asteroidDead[6] = true;
                 if (checkAllDead(asteroidDead)){
                     long finish = System.currentTimeMillis();
                     double timeLapsed = TimeUnit.MILLISECONDS.toSeconds(finish - start);
                     System.out.println("Previous Durability:");
                     System.out.println(homeController.currDurability);
-                    double damageTaken = round((timeLapsed *  0.75), 2);
+                    double damageTaken = round((timeLapsed *  9.0), 2);
                     homeController.currDurability = round(homeController.currDurability - damageTaken,2);
                     System.out.println("New Durability:");
                     System.out.println(homeController.currDurability);
                     GameReport.setText("Time Taken: " + timeLapsed + "\nDamage Taken: " + damageTaken);
                     GameReport.setVisible(true);
-                    gameFinish.play();
-
+                    if (checkDamage()){
+                        return;
+                    }
+                    else {
+                        gameFinish.play();
+                    }
                 }
             });
 
             pauseExplosion.play();
         });
+
+    }
+
+    public boolean checkDamage(){
+        if (homeController.currDurability <= 0){
+            Stage currStage = HelloApplication.getStage();
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("GameOver.fxml"));
+            try {
+                Scene asteroidScene = new Scene(fxmlLoader.load(), 1280, 720);
+                asteroidScene.getStylesheets().add(getClass().getResource("GameOver.css").toExternalForm());
+                currStage.setScene(asteroidScene);
+            }
+            catch (IOException y){
+                System.out.println("GameOver");
+                System.out.println(y);
+            }
+            return true;
+        }
+        return false;
 
     }
 }

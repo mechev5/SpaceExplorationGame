@@ -35,6 +35,8 @@ public class PlanetDestinationTest implements Initializable {
     @FXML
     Button returnToList;
     @FXML
+    Button fuelMinigame;
+    @FXML
     HBox test;
     @FXML
     private Button menuButton, changeDestination, galaxyButton;
@@ -87,7 +89,22 @@ public class PlanetDestinationTest implements Initializable {
             // currStage.setScene(HelloApplication.sceneMap.get("death"));
             FileSwitcher.switchTo(FileStorage.PLANETLIST);
         });
-
+        this.fuelMinigame.setText("Gather Fuel");
+        this.fuelMinigame.setMinSize(200, 50);
+        this.fuelMinigame.setOnAction(e->{
+            Stage currStage = HelloApplication.getStage();
+            HelloApplication.setHolderScene(currStage.getScene());
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("fuelMine.fxml"));
+            try {
+                Scene fuelScene = new Scene(fxmlLoader.load(), 1280, 720);
+                fuelScene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
+                currStage.setScene(fuelScene);
+            }
+            catch (IOException y){
+                System.out.println("Failure in scene asteroid scene transition");
+                System.out.println(y);
+            }
+        });
          //
 
         // img = new Image(this.getClass().getResource("images/Kepler_02.jpg").toExternalForm());

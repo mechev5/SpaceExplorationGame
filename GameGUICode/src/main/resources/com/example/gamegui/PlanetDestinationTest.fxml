@@ -19,6 +19,9 @@
             <Text></Text>
             <ImageView fx:id = "planet"/>
         </HBox>
-        <Button fx:id = "returnToList"/>
+        <HBox spacing = "50">
+            <Button fx:id = "returnToList"/>
+            <Button fx:id = "fuelMinigame"/>
+        </HBox>
     </VBox>
 </BorderPane>
