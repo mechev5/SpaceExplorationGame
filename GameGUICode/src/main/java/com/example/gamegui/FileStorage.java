@@ -21,6 +21,8 @@ public enum FileStorage {
     KEP_H("kep-90h.fxml"),
     KEP_I("kep-90i.fxml"),
     MANUAL("Manual.fxml"),
+    PLANETDEST("PlanetDestinationTest.fxml"),
+    GAMEOVER("GameOver.fxml"),
 
     AndroSystem("Andromeda.fxml");
 

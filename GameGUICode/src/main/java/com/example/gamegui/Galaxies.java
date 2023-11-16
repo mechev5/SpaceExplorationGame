@@ -341,6 +341,8 @@ public class Galaxies implements Initializable {
         PauseTransition pause = new PauseTransition(Duration.seconds(1));
         pause.setOnFinished(x->{
             currStage.setScene(scene);
+            // Stage currStage = HelloApplication.getStage();
+            // currStage.setScene(HelloApplication.sceneMap.get("kepler"));
         });
         pause.play();
     }

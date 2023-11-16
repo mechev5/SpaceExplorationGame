@@ -150,6 +150,16 @@ public class HelloApplication extends Application {
         Scene sceneManual = new Scene(fxmlLoader3.load(), 1280, 720);
         sceneManual.getStylesheets().add(getClass().getResource("style_manual.css").toExternalForm());
         sceneMap.put("manual", sceneManual);
+
+        FXMLLoader fxmlLoader4 = new FXMLLoader(HelloApplication.class.getResource("GameOver.fxml"));
+        Scene sceneDeath = new Scene(fxmlLoader4.load(), 1280, 720);
+        sceneDeath.getStylesheets().add(getClass().getResource("GameOver.css").toExternalForm());
+        sceneMap.put("death", sceneDeath);
+
+        FXMLLoader fxmlLoader5 = new FXMLLoader(HelloApplication.class.getResource("kepler-system.fxml"));
+        Scene sceneKepler = new Scene(fxmlLoader5.load(), 1280, 720);
+        sceneKepler.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
+        sceneMap.put("kepler", sceneKepler);
     }
 
 

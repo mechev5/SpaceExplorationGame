@@ -137,6 +137,17 @@ public class keplerSystem implements Initializable {
         Background andromedaBackground = new Background(new BackgroundImage[]{andBg});
         this.root.setBackground(andromedaBackground);
 
+        // galaxyButotn.setOnAction(e-> FileSwitcher.switchTo(FileStorage.PLANETLIST));
+
+        inv1.setVisible(false);
+        inv2.setVisible(false);
+        inv3.setVisible(false);
+        inv4.setVisible(false);
+        inv5.setVisible(false);
+        inv6.setVisible(false);
+        inv7.setVisible(false);
+        inv8.setVisible(false);
+
 
         changeDestination.setText("Travel to another Galaxy");
         changeDestination.setMinSize(100,100);

@@ -16,7 +16,7 @@
             <ImageView fx:id="kepX"/>
             <TextArea fx:id="planetText"/>
         </HBox>
-        <HBox spacing = "500">
+        <HBox spacing = "600">
             <Button fx:id = "toPlanet"/>
             <Button fx:id = "backButton"/>
         </HBox>
