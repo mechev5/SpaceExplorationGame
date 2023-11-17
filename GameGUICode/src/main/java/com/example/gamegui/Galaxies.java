@@ -71,11 +71,11 @@ public class Galaxies implements Initializable {
         // Keep track of all stats using variables, until classes are made
         root.setMinSize(1280, 720);
 
-        fuelLabel.setMinSize(400, 17);
+        //fuelLabel.setMinSize(400, 17);
         fuelLabel.setText("Fuel: " + AsteroidBelt.round(homeController.currFuel, 1) + " / " + homeController.maxFuel);
-        durabilityLabel.setMinSize(400, 17);
+        //durabilityLabel.setMinSize(400, 17);
         durabilityLabel.setText("Durability: " + homeController.currDurability + " / " + homeController.maxDurability);
-        scoreLabel.setMinSize(400, 17);
+        //scoreLabel.setMinSize(400, 17);
         scoreLabel.setText("Score: " + homeController.playerScore);
 
         playerShip.setX(xPos);
