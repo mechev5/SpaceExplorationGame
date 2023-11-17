@@ -79,13 +79,13 @@ public class AndroController implements Initializable {
     public void switchToScene2(ActionEvent event) throws IOException {
         int randomCheck = rand.nextInt(10);
         System.out.println(randomCheck);
-        if(randomCheck > 5){
+        if(randomCheck > 7){
             if(homeController.currFuel < 100){
                 double fuel = homeController.currFuel;
                 if(fuel + 5 > 100){
                     homeController.currFuel = 100;
                 }else{
-                    homeController.currFuel = homeController.currFuel+5;
+                    homeController.currFuel = homeController.currFuel+3;
                 }
             }
             Parent root = FXMLLoader.load(getClass().getResource("AScene2.fxml"));
@@ -109,7 +109,7 @@ public class AndroController implements Initializable {
     public void switchToScene3(ActionEvent event) throws IOException {
         int randomCheck = rand.nextInt(10);
         System.out.println(randomCheck);
-        if(randomCheck > 2){
+        if(randomCheck > 4){
             if(homeController.currFuel < 100){
                 double fuel = homeController.currFuel;
                 if(fuel + 5 > 100){
@@ -138,7 +138,7 @@ public class AndroController implements Initializable {
     public void switchToScene4(ActionEvent event) throws IOException {
         int randomCheck = rand.nextInt(10);
         System.out.println(randomCheck);
-        if(randomCheck > 2){
+        if(randomCheck > 4){
             if(homeController.currFuel < 100){
                 double fuel = homeController.currFuel;
                 if(fuel + 5 > 100){
@@ -166,7 +166,7 @@ public class AndroController implements Initializable {
     public void switchToScene5(ActionEvent event) throws IOException {
         int randomCheck = rand.nextInt(10);
         System.out.println(randomCheck);
-        if(randomCheck > 2){
+        if(randomCheck > 4){
             if(homeController.currFuel < 100){
                 double fuel = homeController.currFuel;
                 if(fuel + 5 > 100){
@@ -194,7 +194,7 @@ public class AndroController implements Initializable {
     public void switchToScene6(ActionEvent event) throws IOException {
         int randomCheck = rand.nextInt(10);
         System.out.println(randomCheck);
-        if(randomCheck > 2){
+        if(randomCheck > 4){
             if(homeController.currFuel < 100){
                 double fuel = homeController.currFuel;
                 if(fuel + 5 > 100){
@@ -222,7 +222,7 @@ public class AndroController implements Initializable {
     public void switchToScene7(ActionEvent event) throws IOException {
         int randomCheck = rand.nextInt(10);
         System.out.println(randomCheck);
-        if(randomCheck > 2){
+        if(randomCheck > 4){
             if(homeController.currFuel < 100){
                 double fuel = homeController.currFuel;
                 if(fuel + 5 > 100){
@@ -250,7 +250,7 @@ public class AndroController implements Initializable {
     public void switchToScene8(ActionEvent event) throws IOException {
         int randomCheck = rand.nextInt(10);
         System.out.println(randomCheck);
-        if(randomCheck > 2){
+        if(randomCheck > 4){
             if(homeController.currFuel < 100){
                 double fuel = homeController.currFuel;
                 if(fuel + 5 > 100){
@@ -278,7 +278,7 @@ public class AndroController implements Initializable {
     public void switchToScene9(ActionEvent event) throws IOException {
         int randomCheck = rand.nextInt(10);
         System.out.println(randomCheck);
-        if(randomCheck > 2){
+        if(randomCheck > 4){
             if(homeController.currFuel < 100){
                 double fuel = homeController.currFuel;
                 if(fuel + 5 > 100){
@@ -306,7 +306,7 @@ public class AndroController implements Initializable {
     public void switchToScene10(ActionEvent event) throws IOException {
         int randomCheck = rand.nextInt(10);
         System.out.println(randomCheck);
-        if(randomCheck > 2){
+        if(randomCheck > 4){
             if(homeController.currFuel < 100){
                 double fuel = homeController.currFuel;
                 if(fuel + 5 > 100){
@@ -334,7 +334,7 @@ public class AndroController implements Initializable {
     public void switchToScene11(ActionEvent event) throws IOException {
         int randomCheck = rand.nextInt(10);
         System.out.println(randomCheck);
-        if(randomCheck > 2){
+        if(randomCheck > 4){
             if(homeController.currFuel < 100){
                 double fuel = homeController.currFuel;
                 if(fuel + 5 > 100){
