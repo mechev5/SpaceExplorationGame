@@ -12,11 +12,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.FlowPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundImage;
+import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -27,7 +23,7 @@ public class homeController implements Initializable {
     HelloApplication accessScenes;
 
     @FXML
-    BorderPane root;
+    AnchorPane root;
     @FXML
     FlowPane fpInv;
     @FXML
@@ -46,14 +42,14 @@ public class homeController implements Initializable {
     }
 
     @FXML
-    private Button menuButton, milkyWay_POI, changeDestination, exit;
+    private Button milkyWay_POI, changeDestination, exit;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         // Keep track of all stats using variables, until classes are made
         location = "Milky Way";
-        changeDestination.setText("Travel to another Galaxy");
-        changeDestination.setMinSize(100,100);
+        //changeDestination.setText("Travel to another Galaxy");
+        //changeDestination.setMinSize(100,100);
         changeDestination.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
@@ -67,14 +63,14 @@ public class homeController implements Initializable {
         });
 
         // Show the variables on screen
-        locationLabel.setMinSize(400, 17);
-        locationLabel.setText("Designation: " + location);
-        fuelLabel.setMinSize(400, 17);
-        fuelLabel.setText("Fuel: " + AsteroidBelt.round(currFuel, 1) + " / " + maxFuel);
-        durabilityLabel.setMinSize(400, 17);
-        durabilityLabel.setText("Durability: " + currDurability + " / " + maxDurability);
-        scoreLabel.setMinSize(400, 17);
-        scoreLabel.setText("Score: " + playerScore);
+        //locationLabel.setMinSize(400, 17);
+        locationLabel.setText("Destination: " + location);
+        //fuelLabel.setMinSize(400, 17);
+        fuelLabel.setText(String.valueOf(AsteroidBelt.round(currFuel, 1)));
+        //durabilityLabel.setMinSize(400, 17);
+        durabilityLabel.setText(String.valueOf(currDurability));
+        //scoreLabel.setMinSize(400, 17);
+        scoreLabel.setText(String.valueOf(playerScore));
 
         // This will all get cleaned up [hopefully]
         Image square = new Image(getClass().getResource("images/square.png").toExternalForm());
@@ -86,7 +82,6 @@ public class homeController implements Initializable {
         menuIV.setPreserveRatio(true);
         menuIV.setFitWidth(imageW / 8);
         menuIV.setFitHeight(imageH / 8);
-        menuButton.setGraphic(menuIV);
 
         // Milky Way Point of Interest
         // Set the background color to transparent in styles.css
@@ -126,7 +121,6 @@ public class homeController implements Initializable {
         });
         Background milkyWayBackground = new Background(mlkBg);
         root.setBackground(milkyWayBackground);
-
     }
 
     public void enterMilkyWay(ActionEvent event) throws IOException {
