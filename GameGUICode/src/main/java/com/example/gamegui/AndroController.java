@@ -61,11 +61,17 @@ public class AndroController implements Initializable {
             stage.setScene(scene);
             stage.show();
         }else{
-            Parent root = FXMLLoader.load(getClass().getResource("GameOver.fxml"));
-            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-            scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
+            Stage currStage = HelloApplication.getStage();
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("GameOver.fxml"));
+            try {
+                Scene asteroidScene = new Scene(fxmlLoader.load(), 1280, 720);
+                asteroidScene.getStylesheets().add(getClass().getResource("GameOver.css").toExternalForm());
+                currStage.setScene(asteroidScene);
+            }
+            catch (IOException y){
+                System.out.println("GameOver");
+                System.out.println(y);
+            }
         }
 
 //        root = FXMLLoader.load(getClass().getResource("AScene1.fxml"));
@@ -377,20 +383,25 @@ public class AndroController implements Initializable {
             stage.show();
         }else{
             //switch to damaged hull and lost of fuel due to pirates or nah
-            double isdead = homeController.currFuel;
-            if (isdead-15 >=0){
-                homeController.currFuel = homeController.currFuel-15;
+            homeController.currFuel -= 15;
+            if (homeController.currFuel >=0){
                 Parent root = FXMLLoader.load(getClass().getResource("A_Evade_Fail.fxml"));
                 stage = (Stage)((Node)event.getSource()).getScene().getWindow();
                 scene = new Scene(root);
                 stage.setScene(scene);
                 stage.show();
             }else{
-                Parent root = FXMLLoader.load(getClass().getResource("GameOver.fxml"));
-                stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-                scene = new Scene(root);
-                stage.setScene(scene);
-                stage.show();
+                Stage currStage = HelloApplication.getStage();
+                FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("GameOver.fxml"));
+                try {
+                    Scene asteroidScene = new Scene(fxmlLoader.load(), 1280, 720);
+                    asteroidScene.getStylesheets().add(getClass().getResource("GameOver.css").toExternalForm());
+                    currStage.setScene(asteroidScene);
+                }
+                catch (IOException y){
+                    System.out.println("GameOver");
+                    System.out.println(y);
+                }
             }
 
         }
@@ -400,22 +411,29 @@ public class AndroController implements Initializable {
         int randomCheck = rand.nextInt(10);
         System.out.println(randomCheck);
         if(randomCheck > 4){ //60% you fail, 40% you suc
+            homeController.currFuel = homeController.currFuel-10;
+            homeController.currDurability = homeController.currDurability-10;
             double isdead = homeController.currFuel;
             double health = homeController.currDurability;
-            if (isdead-10  >=0 || health-10 >= 0){
-                homeController.currFuel = homeController.currFuel-10;
-                homeController.currDurability = homeController.currDurability-10;
+            if (isdead > 0 && health > 0){
+
                 Parent root = FXMLLoader.load(getClass().getResource("A_Fight_Fail.fxml"));
                 stage = (Stage)((Node)event.getSource()).getScene().getWindow();
                 scene = new Scene(root);
                 stage.setScene(scene);
                 stage.show();
             }else{
-                Parent root = FXMLLoader.load(getClass().getResource("GameOver.fxml"));
-                stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-                scene = new Scene(root);
-                stage.setScene(scene);
-                stage.show();
+                Stage currStage = HelloApplication.getStage();
+                FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("GameOver.fxml"));
+                try {
+                    Scene asteroidScene = new Scene(fxmlLoader.load(), 1280, 720);
+                    asteroidScene.getStylesheets().add(getClass().getResource("GameOver.css").toExternalForm());
+                    currStage.setScene(asteroidScene);
+                }
+                catch (IOException y){
+                    System.out.println("GameOver");
+                    System.out.println(y);
+                }
             }
 
 
@@ -446,20 +464,26 @@ public class AndroController implements Initializable {
     }
 
     public void Negotiate(ActionEvent event) throws IOException {
+        homeController.currFuel = homeController.currFuel-5;
         double isdead = homeController.currFuel;
-        if (isdead-5 >=0){
-            homeController.currFuel = homeController.currFuel-5;
+        if (isdead >=0){
             Stage currStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("A_Negotiate.fxml"));
             Scene scene = new Scene(fxmlLoader.load(), 1280, 720);
             scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
             currStage.setScene(scene);
         }else{
-            Parent root = FXMLLoader.load(getClass().getResource("GameOver.fxml"));
-            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-            scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
+            Stage currStage = HelloApplication.getStage();
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("GameOver.fxml"));
+            try {
+                Scene asteroidScene = new Scene(fxmlLoader.load(), 1280, 720);
+                asteroidScene.getStylesheets().add(getClass().getResource("GameOver.css").toExternalForm());
+                currStage.setScene(asteroidScene);
+            }
+            catch (IOException y){
+                System.out.println("GameOver");
+                System.out.println(y);
+            }
         }
 
 

@@ -2,6 +2,7 @@ package com.example.gamegui;
 
 import java.util.HashMap;
 
+import javafx.scene.Parent;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
@@ -39,6 +40,8 @@ public class HelloApplication extends Application {
 
     public static HashMap<String, Scene> sceneMap;
     FileSwitcher christianFiles;
+
+    private BorderPane borderPane;
 
     public static MediaPlayer mediaPlayer;
 
@@ -106,6 +109,7 @@ public class HelloApplication extends Application {
 
         //template exit commands
         explorationButton.setOnAction(e->{
+            borderPane.setDisable(true);
             Media mediaStart = new Media(getClass().getResource("Sounds/71150__timbre__simulation-of-nasa-rocket-launch.wav").toExternalForm());
             Media mediaOngoing = new Media(getClass().getResource("Sounds/396627__matrixxx__space-atmosphere-01.wav").toExternalForm());
             mediaPlayer.stop();
@@ -119,6 +123,7 @@ public class HelloApplication extends Application {
                 mediaPlayer = new MediaPlayer(mediaOngoing);
                 mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
                 mediaPlayer.play();
+                borderPane.setDisable(false);
                 pStage.setScene(sceneMap.get("main"));
             });
             pause.play();
@@ -137,7 +142,7 @@ public class HelloApplication extends Application {
         centerPiece.setSpacing(10);
 
         // initialize and present Borderpane/scenes
-        BorderPane borderPane = new BorderPane();
+        borderPane = new BorderPane();
         borderPane.setBackground(startBackground);
         borderPane.setCenter(centerPiece);
         Scene start = new Scene(borderPane, 1280, 720);

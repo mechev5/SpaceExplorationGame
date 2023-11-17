@@ -13,7 +13,10 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 import java.io.IOException;
 import java.net.URL;
@@ -112,12 +115,20 @@ public class homeController implements Initializable {
                 null,
                 null
         );
-        exit.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent actionEvent) {
-                Stage currStage = HelloApplication.getStage();
-                currStage.setScene(HelloApplication.sceneMap.get("start"));
-            }
+        exit.setOnAction(e->{
+            HelloApplication.mediaPlayer.stop();
+            Media launchMedia = new Media(getClass().getResource("Sounds/242550__foolboymedia__chode-to-dub-step.wav").toExternalForm());
+            HelloApplication.mediaPlayer= new MediaPlayer(launchMedia);
+            HelloApplication.mediaPlayer.seek(Duration.ZERO);
+            HelloApplication.mediaPlayer.play();
+            Galaxies.xPos = 229.0;
+            Galaxies.yPos = 400.0;
+            homeController.currFuel = 100;
+            homeController.currDurability = 100;
+            homeController.playerScore = 0;
+            Stage currStage = HelloApplication.getStage();
+            currStage.setScene(HelloApplication.sceneMap.get("start"));
+
         });
         Background milkyWayBackground = new Background(mlkBg);
         root.setBackground(milkyWayBackground);
