@@ -45,7 +45,7 @@ public class AndroController implements Initializable {
     double maxdur = homeController.maxDurability;
 
     @FXML
-    Label locationLabel, fuelLabel, durabilityLabel;
+    Label locationLabel, fuelLabel, durabilityLabel, scoreLabel;
 
     int max_added_fuel = 20;
     int added_fuel = 0;
@@ -94,6 +94,7 @@ public class AndroController implements Initializable {
                     homeController.currFuel = homeController.currFuel+3;
                 }
             }
+            homeController.playerScore = homeController.playerScore+30;
             Parent root = FXMLLoader.load(getClass().getResource("AScene2.fxml"));
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             scene = new Scene(root);
@@ -124,6 +125,7 @@ public class AndroController implements Initializable {
                     homeController.currFuel = homeController.currFuel+5;
                 }
             }
+            homeController.playerScore = homeController.playerScore+10;
 //            homeController.currFuel = homeController.currFuel+5;
             Parent root = FXMLLoader.load(getClass().getResource("AScene3.fxml"));
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -153,6 +155,7 @@ public class AndroController implements Initializable {
                     homeController.currFuel = homeController.currFuel+5;
                 }
             }
+            homeController.playerScore = homeController.playerScore+10;
             Parent root = FXMLLoader.load(getClass().getResource("AScene4.fxml"));
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             scene = new Scene(root);
@@ -181,6 +184,7 @@ public class AndroController implements Initializable {
                     homeController.currFuel = homeController.currFuel+5;
                 }
             }
+            homeController.playerScore = homeController.playerScore+10;
             Parent root = FXMLLoader.load(getClass().getResource("AScene5.fxml"));
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             scene = new Scene(root);
@@ -209,6 +213,7 @@ public class AndroController implements Initializable {
                     homeController.currFuel = homeController.currFuel+5;
                 }
             }
+            homeController.playerScore = homeController.playerScore+10;
             Parent root = FXMLLoader.load(getClass().getResource("AScene6.fxml"));
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             scene = new Scene(root);
@@ -237,6 +242,7 @@ public class AndroController implements Initializable {
                     homeController.currFuel = homeController.currFuel+5;
                 }
             }
+            homeController.playerScore = homeController.playerScore+10;
             Parent root = FXMLLoader.load(getClass().getResource("AScene7.fxml"));
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             scene = new Scene(root);
@@ -265,6 +271,7 @@ public class AndroController implements Initializable {
                     homeController.currFuel = homeController.currFuel+5;
                 }
             }
+            homeController.playerScore = homeController.playerScore+10;
             Parent root = FXMLLoader.load(getClass().getResource("AScene8.fxml"));
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             scene = new Scene(root);
@@ -293,6 +300,7 @@ public class AndroController implements Initializable {
                     homeController.currFuel = homeController.currFuel+5;
                 }
             }
+            homeController.playerScore = homeController.playerScore+10;
             Parent root = FXMLLoader.load(getClass().getResource("AScene9.fxml"));
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             scene = new Scene(root);
@@ -321,6 +329,7 @@ public class AndroController implements Initializable {
                     homeController.currFuel = homeController.currFuel+5;
                 }
             }
+            homeController.playerScore = homeController.playerScore+10;
             Parent root = FXMLLoader.load(getClass().getResource("AScene10.fxml"));
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             scene = new Scene(root);
@@ -349,6 +358,7 @@ public class AndroController implements Initializable {
                     homeController.currFuel = homeController.currFuel+5;
                 }
             }
+            homeController.playerScore = homeController.playerScore+10;
             Parent root = FXMLLoader.load(getClass().getResource("AScene11.fxml"));
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             scene = new Scene(root);
@@ -500,7 +510,7 @@ public class AndroController implements Initializable {
 //        this.locationLabel.setText(this.location);
         this.fuelLabel.setText("Fuel: " + AsteroidBelt.round(homeController.currFuel, 1) + " / " + homeController.maxFuel);
         this.durabilityLabel.setText("Durability: " + homeController.currDurability + " / " + homeController.maxDurability);
-
+        this.scoreLabel.setText("Score: " + homeController.playerScore);
     }
 }
 
