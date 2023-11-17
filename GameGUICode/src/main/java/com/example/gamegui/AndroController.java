@@ -52,11 +52,27 @@ public class AndroController implements Initializable {
     Boolean test = true;
 
     public void switchToScene1(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("AScene1.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        double isdead = homeController.currFuel;
+        double health = homeController.currDurability;
+        if (isdead >=0 || health >= 0){
+            Parent root = FXMLLoader.load(getClass().getResource("AScene1.fxml"));
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }else{
+            Parent root = FXMLLoader.load(getClass().getResource("GameOver.fxml"));
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }
+
+//        root = FXMLLoader.load(getClass().getResource("AScene1.fxml"));
+//        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+//        scene = new Scene(root);
+//        stage.setScene(scene);
+//        stage.show();
     }
 
 
@@ -69,7 +85,7 @@ public class AndroController implements Initializable {
                 if(fuel + 5 > 100){
                     homeController.currFuel = 100;
                 }else{
-                    homeController.currFuel = homeController.currFuel+5;
+                    homeController.currFuel = homeController.currFuel-10;
                 }
             }
             Parent root = FXMLLoader.load(getClass().getResource("AScene2.fxml"));
@@ -361,13 +377,22 @@ public class AndroController implements Initializable {
             stage.show();
         }else{
             //switch to damaged hull and lost of fuel due to pirates or nah
+            double isdead = homeController.currFuel;
+            if (isdead-15 >=0){
+                homeController.currFuel = homeController.currFuel-15;
+                Parent root = FXMLLoader.load(getClass().getResource("A_Evade_Fail.fxml"));
+                stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                scene = new Scene(root);
+                stage.setScene(scene);
+                stage.show();
+            }else{
+                Parent root = FXMLLoader.load(getClass().getResource("GameOver.fxml"));
+                stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                scene = new Scene(root);
+                stage.setScene(scene);
+                stage.show();
+            }
 
-            homeController.currFuel = homeController.currFuel-15;
-            Parent root = FXMLLoader.load(getClass().getResource("A_Evade_Fail.fxml"));
-            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-            scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
         }
     }
 
@@ -375,13 +400,25 @@ public class AndroController implements Initializable {
         int randomCheck = rand.nextInt(10);
         System.out.println(randomCheck);
         if(randomCheck > 4){ //60% you fail, 40% you suc
-            homeController.currFuel = homeController.currFuel-10;
-            homeController.currDurability = homeController.currDurability-10;
-            Parent root = FXMLLoader.load(getClass().getResource("A_Fight_Fail.fxml"));
-            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-            scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
+            double isdead = homeController.currFuel;
+            double health = homeController.currDurability;
+            if (isdead-10  >=0 || health-10 >= 0){
+                homeController.currFuel = homeController.currFuel-10;
+                homeController.currDurability = homeController.currDurability-10;
+                Parent root = FXMLLoader.load(getClass().getResource("A_Fight_Fail.fxml"));
+                stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                scene = new Scene(root);
+                stage.setScene(scene);
+                stage.show();
+            }else{
+                Parent root = FXMLLoader.load(getClass().getResource("GameOver.fxml"));
+                stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                scene = new Scene(root);
+                stage.setScene(scene);
+                stage.show();
+            }
+
+
         }else{
             //switch to damaged hull and lost of fuel due to pirates or nah
             if(homeController.currFuel < 100){
@@ -394,7 +431,7 @@ public class AndroController implements Initializable {
             }
             if(homeController.currDurability < 100){
                 double dur = homeController.currDurability;
-                if(dur + 5 > 100){
+                if(dur + 15 > 100){
                     homeController.currDurability = 100;
                 }else{
                     homeController.currDurability = homeController.currDurability+15;
@@ -409,12 +446,23 @@ public class AndroController implements Initializable {
     }
 
     public void Negotiate(ActionEvent event) throws IOException {
-        homeController.currFuel = homeController.currFuel-5;
-        Stage currStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("A_Negotiate.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 1280, 720);
-        scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
-        currStage.setScene(scene);
+        double isdead = homeController.currFuel;
+        if (isdead-5 >=0){
+            homeController.currFuel = homeController.currFuel-5;
+            Stage currStage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("A_Negotiate.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 1280, 720);
+            scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
+            currStage.setScene(scene);
+        }else{
+            Parent root = FXMLLoader.load(getClass().getResource("GameOver.fxml"));
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }
+
+
     }
     //    public void initialize(URL url, ResourceBundle resourceBundle) {
 ////        this.locationLabel.setText(this.location);
