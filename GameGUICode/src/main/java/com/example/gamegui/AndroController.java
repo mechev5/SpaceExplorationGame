@@ -85,7 +85,7 @@ public class AndroController implements Initializable {
     public void switchToScene2(ActionEvent event) throws IOException {
         int randomCheck = rand.nextInt(10);
         System.out.println(randomCheck);
-        if(randomCheck > 7){
+        if(randomCheck > 7){// 70% fail, 30% succeed
             if(homeController.currFuel < 100){
                 double fuel = homeController.currFuel;
                 if(fuel + 5 > 100){
@@ -410,7 +410,7 @@ public class AndroController implements Initializable {
     public void Fight(ActionEvent event) throws IOException {
         int randomCheck = rand.nextInt(10);
         System.out.println(randomCheck);
-        if(randomCheck > 4){ //60% you fail, 40% you suc
+        if(randomCheck > 3){ //60% you fail, 40% you suc
             homeController.currFuel = homeController.currFuel-10;
             homeController.currDurability = homeController.currDurability-10;
             double isdead = homeController.currFuel;
