@@ -29,6 +29,7 @@ import java.util.ResourceBundle;
 
 public class fuelMining implements Initializable {
 
+    boolean spaceLock = false;
     double fuelProgress = 0;
 
     @FXML
@@ -74,10 +75,13 @@ public class fuelMining implements Initializable {
             @Override
             public void handle(KeyEvent event) {
                 if (event.getCode().equals(KeyCode.SPACE)){
-                    actionSound.seek(Duration.ZERO);
-                    actionSound.play();
-                    fuelProgress += 0.01;
-                    fuelGauge.setProgress(fuelProgress);
+                    if (!spaceLock) {
+                        actionSound.seek(Duration.ZERO);
+                        actionSound.play();
+                        fuelProgress += 0.01;
+                        fuelGauge.setProgress(fuelProgress);
+                        spaceLock = true;
+                    }
                 }
                 if ((System.currentTimeMillis() - start) > 7500){
                     PauseTransition pause = new PauseTransition(Duration.seconds(7));
@@ -114,6 +118,16 @@ public class fuelMining implements Initializable {
                 }
 
             }
+        });
+
+        currScene.setOnKeyReleased(new EventHandler<KeyEvent>(){
+            @Override
+            public void handle(KeyEvent event){
+                if (event.getCode() == KeyCode.SPACE){
+                    spaceLock = false;
+                }
+            }
+
         });
 
         button1.setDisable(true);

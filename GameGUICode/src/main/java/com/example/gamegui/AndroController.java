@@ -498,7 +498,7 @@ public class AndroController implements Initializable {
 //    }
     public void initialize(URL url, ResourceBundle resourceBundle) {
 //        this.locationLabel.setText(this.location);
-        this.fuelLabel.setText("Fuel: " + homeController.currFuel + " / " + homeController.maxFuel);
+        this.fuelLabel.setText("Fuel: " + AsteroidBelt.round(homeController.currFuel, 1) + " / " + homeController.maxFuel);
         this.durabilityLabel.setText("Durability: " + homeController.currDurability + " / " + homeController.maxDurability);
 
     }
