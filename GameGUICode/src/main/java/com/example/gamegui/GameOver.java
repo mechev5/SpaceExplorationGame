@@ -93,6 +93,7 @@ public class GameOver implements Initializable {
             currStage.setScene(HelloApplication.sceneMap.get("start"));
         });
         exitGame.setOnAction(e-> Platform.exit());
+        exitGame.setStyle("-fx-text-fill: white; -fx-background-color: red;");
 
         //
 

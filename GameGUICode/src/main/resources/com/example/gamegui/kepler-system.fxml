@@ -16,7 +16,8 @@
                 <Label fx:id="locationLabel"> </Label>
                 <Label fx:id="fuelLabel"> </Label>
                 <Label fx:id="durabilityLabel"> </Label>
-                <Button fx:id="changeDestination"></Button>
+                <Label fx:id="scoreLabel"> </Label>
+                <Button fx:id="changeDestination" mnemonicParsing="false" style="-fx-background-color: blue; -fx-text-fill: white; -fx-border-color: white;" text="Travel to another Galaxy"></Button>
             </VBox>
         </HBox>
     </top>

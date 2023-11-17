@@ -9,6 +9,7 @@
 <?import javafx.scene.image.ImageView?>
 <BorderPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
+            stylesheets="@style_keplerPlanets.css"
             fx:controller="com.example.gamegui.Kep90c"
             fx:id="root">
     <VBox spacing = "200">

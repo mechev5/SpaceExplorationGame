@@ -97,6 +97,7 @@ public class planetList implements Initializable {
         this.leftButton.setOnAction((e) -> {
             Platform.exit();
         });
+        this.leftButton.setStyle("-fx-text-fill: white; -fx-background-color: red;");
         this.middleButton.setOnAction((e) -> {
             FileSwitcher.switchTo(FileStorage.KEPLERSOLARSYSTEM);
         });

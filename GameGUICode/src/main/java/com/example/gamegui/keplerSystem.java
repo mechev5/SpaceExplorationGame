@@ -44,6 +44,8 @@ public class keplerSystem implements Initializable {
     @FXML
     Label durabilityLabel;
     @FXML
+    Label scoreLabel;
+    @FXML
     private HBox botMenu;
     @FXML
     ImageView inv1;
@@ -87,6 +89,7 @@ public class keplerSystem implements Initializable {
         this.locationLabel.setText(this.location);
         this.fuelLabel.setText("Fuel: " + homeController.currFuel + " / " + homeController.maxFuel);
         this.durabilityLabel.setText("Durability: " + homeController.currDurability + " / " + homeController.maxDurability);
+        this.scoreLabel.setText("Score:" + homeController.playerScore);
         Image square = new Image(this.getClass().getResource("images/square.png").toExternalForm());
         int imageH = 512;
         int imageW = 512;
@@ -157,6 +160,8 @@ public class keplerSystem implements Initializable {
         fuelLabel.setStyle("-fx-text-fill: white;");
         durabilityLabel.setFont(Font.font("Tahoma", 24));
         durabilityLabel.setStyle("-fx-text-fill: white;");
+        scoreLabel.setFont(Font.font("Tahoma", 24));
+        scoreLabel.setStyle("-fx-text-fill: white;");
 
         changeDestination.setText("Travel to another Galaxy");
         changeDestination.setMinSize(100,100);
