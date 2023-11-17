@@ -85,7 +85,7 @@ public class AndroController implements Initializable {
                 if(fuel + 5 > 100){
                     homeController.currFuel = 100;
                 }else{
-                    homeController.currFuel = homeController.currFuel-10;
+                    homeController.currFuel = homeController.currFuel+5;
                 }
             }
             Parent root = FXMLLoader.load(getClass().getResource("AScene2.fxml"));
