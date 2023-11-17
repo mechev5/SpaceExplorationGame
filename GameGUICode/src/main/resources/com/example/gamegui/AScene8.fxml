@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1270.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gamegui.AndroController">
+    <children>
+      <ImageView fitHeight="1061.0" fitWidth="1408.0" layoutX="-83.0" layoutY="-174.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/Andromeda_galaxy.jpg" />
+         </image>
+      </ImageView>
+        <ImageView fitHeight="830.0" fitWidth="1285.0" layoutX="-339.0" layoutY="-136.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@images/planet8.png" />
+            </image>
+        </ImageView>
+        <Label layoutX="758.0" layoutY="184.0" text="Beta Pictoris c" textFill="WHITE">
+            <font>
+                <Font size="50.0" />
+            </font>
+        </Label>
+        <Button layoutX="176.0" layoutY="557.0" mnemonicParsing="false" onAction="#switchToScene1" prefHeight="74.0" prefWidth="170.0" text="Return">
+         <font>
+            <Font size="20.0" />
+         </font></Button>
+        <Label fx:id="fuelLabel" layoutX="934.0" layoutY="73.0" textFill="WHITE">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Label>
+        <Label fx:id="durabilityLabel" layoutX="934.0" layoutY="103.0" textFill="WHITE">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Label>
+      <TextArea layoutX="663.0" layoutY="251.0" prefHeight="150.0" prefWidth="528.0" text="Beta Pictoris c is a gas giant exoplanet that orbits an &#10;A-type star. Its mass is 10.139 Jupiters, it takes 3.3 years&#10; to complete one orbit of its star, and is 2.68 AU from its&#10; star. Its discovery was announced in 2019.">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </TextArea>
+    </children>
+</AnchorPane>

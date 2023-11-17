@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1270.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gamegui.AndroController">
+    <children>
+      <ImageView fitHeight="1061.0" fitWidth="1408.0" layoutX="-83.0" layoutY="-174.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/Andromeda_galaxy.jpg" />
+         </image>
+      </ImageView>
+        <ImageView fitHeight="989.0" fitWidth="1476.0" layoutX="-434.0" layoutY="-153.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@images/planet7.png" />
+            </image>
+        </ImageView>
+        <Label layoutX="758.0" layoutY="184.0" text="BD+20 2457 b" textFill="WHITE">
+            <font>
+                <Font size="50.0" />
+            </font>
+        </Label>
+        <Button layoutX="176.0" layoutY="557.0" mnemonicParsing="false" onAction="#switchToScene1" prefHeight="74.0" prefWidth="170.0" text="Return">
+         <font>
+            <Font size="20.0" />
+         </font></Button>
+        <VBox layoutX="43.0" layoutY="100.0" prefHeight="200.0" prefWidth="507.0" />
+        <Label fx:id="fuelLabel" layoutX="934.0" layoutY="73.0" textFill="WHITE">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Label>
+        <Label fx:id="durabilityLabel" layoutX="934.0" layoutY="103.0" textFill="WHITE">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Label>
+      <TextArea layoutX="628.0" layoutY="257.0" prefHeight="144.0" prefWidth="594.0" text="BD+20 2457 b is a gas giant exoplanet that orbits a K-type star. &#10;Its mass is 21.42 Jupiters, it takes 379.6 days to complete one &#10;orbit of its star, and is 1.45 AU from its star. Its discovery &#10;was announced in 2009.">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </TextArea>
+    </children>
+</AnchorPane>

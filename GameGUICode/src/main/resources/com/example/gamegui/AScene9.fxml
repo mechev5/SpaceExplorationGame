@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1270.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gamegui.AndroController">
+    <children>
+      <ImageView fitHeight="1061.0" fitWidth="1408.0" layoutX="-83.0" layoutY="-174.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/Andromeda_galaxy.jpg" />
+         </image>
+      </ImageView>
+        <ImageView fitHeight="799.0" fitWidth="935.0" layoutX="-163.0" layoutY="-78.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@images/planet9.jpg" />
+            </image>
+        </ImageView>
+        <Label layoutX="758.0" layoutY="184.0" text="CI Tauri b" textFill="WHITE">
+            <font>
+                <Font size="50.0" />
+            </font>
+        </Label>
+        <Button layoutX="176.0" layoutY="557.0" mnemonicParsing="false" onAction="#switchToScene1" prefHeight="74.0" prefWidth="170.0" text="Return">
+         <font>
+            <Font size="20.0" />
+         </font></Button>
+        <Label fx:id="fuelLabel" layoutX="934.0" layoutY="73.0" textFill="WHITE">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Label>
+        <Label fx:id="durabilityLabel" layoutX="934.0" layoutY="103.0" textFill="WHITE">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Label>
+          <TextArea layoutX="606.0" layoutY="246.0" prefHeight="166.0" prefWidth="599.0" text="CI Tauri b is a gas giant exoplanet that orbits an M-type star. &#10;Its mass is 11.6 Jupiters and it takes 9 days to complete &#10;one orbit of its star. Its discovery was announced in 2019.">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </TextArea>
+
+    </children>
+</AnchorPane>
