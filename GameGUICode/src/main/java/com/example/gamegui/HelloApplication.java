@@ -112,7 +112,7 @@ public class HelloApplication extends Application {
             mediaPlayer = new MediaPlayer(mediaStart);
             mediaPlayer.setCycleCount(1);
             mediaPlayer.play();
-            PauseTransition pause = new PauseTransition(Duration.seconds(.15));
+            PauseTransition pause = new PauseTransition(Duration.seconds(15));
             pause.setOnFinished(x->{
                 // add parent transition here I think, try it out tomorrow
                 mediaPlayer.stop();
